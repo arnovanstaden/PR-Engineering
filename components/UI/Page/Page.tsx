@@ -1,4 +1,3 @@
-
 import Head from "../Head/Head";
 
 interface IProps {
@@ -11,14 +10,15 @@ interface IProps {
     }
 }
 
-
 const Page = (props: IProps) => {
     return (
         <div>
             <Head
                 {...props.head}
             />
-            {props.children}
+            <div className="container">
+                {props.children}
+            </div>
         </div>
     )
 }

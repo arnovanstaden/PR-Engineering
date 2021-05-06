@@ -1,6 +1,88 @@
 @import "../../../styles/variables.scss";
 
 .footer {
-    padding-top: 2rem;
-    background-color: $white;
+    padding: 2rem 0 1rem 0;
+    background-color: $grey;
+    color: $white;
+
+    .grid {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        &.content {
+            padding-bottom: 1rem;
+
+            .logo {
+                img {
+                    width: 6rem;
+                }
+            }
+
+            .list {
+                @include list-reset;
+
+                li {
+                    margin-left: 1rem;
+                    color: $white;
+                    font-family: $heading-font;
+                    font-weight: 400;
+                    font-size: 1rem;
+                    letter-spacing: 0.5px;
+
+                    &:hover {
+                        color: $blue;
+                    }
+
+                    &.active {
+                        color: $blue;
+                        font-weight: 500;
+                    }
+                }
+
+                &.nav {
+                    display: flex;
+                    align-items: center;
+                    justify-content: flex-end;
+                    border-bottom: 1px solid $lightgrey;
+                    padding-bottom: 0.75rem;
+                }
+
+                &.contact {
+                    padding-top: 0.75rem;
+                    display: flex;
+                    align-items: center;
+                    justify-content: flex-end;
+
+                    li {
+                        font-size: 0.9rem;
+                    }
+                }
+            }
+
+
+        }
+
+        &.bottom {
+            border-top: 1px solid $lightgrey;
+            padding-top: 1rem;
+
+            .social {
+                a {
+                    font-size: 1.1rem;
+                    margin-right: 0.5rem;
+                }
+            }
+
+            p {
+                margin: 0;
+                font-size: 0.7rem;
+                text-align: center;
+
+                a {
+                    color: $blue;
+                }
+            }
+        }
+    }
 }

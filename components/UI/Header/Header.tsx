@@ -1,7 +1,6 @@
 import Link from "next/link";
 import { useRouter } from 'next/router'
 
-
 // Styles
 import styles from "./header.module.scss";
 
