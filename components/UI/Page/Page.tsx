@@ -16,9 +16,7 @@ const Page = (props: IProps) => {
             <Head
                 {...props.head}
             />
-            <div className="container">
-                {props.children}
-            </div>
+            {props.children}
         </div>
     )
 }
