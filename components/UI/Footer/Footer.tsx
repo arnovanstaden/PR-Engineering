@@ -51,20 +51,20 @@ export default function Footer() {
                         </ul>
                         <ul className={`${styles.contact} ${styles.list}`}>
                             <li>
+                                <i className="icon-room"></i>
                                 <a href="https://g.page/Fire-Engineers?share" target="blank">
-                                    {/* <RoomIcon /> */}
                                     Stellenbosch, Western Cape
                                 </a>
                             </li>
                             <li>
+                                <i className="icon-email"></i>
                                 <a href="mailto:info@engpr.com">
-                                    {/* <MailIcon /> */}
-                                        info@engpr.com
+                                    info@engpr.com
                                     </a>
                             </li>
                             <li>
+                                <i className="icon-phone"></i>
                                 <a href="tel:0210125393">
-                                    {/* <PhoneIcon /> */}
                                     021 012 5393
                                 </a>
                             </li>
