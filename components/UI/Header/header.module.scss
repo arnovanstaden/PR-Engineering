@@ -1,1 +1,59 @@
 @import "../../../styles/variables.scss";
+
+.header {
+    background-color: $grey;
+    padding: 1rem 0;
+
+    .nav {
+        display: flex;
+        justify-content: space-between;
+
+        .logo {
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+
+            img {
+                width: 1.75rem;
+                margin-right: 0.5rem;
+            }
+
+            p {
+                margin: 0;
+                color: $white;
+                font-family: $heading-font;
+                text-transform: uppercase;
+                font-size: 1.25rem;
+                font-weight: 500;
+                letter-spacing: 0.5px
+            }
+        }
+
+        .menu {
+            @include list-reset;
+            display: flex;
+            align-items: center;
+
+            li {
+                margin-right: 1rem;
+                color: $white;
+                text-transform: uppercase;
+                font-family: $heading-font;
+                font-weight: 400;
+                font-size: 1.05rem;
+                letter-spacing: 0.5px;
+
+                &:hover {
+                    color: $blue;
+                }
+
+                &.active {
+                    color: $blue;
+                    font-weight: 500;
+                }
+
+
+            }
+        }
+    }
+}

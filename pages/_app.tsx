@@ -1,16 +1,15 @@
+// Components
+import Layout from "../components/Layout/Layout"
 
-// Global Styles
+// Styles & Icons
 import '../styles/global.scss';
 // import "../assets/icons/style.css";
 
-// Fonts
-
 function MyApp({ Component, pageProps }) {
-
   return (
-    <>
+    <Layout>
       <Component {...pageProps} />
-    </>
+    </Layout>
   )
 }
 

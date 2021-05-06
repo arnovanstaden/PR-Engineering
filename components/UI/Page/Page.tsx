@@ -1,5 +1,4 @@
-import Header from "../Header/Header";
-import Footer from "../Footer/Footer";
+
 import Head from "../Head/Head";
 
 interface IProps {
@@ -19,9 +18,7 @@ const Page = (props: IProps) => {
             <Head
                 {...props.head}
             />
-            <Header />
             {props.children}
-            <Footer />
         </div>
     )
 }

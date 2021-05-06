@@ -1,17 +1,17 @@
 import Page from "../components/UI/Page/Page";
 
-const Services = () => {
+const Projects = () => {
     return (
         <Page
             head={{
-                title: "Services | PR Engineering",
+                title: "Projects | PR Engineering",
                 description: "FIX THIS",
-                canonical: "/services",
+                canonical: "/projects",
             }}
         >
-            <h1>Services</h1>
+            <h1>Projects</h1>
         </Page>
     )
 }
 
-export default Services
+export default Projects
