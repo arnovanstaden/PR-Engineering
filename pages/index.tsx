@@ -2,6 +2,7 @@
 import Page from "../components/UI/Page/Page";
 import Section from "../components/UI/Section/Section";
 import Button from "../components/UI/Button/Button";
+import Contact from "../components/Content/Contact/Contact"
 
 // styles
 import styles from "../styles/pages/home.module.scss"
@@ -45,7 +46,7 @@ const Home = () => {
                 heading="Get In Touch"
                 number={4}
             >
-                <p>something</p>
+                <Contact />
             </Section>
 
 
