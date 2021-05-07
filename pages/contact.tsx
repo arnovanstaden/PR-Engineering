@@ -1,5 +1,5 @@
 import Page from "../components/UI/Page/Page";
-import Button from "../components/UI/Library/Button/Button";
+import Button from "../components/UI/Button/Button";
 
 // Styles
 import styles from "../styles/pages/contact.module.scss";

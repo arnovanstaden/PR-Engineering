@@ -10,7 +10,7 @@ import styles from "./footer.module.scss";
 // import PhoneIcon from '@material-ui/icons/Phone';
 
 export default function Footer() {
-    const router = useRouter()
+    const router = useRouter();
 
     return (
         <footer className={styles.footer}>

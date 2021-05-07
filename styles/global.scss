@@ -29,10 +29,6 @@ body {
   }
 }
 
-section {
-  padding: 6rem 0;
-}
-
 // Typography
 
 a {
@@ -43,8 +39,8 @@ a {
 
 p {
   color: $lightgrey;
-  font-weight: 300;
   line-height: 1.5;
+  margin: 0;
 }
 
 h1,

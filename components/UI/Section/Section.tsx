@@ -8,9 +8,10 @@ interface IProps {
     heading: string;
     colour?: "light" | "dark";
     number?: number;
+    className?: string;
 }
 
-const Section = ({ children, colour, heading, number }: IProps) => {
+const Section = ({ children, colour, heading, number, className }: IProps) => {
     const classes = ClassNames(
         styles.section,
         colour === "light" ? styles.light : null,
@@ -26,10 +27,12 @@ const Section = ({ children, colour, heading, number }: IProps) => {
                 <div className={styles.content}>
                     <div className="container">
                         <div className={styles.heading}>
-                            <div className={styles.line}></div>
                             <h1>{heading}</h1>
+                            <div className={styles.line}></div>
                         </div>
-                        {children}
+                        <div className={className}>
+                            {children}
+                        </div>
                     </div>
                 </div>
             </div>

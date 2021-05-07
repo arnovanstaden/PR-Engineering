@@ -1,7 +1,7 @@
 // Components
 import Page from "../components/UI/Page/Page";
 import Section from "../components/UI/Section/Section";
-import Button from "../components/UI/Library/Button/Button";
+import Button from "../components/UI/Button/Button";
 
 // styles
 import styles from "../styles/pages/home.module.scss"
