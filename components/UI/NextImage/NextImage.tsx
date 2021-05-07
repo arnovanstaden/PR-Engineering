@@ -7,12 +7,13 @@ interface IProps {
     src: string;
     alt: string;
     width?: number;
-    background?: boolean
+    background?: boolean;
+    priority?: boolean;
 }
 
 // next/image creates unintended image styles. This components rectifies some styles to use the components just like a normal image, but still making use of the optimization & sizing features
 
-const NextImage = ({ src, alt, width, background }: IProps) => {
+const NextImage = ({ src, alt, width, background, priority }: IProps) => {
 
     if (width) {
         const classes = ClassNames(
@@ -29,6 +30,7 @@ const NextImage = ({ src, alt, width, background }: IProps) => {
                     className={`Picture of ${styles.image}`}
                     width={width}
                     height="auto"
+                    priority
                 />
             </div>
         )
@@ -41,6 +43,7 @@ const NextImage = ({ src, alt, width, background }: IProps) => {
                 alt={alt}
                 layout="fill"
                 className={`Picture of ${styles.image}`}
+                priority
             />
         </div>
     )

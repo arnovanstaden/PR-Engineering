@@ -7,10 +7,11 @@ import styles from "./button.module.scss";
 interface IProps {
     link?: string;
     text: string;
-    dark?: boolean
+    dark?: boolean;
+    click?: () => void
 }
 
-const Button = ({ link, text, dark }: IProps) => {
+const Button = ({ link, text, dark, click }: IProps) => {
 
     const classes = ClassNames(
         styles.button,
@@ -19,7 +20,7 @@ const Button = ({ link, text, dark }: IProps) => {
 
     const Inner = () => {
         return (
-            <button className={classes}>
+            <button className={classes} onClick={click ? click : null}>
                 {text}
             </button>
         )

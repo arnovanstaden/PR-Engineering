@@ -89,6 +89,7 @@ const About = () => {
                             alt="Paul van Staden"
                             width={400}
                             background
+                            priority
                         />
                     </div>
                     <div className={styles.text}>
@@ -111,6 +112,7 @@ const About = () => {
                             alt="Paul van Staden"
                             width={400}
                             background
+                            priority
                         />
                     </div>
                     <div className={styles.text}>

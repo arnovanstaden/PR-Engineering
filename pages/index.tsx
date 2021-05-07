@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 // Components
 import Page from "../components/UI/Page/Page";
 import Section from "../components/UI/Section/Section";
@@ -21,6 +23,28 @@ const Home = () => {
             }}
             className={styles.home}
         >
+
+            <section className={styles.landing}>
+                <video autoPlay muted={true} loop={true} >
+                    <source src={`/videos/landing1.mp4`} type="video/mp4" />
+                </video>
+                <div className={styles.overlay}>
+                    <div className={styles.content}>
+                        <h1>PR Engineering</h1>
+                        <hr />
+                        <h2>Mechanical, Fire and Electrical Engineers</h2>
+                        <div className={styles.actions}>
+                            <Button text="What We Do" link="/services" />
+                            <Button text="Get In Touch" link="/contact" />
+                        </div>
+                        <div className={styles.actions}>
+                            <Link href="2">
+                                <button className={styles.videoButton} >Home Video 2</button>
+                            </Link>
+                        </div>
+                    </div>
+                </div>
+            </section>
 
             <Section
                 heading="Professional Value-Driven Consulting Engineering Solutions"

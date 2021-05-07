@@ -2,6 +2,79 @@
 
 .home {
 
+    .landing {
+        min-width: 95vw;
+        max-height: 100vh;
+        overflow: hidden;
+        position: relative;
+
+        video {
+            min-width: 100vw;
+            min-height: 100vh;
+        }
+
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 100%;
+            background-color: rgba($grey, 0.5);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            .content {
+                text-align: center;
+                margin-top: -5vh;
+
+                h1 {
+                    margin: 0;
+                    color: $white;
+                    font-weight: 600;
+                    font-size: 3rem;
+                    text-transform: uppercase;
+                    letter-spacing: 1px
+                }
+
+                hr {
+                    @include hr-reset;
+                    width: 40%;
+                    height: 2px;
+                    background-color: $blue;
+                    margin: 1rem auto;
+                }
+
+                h2 {
+                    margin: 0;
+                    font-weight: 400;
+                    font-family: $font;
+                    color: $white;
+                    font-size: 1.75rem;
+                    padding-top: 0.25rem;
+                }
+
+                .actions {
+                    margin-top: 2rem;
+
+                    button:first-child {
+                        margin-right: 1rem;
+                    }
+
+                    .videoButton {
+                        border: none;
+                        color: $grey;
+                        background-color: $white;
+                        font-size: 0.9rem;
+                        font-weight: 500;
+                        font-family: $font;
+                        padding: 0.2rem 0.5rem;
+                    }
+                }
+            }
+        }
+    }
+
     .intro {
         button {
             margin-top: 2rem;
