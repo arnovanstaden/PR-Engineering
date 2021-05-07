@@ -1,0 +1,28 @@
+@import "../variables.scss";
+
+.pageNotFound {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    h1 {
+        font-size: 4rem;
+        letter-spacing: 0.5rem;
+        margin: 0;
+
+        span {
+            color: $blue;
+        }
+    }
+
+    h2 {
+        font-weight: 600;
+        margin: 0 0 0.5rem 0;
+    }
+
+    p {
+        color: $lightgrey;
+        margin: 0 0 1rem 0;
+    }
+}
