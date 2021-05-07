@@ -59,6 +59,8 @@
 
     .mobileNav {
         z-index: 10;
+        display: flex;
+        align-items: center;
 
         >i {
             color: $white;
