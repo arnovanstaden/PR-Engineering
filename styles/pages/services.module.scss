@@ -40,4 +40,18 @@
             }
         }
     }
+
+    @media screen and (max-width: 768px) {
+        .intro {
+            grid-template-columns: 1fr;
+
+            .content {
+                padding-right: 0;
+
+                &:first-child {
+                    border-right: none
+                }
+            }
+        }
+    }
 }

@@ -123,6 +123,28 @@
         .more {
             display: flex;
             justify-content: center;
+            margin-top: 1rem;
+        }
+    }
+
+    @media screen and (max-width: 991px) {
+        .services {
+            .grid {
+                grid-template-columns: 1fr;
+
+                .area {
+                    border-right: 0;
+                    padding-right: 0;
+
+                    &:last-child {
+                        border-bottom: none
+                    }
+                }
+            }
+
+            .more {
+                justify-content: flex-start;
+            }
         }
     }
 }

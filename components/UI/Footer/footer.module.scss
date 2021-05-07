@@ -98,4 +98,34 @@
             }
         }
     }
+
+    @media screen and (max-width: 768px) {
+        .grid {
+            flex-direction: column;
+
+
+            &.content {
+
+                .list {
+
+                    li {
+                        margin-left: 0;
+                    }
+
+                    &.nav {
+                        flex-wrap: wrap;
+                        justify-content: space-around;
+                        margin-top: 1rem;
+
+
+                    }
+
+                    &.contact {
+                        justify-content: space-around;
+                        flex-wrap: wrap;
+                    }
+                }
+            }
+        }
+    }
 }

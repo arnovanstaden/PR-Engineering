@@ -123,4 +123,28 @@
             margin-top: 1.5rem;
         }
     }
+
+    @media screen and (max-width: 991px) {
+        flex-wrap: wrap;
+
+        .form,
+        .details {
+            width: 100%;
+        }
+    }
+
+    @media screen and (max-width: 600px) {
+        .form {
+
+
+            form {
+                display: block;
+
+                .group {
+                    padding-top: 1rem;
+                }
+
+            }
+        }
+    }
 }

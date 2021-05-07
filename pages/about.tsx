@@ -92,13 +92,15 @@ const About = () => {
                             priority
                         />
                     </div>
-                    <div className={styles.text}>
+                    <div className={styles.details}>
                         <h2>Jaco Buys</h2>
                         <h3>Director</h3>
                         <div>
                             <i className="icon-email"></i>
                             <a href="mailto:jaco@engpr.com">jaco@engpr.com</a>
                         </div>
+                    </div>
+                    <div className={styles.bio}>
                         <p>
                             Lorem ipsum dolor sit, amet consectetur adipisicing elit. Maxime, nemo labore? In perferendis doloremque similique laudantium, provident quo aliquam ratione optio necessitatibus dicta excepturi nam ad, atque facere libero sequi sapiente? Labore illum nisi cupiditate asperiores voluptate nesciunt, porro omnis? Dolores dicta perferendis dolore soluta maiores sit nemo aliquid temporibus!
                         </p>
@@ -115,13 +117,15 @@ const About = () => {
                             priority
                         />
                     </div>
-                    <div className={styles.text}>
+                    <div className={styles.details}>
                         <h2>Paul van Staden</h2>
                         <h3>Director</h3>
                         <div>
                             <i className="icon-email"></i>
                             <a href="mailto:paul@engpr.com">paul@engpr.com</a>
                         </div>
+                    </div>
+                    <div className={styles.bio}>
                         <p>
                             Lorem ipsum dolor sit, amet consectetur adipisicing elit. Maxime, nemo labore? In perferendis doloremque similique laudantium, provident quo aliquam ratione optio necessitatibus dicta excepturi nam ad, atque facere libero sequi sapiente? Labore illum nisi cupiditate asperiores voluptate nesciunt, porro omnis? Dolores dicta perferendis dolore soluta maiores sit nemo aliquid temporibus!
                         </p>
