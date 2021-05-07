@@ -19,55 +19,55 @@
                 }
             }
 
-            .list {
-                @include list-reset;
-
-                li {
-                    margin-left: 1rem;
-                    color: $white;
-                    font-family: $heading-font;
-                    font-weight: 400;
-                    font-size: 1rem;
-                    letter-spacing: 0.5px;
-
-                    &:hover {
-                        color: $blue;
-                    }
-
-                    &.active {
-                        color: $blue;
-                        font-weight: 500;
-                    }
-                }
-
-                &.nav {
-                    display: flex;
-                    align-items: center;
-                    justify-content: flex-end;
-                    border-bottom: 1px solid $lightgrey;
-                    padding-bottom: 0.75rem;
-                }
-
-                &.contact {
-                    padding-top: 0.75rem;
-                    display: flex;
-                    align-items: center;
-                    justify-content: flex-end;
+            .top {
+                .list {
+                    @include list-reset;
 
                     li {
-                        font-size: 0.9rem;
+                        margin-left: 1rem;
+                        color: $white;
+                        font-family: $heading-font;
+                        font-weight: 400;
+                        font-size: 1rem;
+                        letter-spacing: 0.5px;
+
+                        &:hover {
+                            color: $blue;
+                        }
+
+                        &.active {
+                            color: $blue;
+                            font-weight: 500;
+                        }
+                    }
+
+                    &.nav {
                         display: flex;
                         align-items: center;
+                        justify-content: flex-end;
+                        border-bottom: 1px solid $lightgrey;
+                        padding-bottom: 0.75rem;
+                    }
 
-                        i {
-                            color: $blue;
-                            margin-right: 0.25rem;
+                    &.contact {
+                        padding-top: 0.75rem;
+                        display: flex;
+                        align-items: center;
+                        justify-content: flex-end;
+
+                        li {
+                            font-size: 0.9rem;
+                            display: flex;
+                            align-items: center;
+
+                            i {
+                                color: $blue;
+                                margin-right: 0.25rem;
+                            }
                         }
                     }
                 }
             }
-
-
         }
 
         &.bottom {
@@ -103,27 +103,39 @@
         .grid {
             flex-direction: column;
 
-
             &.content {
 
-                .list {
+                .top {
+                    width: 100%;
 
-                    li {
-                        margin-left: 0;
+                    .list {
+
+                        li {
+                            margin-left: 0;
+                        }
+
+                        &.nav {
+                            flex-wrap: wrap;
+                            justify-content: space-around;
+                            margin-top: 1rem;
+                        }
+
+                        &.contact {
+                            flex-direction: column;
+
+                            li {
+                                margin-bottom: 0.25rem;
+                            }
+                        }
                     }
+                }
+            }
 
-                    &.nav {
-                        flex-wrap: wrap;
-                        justify-content: space-around;
-                        margin-top: 1rem;
+            &.bottom {
 
 
-                    }
-
-                    &.contact {
-                        justify-content: space-around;
-                        flex-wrap: wrap;
-                    }
+                .social {
+                    margin-bottom: 0.5rem;
                 }
             }
         }

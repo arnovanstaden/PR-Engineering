@@ -29,18 +29,20 @@ const Home = () => {
                     <source src={`/videos/landing1.mp4`} type="video/mp4" />
                 </video>
                 <div className={styles.overlay}>
-                    <div className={styles.content}>
-                        <h1>PR Engineering</h1>
-                        <hr />
-                        <h2>Mechanical, Fire and Electrical Engineers</h2>
-                        <div className={styles.actions}>
-                            <Button text="What We Do" link="/services" />
-                            <Button text="Get In Touch" link="/contact" />
-                        </div>
-                        <div className={styles.actions}>
-                            <Link href="2">
-                                <button className={styles.videoButton} >Home Video 2</button>
-                            </Link>
+                    <div className="container">
+                        <div className={styles.content}>
+                            <h1>PR Engineering</h1>
+                            <hr />
+                            <h2>Mechanical, Fire and Electrical Engineers</h2>
+                            <div className={styles.actions}>
+                                <Button text="What We Do" link="/services" />
+                                <Button text="Get In Touch" link="/contact" />
+                            </div>
+                            <div className={styles.actions}>
+                                <Link href="2">
+                                    <button className={styles.videoButton} >Home Video 2</button>
+                                </Link>
+                            </div>
                         </div>
                     </div>
                 </div>

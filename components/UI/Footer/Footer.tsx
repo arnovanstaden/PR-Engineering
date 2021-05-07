@@ -21,7 +21,7 @@ export default function Footer() {
                             <img src="/images/logos/logo-white-text.svg" alt="PR Engineering Logo" />
                         </a>
                     </Link>
-                    <div>
+                    <div className={styles.top}>
                         <ul className={`${styles.nav} ${styles.list}`}>
                             <li className={router.pathname == "/" ? styles.active : ""}>
                                 <Link href="/">
