@@ -3,6 +3,9 @@ import Page from "../components/UI/Page/Page";
 import Section from "../components/UI/Section/Section";
 import Button from "../components/UI/Library/Button/Button";
 
+// styles
+import styles from "../styles/pages/home.module.scss"
+
 const Home = () => {
     return (
         <Page
@@ -11,6 +14,7 @@ const Home = () => {
                 description: "FIX THIS",
                 canonical: "/",
             }}
+            className={styles.home}
         >
 
             <Section

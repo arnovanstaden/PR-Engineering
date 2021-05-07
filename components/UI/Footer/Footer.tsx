@@ -73,11 +73,11 @@ export default function Footer() {
                 </div>
                 <div className={`${styles.grid} ${styles.bottom}`}>
                     <div className={styles.social}>
-                        <a href="https://www.linkedin.com/company/pr-engineering-africa/" target="blank">
-                            <i className="icon-linkedin"></i>
-                        </a>
                         <a href="https://www.instagram.com/prengineering/?hl=en" target="blank">
                             <i className="icon-instagram"></i>
+                        </a>
+                        <a href="https://www.linkedin.com/company/pr-engineering-africa/" target="blank">
+                            <i className="icon-linkedin"></i>
                         </a>
                     </div>
                     <p>© 2020 - PR Engineering (PTY) LTD.</p>

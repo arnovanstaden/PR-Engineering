@@ -14,7 +14,7 @@ const Section = ({ children, colour, heading, number }: IProps) => {
     const classes = ClassNames(
         styles.section,
         colour === "light" ? styles.light : null,
-        colour === "dark" ? styles.dark : null
+        colour === "dark" ? styles.dark : null,
     )
 
     return (

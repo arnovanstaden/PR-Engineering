@@ -78,6 +78,10 @@
                 a {
                     font-size: 1.1rem;
                     margin-right: 0.5rem;
+
+                    &:hover {
+                        color: $blue;
+                    }
                 }
             }
 
