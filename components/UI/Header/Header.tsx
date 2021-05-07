@@ -1,3 +1,4 @@
+import { useRef } from "react";
 import Link from "next/link";
 import { useRouter } from 'next/router';
 import { useMediaQuery } from 'react-responsive'
@@ -12,25 +13,49 @@ export default function Header() {
     const isMobile = useMediaQuery({ query: '(max-width: 768px)' })
 
     // Subcomponents
-    const Menu = () => {
+    const Menu = ({ mobileNavToggle }: {
+        mobileNavToggle?: () => void
+    }) => {
         return (
             <ul className={styles.menu}>
-                <li className={router.pathname == "/about" ? styles.active : ""}>
+                {mobileNavToggle ?
+                    <li
+                        className={router.pathname == "/" ? styles.active : ""}
+                        onClick={mobileNavToggle}
+                    >
+                        <Link href="/">
+                            Home
+                        </Link>
+                    </li>
+                    : null}
+                <li
+                    className={router.pathname == "/about" ? styles.active : ""}
+                    onClick={mobileNavToggle ? mobileNavToggle : null}
+                >
                     <Link href="/about">
                         About
                     </Link>
                 </li>
-                <li className={router.pathname == "/services" ? styles.active : ""}>
+                <li
+                    className={router.pathname == "/services" ? styles.active : ""}
+                    onClick={mobileNavToggle ? mobileNavToggle : null}
+                >
                     <Link href="/services">
                         Services
                     </Link>
                 </li>
-                <li className={router.pathname == "/projects" ? styles.active : ""}>
+                <li
+                    className={router.pathname == "/projects" ? styles.active : ""}
+                    onClick={mobileNavToggle ? mobileNavToggle : null}
+                >
                     <Link href="/projects">
                         Projects
                     </Link>
                 </li>
-                <li className={router.pathname == "/contact" ? styles.active : ""}>
+                <li
+                    className={router.pathname == "/contact" ? styles.active : ""}
+                    onClick={mobileNavToggle ? mobileNavToggle : null}
+                >
                     <Link href="/contact">
                         Contact
                     </Link>
@@ -40,8 +65,33 @@ export default function Header() {
     }
 
     const MobileNav = () => {
+        const navRef = useRef();
+
+        const toggleNav = () => {
+            const nav = navRef.current as HTMLElement;
+            const body = document.body
+            if (nav) {
+                nav.classList.toggle(styles.open);
+                body.classList.toggle("noscroll")
+            }
+        }
+
         return (
-            <p>|||</p>
+            <div className={styles.mobileNav} ref={navRef}>
+                <i className="icon-menu" onClick={toggleNav}></i>
+                <div className={styles.overlay}>
+                    <i className="icon-close" onClick={toggleNav}></i>
+                    <Menu mobileNavToggle={toggleNav} />
+                    <div className={styles.social}>
+                        <a href="https://www.instagram.com/prengineering/?hl=en" target="blank">
+                            <i className="icon-instagram"></i>
+                        </a>
+                        <a href="https://www.linkedin.com/company/pr-engineering-africa/" target="blank">
+                            <i className="icon-linkedin"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
         )
     }
 
