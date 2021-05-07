@@ -28,7 +28,7 @@ const Section = ({ children, colour, heading, number, className }: IProps) => {
                     <div className="container">
                         <div className={styles.heading}>
                             <h1>{heading}</h1>
-                            <div className={styles.line}></div>
+                            <hr />
                         </div>
                         <div className={className}>
                             {children}

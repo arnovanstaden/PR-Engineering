@@ -1,1 +1,43 @@
 @import "../variables.scss";
+
+.services {
+
+    .intro {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 2rem;
+
+        .content {
+            padding-right: 1.5rem;
+
+            h2 {
+                font-size: 1.5rem;
+                font-weight: 600;
+            }
+
+            .list {
+                @include list-reset;
+
+                li {
+                    margin: 0 0 0.5rem 0;
+                    display: flex;
+                    font-size: 1.05rem;
+                    font-weight: 500;
+                    color: $lightgrey;
+
+                    i {
+                        color: $blue;
+                        font-size: 0.9rem;
+                        margin-right: 0.5rem;
+                        margin-top: 0.35rem;
+
+                    }
+                }
+            }
+
+            &:first-child {
+                border-right: 2px solid $blue;
+            }
+        }
+    }
+}

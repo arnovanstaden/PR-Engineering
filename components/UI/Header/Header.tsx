@@ -14,7 +14,7 @@ export default function Header() {
                     <Link href="/">
                         <div className={styles.logo}>
                             <img src="/images/logos/logo.svg" alt="PR Engineering Logo" />
-                            <p>PR Engineering</p>
+                            <p>Engineering</p>
                         </div>
                     </Link>
                     <ul className={styles.menu}>

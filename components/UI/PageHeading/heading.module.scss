@@ -14,7 +14,8 @@
         }
     }
 
-    .line {
+    hr {
+        @include hr-reset;
         background-color: $grey;
         width: 10rem;
         height: 4px;

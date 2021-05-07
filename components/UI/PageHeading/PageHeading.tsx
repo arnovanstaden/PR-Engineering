@@ -5,7 +5,7 @@ const PageHeading = ({ children }) => {
         <section className={styles.heading}>
             <div className="container">
                 {children}
-                <div className={styles.line}></div>
+                <hr />
             </div>
         </section>
     )

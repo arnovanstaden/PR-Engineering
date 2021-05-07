@@ -1,3 +1,55 @@
 @import "../variables.scss";
 
-.home {}
+.home {
+
+    .intro {
+        button {
+            margin-top: 2rem;
+        }
+    }
+
+    .services {
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+
+            .area {
+                border-right: 2px solid $blue;
+                padding-right: 1rem;
+
+                h2 {
+                    font-size: 1.5rem;
+                    font-weight: 600;
+                    color: $blue;
+                }
+
+                &:last-child {
+                    border-right: none
+                }
+            }
+
+
+            .list {
+                @include list-reset;
+
+                li {
+                    margin: 0 0 0.5rem 0;
+                    display: flex;
+
+                    i {
+                        color: $blue;
+                        font-size: 0.75rem;
+                        margin-right: 0.5rem;
+                        margin-top: 0.3rem;
+                    }
+                }
+            }
+        }
+
+        .more {
+            display: flex;
+            justify-content: center;
+        }
+    }
+}

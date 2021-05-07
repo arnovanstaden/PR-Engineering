@@ -2,12 +2,16 @@
 import Page from "../components/UI/Page/Page";
 import Section from "../components/UI/Section/Section";
 import Button from "../components/UI/Button/Button";
-import Contact from "../components/Content/Contact/Contact"
+import Contact from "../components/Content/Contact/Contact";
+
+// Data
+import servicesData from "../assets/data/services.json";
 
 // styles
 import styles from "../styles/pages/home.module.scss"
 
 const Home = () => {
+
     return (
         <Page
             head={{
@@ -21,6 +25,7 @@ const Home = () => {
             <Section
                 heading="Professional Value-Driven Consulting Engineering Solutions"
                 number={1}
+                className={styles.intro}
             >
                 <p>PR Engineering is a dynamic and experienced consulting engineering firm with the capacity to provide comprehensive and value-driven design and project management services. As providers of engineering solutions to clients in the property, commercial and industrial markets, our dedicated and professional team of engineering specialists have built a reputation for providing viable, durable and cost-effective solutions to meet challenging project requirements throughout Africa.</p>
                 <Button text="Learn More" link="/about" />
@@ -38,8 +43,26 @@ const Home = () => {
                 heading="Services We Offer"
                 number={3}
                 colour="dark"
+                className={styles.services}
             >
-                <p>something</p>
+                <div className={styles.grid}>
+                    {servicesData.map((service, i) => (
+                        <div className={styles.area} key={i}>
+                            <h2>{service.area}</h2>
+                            <ul className={styles.list}>
+                                {service.categories.map((category, j) => (
+                                    <li key={j}>
+                                        <i className="icon-square" />
+                                        {category.name}
+                                    </li>
+                                ))}
+                            </ul>
+                        </div>
+                    ))}
+                </div>
+                <div className={styles.more}>
+                    <Button text="All Services" link="/services" />
+                </div>
             </Section>
 
             <Section
@@ -48,9 +71,7 @@ const Home = () => {
             >
                 <Contact />
             </Section>
-
-
-        </Page>
+        </Page >
     )
 }
 

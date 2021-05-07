@@ -24,7 +24,8 @@
             .heading {
                 padding-bottom: 3rem;
 
-                .line {
+                hr {
+                    @include hr-reset;
                     width: 10rem;
                     height: 0.25rem;
                     background-color: $blue;
