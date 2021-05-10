@@ -5,7 +5,7 @@ import styles from "./section.module.scss";
 
 interface IProps {
     children: React.ReactNode;
-    heading: string;
+    heading?: string;
     colour?: "light" | "dark";
     number?: number;
     className?: string;
