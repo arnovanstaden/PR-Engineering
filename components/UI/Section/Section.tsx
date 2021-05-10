@@ -26,10 +26,12 @@ const Section = ({ children, colour, heading, number, className }: IProps) => {
                 </div>
                 <div className={styles.content}>
                     <div className="container">
-                        <div className={styles.heading}>
-                            <h1>{heading}</h1>
-                            <hr />
-                        </div>
+                        {heading ?
+                            <div className={styles.heading}>
+                                <h1>{heading}</h1>
+                                <hr />
+                            </div>
+                            : null}
                         <div className={className}>
                             {children}
                         </div>

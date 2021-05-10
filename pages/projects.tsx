@@ -8,6 +8,7 @@ import Link from "next/link";
 import Page from "../components/UI/Page/Page";
 import Section from "../components/UI/Section/Section";
 import NextImage from "../components/UI/NextImage/NextImage";
+import PageHeading from "../components/UI/PageHeading/PageHeading";
 
 // Styles
 import styles from "../styles/pages/projects.module.scss";
@@ -51,10 +52,13 @@ const Projects = ({ projects }) => {
             }}
             className={styles.projects}
         >
+            <PageHeading dark={true}>
+                <h1>Our <span>Projects</span>.</h1>
+            </PageHeading>
+
             <Section
                 colour="light"
                 number={1}
-                heading="Featured Projects"
             >
                 <div className={styles.grid}>
                     {projects.map((project, index) => (

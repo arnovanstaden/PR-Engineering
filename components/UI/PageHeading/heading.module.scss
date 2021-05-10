@@ -4,6 +4,7 @@
     text-align: center;
     font-weight: 600;
     padding: 4rem 0 0 0;
+    background-color: $white;
 
     h1 {
         font-size: 2.25rem;
@@ -21,4 +22,15 @@
         height: 4px;
         margin: auto;
     }
+
+    &.dark {
+        background-color: $lightgrey;
+        color: $white;
+
+        hr {
+            background-color: white;
+        }
+    }
+
+
 }

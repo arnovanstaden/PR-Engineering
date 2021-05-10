@@ -1,8 +1,22 @@
+import ClassNames from "classnames";
+
+// Styles
 import styles from "./heading.module.scss";
 
-const PageHeading = ({ children }) => {
+interface IProps {
+    children: React.ReactNode,
+    dark?: boolean;
+}
+
+const PageHeading = ({ children, dark }: IProps) => {
+
+    const classes = ClassNames(
+        styles.heading,
+        dark ? styles.dark : null
+    )
+
     return (
-        <section className={styles.heading}>
+        <section className={classes}>
             <div className="container">
                 {children}
                 <hr />

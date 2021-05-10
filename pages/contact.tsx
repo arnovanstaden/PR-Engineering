@@ -1,6 +1,7 @@
 // Components
 import Page from "../components/UI/Page/Page";
 import Contact from "../components/Content/Contact/Contact"
+import PageHeading from "../components/UI/PageHeading/PageHeading";
 
 // Styles
 import styles from "../styles/pages/contact.module.scss";
@@ -15,7 +16,11 @@ const ContactPage = () => {
             }}
             className={styles.contact}
         >
-            <section>
+            <PageHeading>
+                <h1><span>Contact</span> us.</h1>
+            </PageHeading>
+
+            <section className={styles.content}>
                 <div className="container">
                     <Contact />
 
