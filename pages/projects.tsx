@@ -54,6 +54,7 @@ const Projects = ({ projects }) => {
             <Section
                 colour="light"
                 number={1}
+                heading="Featured Projects"
             >
                 <div className={styles.grid}>
                     {projects.map((project, index) => (

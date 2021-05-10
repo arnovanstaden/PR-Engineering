@@ -90,6 +90,7 @@ const About = () => {
                             width={400}
                             background
                             priority
+                            alignTop
                         />
                     </div>
                     <div className={styles.details}>
@@ -115,6 +116,7 @@ const About = () => {
                             width={400}
                             background
                             priority
+                            alignTop
                         />
                     </div>
                     <div className={styles.details}>

@@ -22,6 +22,10 @@
         width: 100% !important;
         position: relative !important;
         height: unset !important;
+
+        &.alignTop {
+            object-position: top center;
+        }
     }
 
     &.background {
@@ -36,7 +40,11 @@
             width: 100% !important;
             height: 100% !important;
             position: absolute !important;
-            object-position: top center;
+            object-position: center center;
+
+            &.alignTop {
+                object-position: top center;
+            }
         }
     }
 }

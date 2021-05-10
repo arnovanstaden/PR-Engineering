@@ -2,9 +2,12 @@ import { client } from "../../utils/apollo-client";
 import { gql } from "@apollo/client";
 import { GetStaticProps } from 'next'
 import { GetStaticPaths } from 'next'
+import NextImage from "../../components/UI/NextImage/NextImage";
 
 // Components
 import Page from "../../components/UI/Page/Page";
+import Section from "../../components/UI/Section/Section";
+
 
 // Styles
 import styles from "../../styles/pages/projects/[slug].module.scss";
@@ -17,9 +20,83 @@ const Project = ({ project }) => {
                 description: `${project.description}`,
                 canonical: `/project/${project.slug}`,
             }}
-            className={styles.about}
+            className={styles.project}
         >
-            <h1>{project.title}</h1>
+            <section className={styles.landing}>
+                <div className={styles.image}>
+                    <NextImage
+                        src={project.thumbnail.asset.url}
+                        alt={project.title}
+                        width={1920}
+                        background
+                        priority
+                    />
+                </div>
+                <div className={styles.overlay}>
+                    <div className={styles.content}>
+                        <div className={styles.content}>
+                            <h1>{project.title}</h1>
+                            <hr />
+                            <p>
+                                <i className="icon-room"></i>
+                                {project.location}
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <Section
+                className={styles.details}
+                heading="Project Overview"
+                number={1}
+            >
+                <div className={styles.grid}>
+
+                    <div className={styles.stats}>
+                        <ul>
+                            <li>
+                                <span>Scope:</span>{project.type}
+                            </li>
+                            <li>
+                                <span>Date:</span>{project.year}
+                            </li>
+                            <li>
+                                <span>Location:</span>{project.location}
+                            </li>
+                        </ul>
+                    </div>
+                    <div className={styles.description}>
+                        <p>{project.description}</p>
+                    </div>
+                </div>
+            </Section>
+
+            <Section
+                className={styles.gallery}
+                heading="Project Gallery"
+                number={2}
+                colour="light"
+            >
+                <div className={styles.grid}>
+                    {project.images.map((image, index) => (
+                        <div className={styles.item}>
+                            <div className={styles.image} key={index}>
+                                <div className={styles.overlay}></div>
+                                <NextImage
+                                    src={image.asset.url}
+                                    alt={project.title}
+                                    width={400}
+                                    background
+                                    priority
+                                />
+                            </div>
+                        </div>
+                    ))}
+                </div>
+            </Section>
+
+
         </Page>
     )
 }
@@ -41,14 +118,14 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
                     current
                     }
                 thumbnail {
-                asset {
-                    url
-                    }
+                    asset {
+                        url
+                        }
                 }
                 images {
-                asset {
-                    url
-                    }
+                    asset {
+                        url
+                        }
                 }
             }
             }
