@@ -87,7 +87,7 @@ const About = () => {
                         <NextImage
                             src="/images/pages/about/team/team.jpg"
                             alt="Paul van Staden"
-                            width={400}
+                            width={300}
                             background
                             alignTop
                         />
@@ -112,7 +112,7 @@ const About = () => {
                         <NextImage
                             src="/images/pages/about/team/team.jpg"
                             alt="Paul van Staden"
-                            width={400}
+                            width={300}
                             background
                             alignTop
                         />

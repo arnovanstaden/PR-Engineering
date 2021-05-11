@@ -3,16 +3,25 @@ import { gql } from "@apollo/client";
 import { GetStaticProps } from 'next'
 import { GetStaticPaths } from 'next'
 import NextImage from "../../components/UI/NextImage/NextImage";
+import { useState } from "react";
 
 // Components
 import Page from "../../components/UI/Page/Page";
 import Section from "../../components/UI/Section/Section";
-
+import LightBox from "../../components/UI/Lightbox/Lightbox";
 
 // Styles
 import styles from "../../styles/pages/projects/[slug].module.scss";
 
 const Project = ({ project }) => {
+
+    const [lightboxImage, setLightboxImage] = useState(undefined);
+
+    const hideLightBox = () => {
+        setLightboxImage(undefined)
+        document.body.classList.remove("noscroll")
+    }
+
     return (
         <Page
             head={{
@@ -52,7 +61,6 @@ const Project = ({ project }) => {
                 number={1}
             >
                 <div className={styles.grid}>
-
                     <div className={styles.stats}>
                         <ul>
                             <li>
@@ -80,8 +88,8 @@ const Project = ({ project }) => {
             >
                 <div className={styles.grid}>
                     {project.images.map((image, index) => (
-                        <div className={styles.item}>
-                            <div className={styles.image} key={index}>
+                        <div className={styles.item} key={index} onClick={() => setLightboxImage(image.asset.url)}>
+                            <div className={styles.image}>
                                 <div className={styles.overlay}></div>
                                 <NextImage
                                     src={image.asset.url}
@@ -96,6 +104,7 @@ const Project = ({ project }) => {
                 </div>
             </Section>
 
+            <LightBox image={lightboxImage} toggle={hideLightBox} />
 
         </Page>
     )
