@@ -3,6 +3,7 @@ import Page from "../components/UI/Page/Page";
 import PageHeading from "../components/UI/PageHeading/PageHeading";
 import NextImage from "../components/UI/NextImage/NextImage";
 import Section from "../components/UI/Section/Section";
+import Banner from "../components/UI/Banner/Banner"
 
 // Styles
 import styles from "../styles/pages/about.module.scss";
@@ -40,12 +41,6 @@ const About = () => {
                     </div>
                 </div>
                 <div className={styles.image}>
-                    {/* <NextImage
-                        src="/images/pages/about/team/overview.svg"
-                        alt="Engineer with Hat Vector Drawing"
-                        // width={600}
-                        alignTop
-                    /> */}
                     <img src="/images/pages/about/team/overview.png" alt="" />
                 </div>
             </Section>
@@ -73,6 +68,13 @@ const About = () => {
                     <p>We seek to build a brighter future and to assist in improving the lives of all South Africa.</p>
                 </div>
             </Section>
+
+            <Banner
+                img="/images/pages/about/banner.png"
+                dark
+            >
+                <h1>Another cool phrase here with some <span>highlighted keywords</span>.</h1>
+            </Banner>
 
             <Section
                 heading="Our Memberships"

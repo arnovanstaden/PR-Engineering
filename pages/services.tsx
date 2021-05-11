@@ -1,7 +1,7 @@
 import Page from "../components/UI/Page/Page";
 import Section from "../components/UI/Section/Section";
-import Button from "../components/UI/Button/Button";
 import PageHeading from "../components/UI/PageHeading/PageHeading";
+import Banner from "../components/UI/Banner/Banner"
 
 // Styles
 import styles from "../styles/pages/services.module.scss";
@@ -101,6 +101,12 @@ const Services = () => {
 
                 </div>
             </Section>
+
+            <Banner
+                img="/images/pages/services/banner.png"
+            >
+                <h1>Another cool phrase here with the full list of <span>services going underneath</span>.</h1>
+            </Banner>
         </Page>
     )
 }
