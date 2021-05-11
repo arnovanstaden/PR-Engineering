@@ -24,7 +24,8 @@ const Contact = () => {
         })
             .then(response => response.json())
             .then(data => {
-                alert("Thanks for your submission. We'll get back to you soon.")
+                form.reset()
+                alert("Thanks for your submission. We'll get back to you soon.");
             });
     }
 
