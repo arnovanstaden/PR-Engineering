@@ -39,7 +39,15 @@ const About = () => {
                         </div>
                     </div>
                 </div>
-                <div className={styles.image}></div>
+                <div className={styles.image}>
+                    {/* <NextImage
+                        src="/images/pages/about/team/overview.svg"
+                        alt="Engineer with Hat Vector Drawing"
+                        // width={600}
+                        alignTop
+                    /> */}
+                    <img src="/images/pages/about/team/overview.png" alt="" />
+                </div>
             </Section>
 
             <Section
@@ -68,7 +76,7 @@ const About = () => {
 
             <Section
                 heading="Our Memberships"
-                number={1}
+                number={3}
                 className={styles.memberships}
             >
                 <img src="/images/pages/about/ECSA-Logo.png" alt="ECSA-Logo" />
