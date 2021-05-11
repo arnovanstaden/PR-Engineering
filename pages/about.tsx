@@ -89,7 +89,6 @@ const About = () => {
                             alt="Paul van Staden"
                             width={400}
                             background
-                            priority
                             alignTop
                         />
                     </div>
@@ -115,7 +114,6 @@ const About = () => {
                             alt="Paul van Staden"
                             width={400}
                             background
-                            priority
                             alignTop
                         />
                     </div>
