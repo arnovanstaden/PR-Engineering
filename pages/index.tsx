@@ -9,6 +9,7 @@ import Section from "../components/UI/Section/Section";
 import Button from "../components/UI/Button/Button";
 import Contact from "../components/Content/Contact/Contact";
 import ProjectsGrid from "../components/Content/ProjectsGrid/ProjectsGrid"
+import Banner from "../components/UI/Banner/Banner"
 
 // Data
 import servicesData from "../assets/data/services.json";
@@ -68,6 +69,12 @@ const Home = ({ projects }) => {
             >
                 <ProjectsGrid projects={projects} />
             </Section>
+
+            <Banner
+                img="/images/pages/home/banner.png"
+            >
+                <h1>We aim to ensure excellent <span>service delivery</span> with <span>cost efficient</span> solutions across <span>Africa</span>.</h1>
+            </Banner>
 
             <Section
                 heading="Services We Offer"

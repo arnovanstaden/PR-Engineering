@@ -1,0 +1,79 @@
+@import "../../../styles/variables.scss";
+
+.banner {
+    position: relative;
+
+    .overlay {
+        position: absolute;
+        z-index: 0;
+        background-color: rgba($color: $lightgrey, $alpha: 0.1);
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+    }
+
+    &.dark {
+        .overlay {
+            display: none;
+        }
+    }
+
+    .inner {
+        display: flex;
+        align-items: center;
+        box-sizing: border-box;
+        padding: 4rem 0;
+        position: relative;
+        z-index: 1;
+
+        .grid {
+            display: grid;
+            grid-template-columns: auto 1fr;
+
+            >div:first-child {
+                padding: 0 1.5rem;
+            }
+
+            .content {
+                h1 {
+                    font-size: 1.85rem;
+                    font-weight: 600;
+
+                    span {
+                        color: $blue;
+                    }
+                }
+            }
+        }
+    }
+
+    &.dark {
+        .grid .content {
+            h1 {
+                color: $white;
+            }
+        }
+    }
+
+
+    @media screen and (min-width:1600px) {
+        .inner {
+            padding: 6rem 0;
+        }
+    }
+
+    @media screen and (max-width: 600px) {
+
+        .inner {
+            .grid {
+                display: block;
+
+                >div:first-child {
+                    display: none;
+                }
+            }
+        }
+    }
+
+}
