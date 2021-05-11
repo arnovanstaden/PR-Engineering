@@ -1,10 +1,14 @@
 import Link from "next/link";
+import { GetStaticProps } from 'next';
+import { gql } from "@apollo/client";
+import { client } from "../utils/apollo-client";
 
 // Components
 import Page from "../components/UI/Page/Page";
 import Section from "../components/UI/Section/Section";
 import Button from "../components/UI/Button/Button";
 import Contact from "../components/Content/Contact/Contact";
+import ProjectsGrid from "../components/Content/ProjectsGrid/ProjectsGrid"
 
 // Data
 import servicesData from "../assets/data/services.json";
@@ -12,7 +16,7 @@ import servicesData from "../assets/data/services.json";
 // styles
 import styles from "../styles/pages/home.module.scss"
 
-const Home = () => {
+const Home = ({ projects }) => {
 
     return (
         <Page
@@ -62,7 +66,7 @@ const Home = () => {
                 number={2}
                 colour="light"
             >
-                <p>something</p>
+                <ProjectsGrid projects={projects} />
             </Section>
 
             <Section
@@ -102,3 +106,31 @@ const Home = () => {
 }
 
 export default Home
+
+export const getStaticProps: GetStaticProps = async (context) => {
+    const { data } = await await client.query({
+        query: gql`
+          query GetProjects {
+            allProject (where: {home: {eq: true}}) {
+                title
+                location
+                slug {
+                current
+                }
+                thumbnail {
+                asset {
+                    url
+                }
+                }
+            }
+            }
+        `,
+    });
+
+
+    return {
+        props: {
+            projects: data.allProject
+        }
+    }
+}
