@@ -7,15 +7,15 @@ import styles from "./button.module.scss";
 interface IProps {
     link?: string;
     text: string;
-    dark?: boolean;
-    click?: any
+    hollow?: boolean;
+    click?: any;
 }
 
-const Button = ({ link, text, dark, click }: IProps) => {
+const Button = ({ link, text, hollow, click }: IProps) => {
 
     const classes = ClassNames(
         styles.button,
-        dark ? styles.dark : null,
+        hollow ? styles.hollow : null,
     )
 
     const Inner = () => {

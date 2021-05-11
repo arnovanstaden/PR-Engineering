@@ -8,7 +8,6 @@
     font-size: 0.95rem;
     border: none;
     font-family: $heading-font;
-    // text-transform: uppercase;
     outline: none;
     cursor: pointer;
     margin-top: 1rem;
@@ -18,5 +17,14 @@
     &:hover {
         background-color: transparent;
         color: $blue;
+    }
+
+    &.hollow {
+        background-color: transparent;
+        color: $white;
+
+        &:hover {
+            background-color: $blue;
+        }
     }
 }

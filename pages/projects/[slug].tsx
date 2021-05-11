@@ -64,7 +64,7 @@ const Project = ({ project }) => {
                     <div className={styles.stats}>
                         <ul>
                             <li>
-                                <span>Scope:</span>{project.type}
+                                <span>Scope:</span>{project.services}
                             </li>
                             <li>
                                 <span>Date:</span>{project.year}
@@ -121,6 +121,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
                 title
                 description
                 type
+                services
                 location
                 year
                 slug {

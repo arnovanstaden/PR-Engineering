@@ -1,5 +1,6 @@
 import Link from "next/link";
 import NextImage from "../../UI/NextImage/NextImage";
+import { Fade } from "react-reveal"
 
 // Styles
 import styles from "./grid.module.scss";
@@ -37,7 +38,9 @@ const ProjectsGrid = ({ projects }) => {
     return (
         <div className={styles.grid}>
             {projects.map((project, index) => (
-                <Project project={project} key={index} />
+                <Fade>
+                    <Project project={project} key={index} />
+                </Fade>
             ))}
         </div>
     )
