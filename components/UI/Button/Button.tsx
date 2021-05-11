@@ -8,7 +8,7 @@ interface IProps {
     link?: string;
     text: string;
     dark?: boolean;
-    click?: () => void
+    click?: any
 }
 
 const Button = ({ link, text, dark, click }: IProps) => {

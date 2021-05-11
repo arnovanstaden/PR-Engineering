@@ -1,10 +1,33 @@
+import { useRef } from "react";
+
 // Components
 import Button from "../../UI/Button/Button";
 
 // Styles
 import styles from "./contact.module.scss";
 
+
 const Contact = () => {
+    const formRef = useRef()
+
+    const submitForm = (e) => {
+        e.preventDefault()
+        const form = formRef.current as HTMLFormElement;
+        let formData = new FormData(form);
+
+        fetch('https://formspree.io/f/myyleyll', {
+            method: "POST",
+            body: formData,
+            headers: {
+                'Accept': 'application/json'
+            }
+        })
+            .then(response => response.json())
+            .then(data => {
+                alert("Thanks for your submission. We'll get back to you soon.")
+            });
+    }
+
     return (
         <div className={styles.contact}>
             <div className={styles.details}>
@@ -42,7 +65,7 @@ const Contact = () => {
             </div>
             <div className={styles.form}>
                 <h1>Send us a Message</h1>
-                <form>
+                <form ref={formRef}>
                     <div className={styles.group}>
                         <label htmlFor="Name">Name</label>
                         <input type="text" name="Name" required />
@@ -59,12 +82,14 @@ const Contact = () => {
                         <label htmlFor="Company">Company</label>
                         <input type="text" name="Company" />
                     </div>
-                    <div className={styles.group}>
+                    <div className={`${styles.group} ${styles.row}`}>
                         <label htmlFor="Message">Message</label>
                         <textarea name="Message"></textarea>
                     </div>
+                    <div className={styles.button}>
+                        <Button text="Send Message" click={submitForm} />
+                    </div>
                 </form>
-                <Button text="Send Message" />
             </div>
         </div>
     )
