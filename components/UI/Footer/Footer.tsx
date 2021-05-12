@@ -80,7 +80,7 @@ export default function Footer() {
                             <i className="icon-linkedin"></i>
                         </a>
                     </div>
-                    <p>© 2020 - PR Engineering (PTY) LTD.</p>
+                    <p>© 2020 - PR Engineering Africa (PTY) LTD.</p>
                     <p>Design &amp; Development by <a target="blank" href="https://webdacity.dev">Webdacity</a></p>
                 </div>
             </div>
