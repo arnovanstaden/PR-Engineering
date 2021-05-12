@@ -1,10 +1,15 @@
 import Link from "next/link";
+import { GetStaticProps } from 'next';
+import { gql } from "@apollo/client";
+import { client } from "../utils/apollo-client";
 
 // Components
 import Page from "../components/UI/Page/Page";
 import Section from "../components/UI/Section/Section";
 import Button from "../components/UI/Button/Button";
 import Contact from "../components/Content/Contact/Contact";
+import ProjectsGrid from "../components/Content/ProjectsGrid/ProjectsGrid"
+import Banner from "../components/UI/Banner/Banner"
 
 // Data
 import servicesData from "../assets/data/services.json";
@@ -12,7 +17,7 @@ import servicesData from "../assets/data/services.json";
 // styles
 import styles from "../styles/pages/home.module.scss"
 
-const Home = () => {
+const Home = ({ projects }) => {
 
     return (
         <Page
@@ -29,18 +34,20 @@ const Home = () => {
                     <source src={`/videos/landing2.mp4`} type="video/mp4" />
                 </video>
                 <div className={styles.overlay}>
-                    <div className={styles.content}>
-                        <h1>PR Engineering</h1>
-                        <hr />
-                        <h2>Mechanical, Fire and Electrical Engineers</h2>
-                        <div className={styles.actions}>
-                            <Button text="What We Do" link="/services" />
-                            <Button text="Get In Touch" link="/contact" />
-                        </div>
-                        <div className={styles.actions}>
-                            <Link href="/">
-                                <button className={styles.videoButton} >Home Video 1</button>
-                            </Link>
+                    <div className="container">
+                        <div className={styles.content}>
+                            <h1>PR Engineering</h1>
+                            <hr />
+                            <h2>Mechanical, Fire and Electrical Engineers</h2>
+                            <div className={styles.actions}>
+                                <Button text="What We Do" link="/services" />
+                                <Button text="Get In Touch" link="/contact" />
+                            </div>
+                            <div className={styles.actions}>
+                                <Link href="2">
+                                    <button className={styles.videoButton} >Home Video 2</button>
+                                </Link>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -60,8 +67,14 @@ const Home = () => {
                 number={2}
                 colour="light"
             >
-                <p>something</p>
+                <ProjectsGrid projects={projects} />
             </Section>
+
+            <Banner
+                img="/images/pages/home/banner.png"
+            >
+                <h1>We aim to ensure excellent <span>service delivery</span> with <span>cost efficient</span> solutions across <span>Africa</span>.</h1>
+            </Banner>
 
             <Section
                 heading="Services We Offer"
@@ -100,3 +113,31 @@ const Home = () => {
 }
 
 export default Home
+
+export const getStaticProps: GetStaticProps = async (context) => {
+    const { data } = await await client.query({
+        query: gql`
+          query GetProjects {
+            allProject (where: {home: {eq: true}}) {
+                title
+                location
+                slug {
+                current
+                }
+                thumbnail {
+                asset {
+                    url
+                }
+                }
+            }
+            }
+        `,
+    });
+
+
+    return {
+        props: {
+            projects: data.allProject
+        }
+    }
+}

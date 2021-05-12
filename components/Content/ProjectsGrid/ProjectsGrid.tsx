@@ -38,8 +38,8 @@ const ProjectsGrid = ({ projects }) => {
     return (
         <div className={styles.grid}>
             {projects.map((project, index) => (
-                <Fade>
-                    <Project project={project} key={index} />
+                <Fade key={index}>
+                    <Project project={project} />
                 </Fade>
             ))}
         </div>
