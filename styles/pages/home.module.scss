@@ -72,8 +72,35 @@
     }
 
     .intro {
-        button {
-            margin-top: 2rem;
+
+        display: flex;
+
+        .text {
+            width: 60%;
+            padding-right: 2rem;
+
+            p {
+                font-size: 1.1rem;
+            }
+
+            button {
+                margin-top: 2rem;
+            }
+        }
+
+        .image {
+            width: 40%;
+            position: relative;
+            display: flex;
+            justify-content: center;
+
+            img {
+                position: absolute;
+                object-position: center top;
+                object-fit: contain;
+                height: 130%;
+                top: -20%;
+            }
         }
     }
 
@@ -123,7 +150,43 @@
         }
     }
 
+
+    @media screen and (min-width:1600px) {
+        .intro {
+
+            .image {
+                img {
+                    height: 200%;
+                    top: -70%;
+                }
+            }
+        }
+    }
+
+
     @media screen and (max-width: 991px) {
+
+        .intro {
+            flex-wrap: wrap;
+
+            .text {
+                width: 100%;
+                padding: 0;
+            }
+
+            .image {
+                width: 100%;
+                margin-top: 3rem;
+
+                img {
+                    position: relative;
+                    top: unset;
+                    height: unset;
+                    width: 50%;
+                }
+            }
+        }
+
         .services {
             .grid {
                 grid-template-columns: 1fr;
@@ -144,10 +207,23 @@
         }
     }
 
+    @media screen and (max-width: 768px) {
+
+        .intro {
+
+            .image {
+
+                img {
+                    width: 100%;
+                }
+            }
+        }
+
+    }
+
     @media screen and (max-width: 600px) {
         .landing {
 
-            video {}
 
             .overlay {
 

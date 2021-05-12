@@ -23,7 +23,7 @@ const Home = ({ projects }) => {
         <Page
             head={{
                 title: "PR Engineering",
-                description: "FIX THIS",
+                description: "PR Engineering is a Dynamic and Experienced Consulting Engineering Firm offering Professional Value-Driven Consulting Engineering Solutions.",
                 canonical: "/",
             }}
             className={styles.home}
@@ -58,8 +58,13 @@ const Home = ({ projects }) => {
                 number={1}
                 className={styles.intro}
             >
-                <p>PR Engineering is a dynamic and experienced consulting engineering firm with the capacity to provide comprehensive and value-driven design and project management services. As providers of engineering solutions to clients in the property, commercial and industrial markets, our dedicated and professional team of engineering specialists have built a reputation for providing viable, durable and cost-effective solutions to meet challenging project requirements throughout Africa.</p>
-                <Button text="Learn More" link="/about" />
+                <div className={styles.text}>
+                    <p>PR Engineering is a dynamic and experienced consulting engineering firm with the capacity to provide comprehensive and value-driven design and project management services. As providers of engineering solutions to clients in the property, commercial and industrial markets, our dedicated and professional team of engineering specialists have built a reputation for providing viable, durable and cost-effective solutions to meet challenging project requirements throughout Africa.</p>
+                    <Button text="Learn More" link="/about" />
+                </div>
+                <div className={styles.image}>
+                    <img src="/images/pages/home/overview.png" alt="Map of Africa" />
+                </div>
             </Section>
 
             <Section
