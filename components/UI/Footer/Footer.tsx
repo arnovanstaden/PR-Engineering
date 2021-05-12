@@ -4,11 +4,6 @@ import { useRouter } from 'next/router'
 // Styles
 import styles from "./footer.module.scss";
 
-// Icons
-// import RoomIcon from '@material-ui/icons/Room';
-// import MailIcon from '@material-ui/icons/Mail';
-// import PhoneIcon from '@material-ui/icons/Phone';
-
 export default function Footer() {
     const router = useRouter();
 
