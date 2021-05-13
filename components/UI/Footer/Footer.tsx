@@ -13,7 +13,7 @@ export default function Footer() {
                 <div className={`${styles.grid} ${styles.content}`}>
                     <Link href="/">
                         <a className={styles.logo}>
-                            <img src="/images/logos/logo-white-text.svg" alt="PR Engineering Logo" />
+                            <img src="/images/logos/logo-white-text.png" alt="PR Engineering Logo" />
                         </a>
                     </Link>
                     <div className={styles.top}>
