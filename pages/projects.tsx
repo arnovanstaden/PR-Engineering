@@ -18,12 +18,18 @@ const Projects = ({ allProjects }) => {
     // State
     const [projects, setProjects] = useState(allProjects)
 
-    const types = allProjects.map(project => project.type)
 
     // Handlers
-    const handleFilter = (type: string) => {
+    const handleFilter = (type) => {
         const newProjects = allProjects.filter(project => project.type === type);
         setProjects(newProjects)
+    }
+
+    const getFilters = () => {
+        const types = allProjects.map(project => project.type);
+        const uniqueTypes = [...new Set(types)];
+        console.log(uniqueTypes)
+        return uniqueTypes
     }
 
     const resetFilter = () => {
@@ -49,7 +55,7 @@ const Projects = ({ allProjects }) => {
             >
                 <div className={styles.filter}>
                     <Button text="All Projects" hollow click={resetFilter} />
-                    {types.map((type, index) => (
+                    {getFilters().map((type, index) => (
                         <Button key={index} text={`${type} Projects`} hollow click={() => handleFilter(type)} />
                     ))}
                 </div>

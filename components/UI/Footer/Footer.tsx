@@ -6,7 +6,8 @@ import styles from "./footer.module.scss";
 
 export default function Footer() {
     const router = useRouter();
-
+    const date = new Date();
+    const currentYear = date.getFullYear();
     return (
         <footer className={styles.footer}>
             <div className="container">
@@ -75,7 +76,7 @@ export default function Footer() {
                             <i className="icon-linkedin"></i>
                         </a>
                     </div>
-                    <p>© 2020 - PR Engineering Africa (PTY) LTD.</p>
+                    <p>© {currentYear} - PR Engineering Africa (PTY) LTD.</p>
                     <p>Design &amp; Development by <a target="blank" href="https://webdacity.dev">Webdacity</a></p>
                 </div>
             </div>
