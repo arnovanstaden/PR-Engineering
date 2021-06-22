@@ -1,7 +1,10 @@
 import Page from "../components/UI/Page/Page";
 import Section from "../components/UI/Section/Section";
 import PageHeading from "../components/UI/PageHeading/PageHeading";
-import Banner from "../components/UI/Banner/Banner"
+import Banner from "../components/UI/Banner/Banner";
+
+// Data
+import servicesData from "../assets/data/services.json";
 
 // Styles
 import styles from "../styles/pages/services.module.scss";
@@ -105,9 +108,58 @@ const Services = () => {
             <Banner
                 img="/images/pages/services/banner.png"
             >
-                <h1>Another cool phrase here with the full list of <span>services going underneath</span>.</h1>
+                <h1>We aspire to provide the <span>highest quality engineering services</span> in our chosen field of expertise to ensure excellent service delivery with cost efficient solutions <span>across Africa</span>.</h1>
             </Banner>
-        </Page>
+
+            <Section
+                heading="Mechanical Engineering"
+                number={2}
+                className={styles.category}
+                colour="dark"
+            >
+                <ul className={styles.list}>
+                    {servicesData.filter(data => data.area === "Mechanical")[0].categories.map((category, j) => (
+                        <li key={j}>
+                            <i className="icon-square" />
+                            {category}
+                        </li>
+                    ))}
+                </ul>
+            </Section>
+
+            <Section
+                heading="Electrical &amp; Electronic Engineering"
+                number={3}
+                className={styles.category}
+            >
+                <ul className={styles.list}>
+                    {servicesData.filter(data => data.area === "Electrical & Electronic")[0].categories.map((category, j) => (
+                        <li key={j}>
+                            <i className="icon-square" />
+                            {category}
+                        </li>
+                    ))}
+                </ul>
+            </Section>
+
+
+
+            <Section
+                heading="Fire Engineering"
+                number={4}
+                className={styles.category}
+                colour="dark"
+            >
+                <ul className={styles.list}>
+                    {servicesData.filter(data => data.area === "Fire")[0].categories.map((category, j) => (
+                        <li key={j}>
+                            <i className="icon-square" />
+                            {category}
+                        </li>
+                    ))}
+                </ul>
+            </Section>
+        </Page >
     )
 }
 

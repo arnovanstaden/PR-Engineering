@@ -1,98 +1,31 @@
 [{
-        "area": "Mechanical Engineering",
-        "categories": [{
-                "name": "HVAC",
-                "services": [
-                    "Central Chilled Water Systems"
-                ]
-            },
-            {
-                "name": "Plant Engineering",
-                "services": [
-                    "Central Chilled Water Systems"
-                ]
-            },
-            {
-                "name": "Refrigeration",
-                "services": [
-                    "Central Chilled Water Systems"
-                ]
-            },
-            {
-                "name": "Water Reticulation",
-                "services": [
-                    "Central Chilled Water Systems"
-                ]
-            },
-            {
-                "name": "Lifting Equipment",
-                "services": [
-                    "Central Chilled Water Systems"
-                ]
-            },
-            {
-                "name": "Pipe Gasses",
-                "services": [
-                    "Central Chilled Water Systems"
-                ]
-            },
-            {
-                "name": "Extraction Systems",
-                "services": [
-                    "Central Chilled Water Systems"
-                ]
-            },
-            {
-                "name": "Rational Fire Design and Certification",
-                "services": [
-                    "Central Chilled Water Systems"
-                ]
-            }
+        "area": "Mechanical",
+        "categories": [
+            "HVAC",
+            "Extraction Systems",
+            "Refrigeration"
         ]
     },
     {
-        "area": "Electrical Engineering",
-        "categories": [{
-                "name": "Security",
-                "services": []
-            },
-            {
-                "name": "Management & Control Systems",
-                "services": []
-            },
-            {
-                "name": " IT & Network Systems",
-                "services": []
-            },
-            {
-                "name": "Building Safety Systems",
-                "services": []
-            }
+        "area": "Electrical & Electronic",
+        "categories": [
+            "Security",
+            "Management & Control Systems",
+            "IT & Network Systems",
+            "Building Safety Systems",
+            "Protection",
+            "Emergency Power",
+            "Alternative Energy",
+            "Value Engineering",
+            "Electrical Infrastructure Networks"
         ]
     },
     {
-        "area": "Electronic Engineering",
-        "categories": [{
-                "name": "Protection",
-                "services": []
-            }, {
-                "name": "Emergency Power",
-                "services": []
-            },
-
-            {
-                "name": "Alternative Energy",
-                "services": []
-            },
-            {
-                "name": "Value Engineering",
-                "services": []
-            },
-
-            {
-                "name": "Electrical Infrastructure Networks",
-                "services": []
-            }
+        "area": "Fire",
+        "categories": [
+            "Fire Design",
+            "Extraction Systems",
+            "Fire Compliance Audits"
         ]
     }
 ]

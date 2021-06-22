@@ -103,7 +103,7 @@ const Home = ({ projects }) => {
                                 {service.categories.map((category, j) => (
                                     <li key={j}>
                                         <i className="icon-square" />
-                                        {category.name}
+                                        {category}
                                     </li>
                                 ))}
                             </ul>
