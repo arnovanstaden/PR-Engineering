@@ -30,7 +30,12 @@
                     font-weight: 600;
                     font-size: 3rem;
                     text-transform: uppercase;
-                    letter-spacing: 1px
+                    letter-spacing: 1px;
+
+                    sup {
+                        font-weight: 300;
+                        font-size: 1.5rem
+                    }
                 }
 
                 hr {
@@ -79,10 +84,10 @@
         a {
             font-size: 1.2rem;
             margin-right: 0.5rem;
-            color: $white;
+            color: $blue;
 
             &:hover {
-                color: $blue;
+                color: $white;
             }
         }
     }

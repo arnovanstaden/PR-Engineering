@@ -36,7 +36,7 @@ const Home = ({ projects }) => {
                 <div className={styles.overlay}>
                     <div className="container">
                         <div className={styles.content}>
-                            <h1>PR Engineering</h1>
+                            <h1>PR Engineering<sup>™</sup></h1>
                             <hr />
                             <h2>Mechanical, Fire and Electrical Engineers</h2>
                             <div className={styles.actions}>

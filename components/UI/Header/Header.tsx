@@ -102,7 +102,7 @@ export default function Header() {
                     <Link href="/">
                         <div className={styles.logo}>
                             <img src="/images/logos/logo.svg" alt="PR Engineering Logo" />
-                            <p>Engineering</p>
+                            <p>Engineering<sup>™</sup></p>
                         </div>
                     </Link>
                     {isMobile ? <MobileNav /> : <Menu />}

@@ -83,7 +83,11 @@ const About = () => {
             >
                 <img src="/images/pages/about/ECSA-Logo.png" alt="ECSA-Logo" />
                 <img src="/images/pages/about/GBCSA-Logo.png" alt="GBCSA-Logo" />
-                <img src="/images/pages/about/SAIMECHE-Logo.png" alt="SAIMECHE-Logo" />
+                <img src="/images/pages/about/ASHRAE-Logo.png" alt="SAIMECHE-Logo" />
+                <img src="/images/pages/about/SAIRAC_2012_web.png" alt="SAIMECHE-Logo" />
+                <img src="/images/pages/about/revit-logo.png" alt="SAIMECHE-Logo" />
+                <img src="/images/pages/about/AutoCAD-logo.png" alt="SAIMECHE-Logo" />
+
             </Section>
 
             <Section
@@ -93,15 +97,6 @@ const About = () => {
                 className={styles.team}
             >
                 <article className={styles.member}>
-                    <div className={styles.image}>
-                        <NextImage
-                            src="/images/pages/about/team/team.jpg"
-                            alt="Paul van Staden"
-                            width={300}
-                            background
-                            alignTop
-                        />
-                    </div>
                     <div className={styles.details}>
                         <h2>Jaco Buys</h2>
                         <h3>Director</h3>
@@ -118,15 +113,6 @@ const About = () => {
                 </article>
 
                 <article className={styles.member}>
-                    <div className={styles.image}>
-                        <NextImage
-                            src="/images/pages/about/team/team.jpg"
-                            alt="Paul van Staden"
-                            width={300}
-                            background
-                            alignTop
-                        />
-                    </div>
                     <div className={styles.details}>
                         <h2>Paul van Staden</h2>
                         <h3>Director</h3>
