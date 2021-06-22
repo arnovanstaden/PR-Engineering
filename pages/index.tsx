@@ -43,11 +43,6 @@ const Home = ({ projects }) => {
                                 <Button text="What We Do" link="/services" />
                                 <Button text="Get In Touch" link="/contact" />
                             </div>
-                            <div className={styles.actions}>
-                                <Link href="2">
-                                    <button className={styles.videoButton} >Home Video 2</button>
-                                </Link>
-                            </div>
                         </div>
                     </div>
                     <div className={styles.social}>
