@@ -41,7 +41,7 @@ const About = () => {
                     </div>
                 </div>
                 <div className={styles.image}>
-                    <img src="/images/pages/about/team/overview.png" alt="Abstract Engineer with Hat" />
+                    <img src="/images/pages/home/overview.png" alt="Map of Africa" />
                 </div>
             </Section>
 
