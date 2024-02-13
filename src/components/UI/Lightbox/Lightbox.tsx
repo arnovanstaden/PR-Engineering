@@ -1,4 +1,4 @@
-import NextImage from '../../UI/NextImage/NextImage';
+import NextImage from '../NextImage/NextImage';
 
 // Styles
 import styles from './lightbox.module.scss';
