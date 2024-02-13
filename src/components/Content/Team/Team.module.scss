@@ -1,0 +1,87 @@
+.Team {
+  padding-top: 2rem;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 4rem;
+
+  .member {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    grid-template-rows: auto auto;
+    background-color: $white;
+    color: $grey;
+    padding: 1rem;
+    gap: 1rem;
+
+    .image {
+      grid-area: 1/1/3/2;
+
+      img {
+        object-fit: cover;
+        object-position: center top;
+        height: 100%;
+      }
+    }
+
+    .details {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+
+      h2 {
+        margin: 0;
+        font-size: 1.4rem;
+      }
+
+      h3 {
+        margin: 0 0 1rem 0;
+        font-size: 1.1rem;
+        font-weight: 500;
+        font-family: $font;
+        color: $blue;
+      }
+
+      >div {
+        display: flex;
+        align-items: center;
+        font-size: 0.9rem;
+
+        a:hover {
+          color: $blue;
+        }
+
+        i {
+          color: $blue;
+          margin-right: 0.5rem;
+        }
+      }
+    }
+
+    .bio {
+      p {
+        color: $lightgrey;
+        margin-top: 1.5rem;
+        font-style: italic;
+
+        span {
+          display: block;
+          color: $blue;
+          font-weight: 300;
+        }
+      }
+    }
+  }
+
+  @media screen and (max-width: 768px) {
+    .member {
+      grid-template-columns: 1fr;
+
+      .image {
+        img {
+          width: 100%;
+          max-height: 400px;
+        }
+      }
+    }
+  }
+}

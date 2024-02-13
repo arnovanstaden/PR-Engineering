@@ -4,8 +4,8 @@ import Banner from '@components/UI/Banner/Banner'
 import styles from './about.module.scss';
 import Image from 'next/image';
 import MapOfAfricaImage from '@static/images/pages/home/overview.png';
-import Icon from '@components/UI/Icon/Icon';
 import { generateCustomMetaData } from '@utils/metadata';
+import Team from '@components/Content/Team';
 
 export const metadata = generateCustomMetaData({
   title: 'About | PR Engineering',
@@ -126,38 +126,7 @@ const About = () => {
         colour="light"
         className={styles.team}
       >
-        <article className={styles.member}>
-          <div className={styles.details}>
-            <h2>Jaco Buys</h2>
-            <h3>Director</h3>
-            <div>
-              <Icon name="email" />
-              <a href="mailto:jaco@engpr.com">jaco@engpr.com</a>
-            </div>
-          </div>
-          <div className={styles.bio}>
-            <p>
-              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Maxime, nemo labore? In perferendis doloremque similique laudantium, provident quo aliquam ratione optio necessitatibus dicta excepturi nam ad, atque facere libero sequi sapiente? Labore illum nisi cupiditate asperiores voluptate nesciunt, porro omnis? Dolores dicta perferendis dolore soluta maiores sit nemo aliquid temporibus!
-            </p>
-          </div>
-        </article>
-
-        <article className={styles.member}>
-          <div className={styles.details}>
-            <h2>Paul van Staden</h2>
-            <h3>Director</h3>
-            <div>
-              <Icon name="email" />
-              <a href="mailto:paul@engpr.com">paul@engpr.com</a>
-            </div>
-          </div>
-          <div className={styles.bio}>
-            <p>
-              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Maxime, nemo labore? In perferendis doloremque similique laudantium, provident quo aliquam ratione optio necessitatibus dicta excepturi nam ad, atque facere libero sequi sapiente? Labore illum nisi cupiditate asperiores voluptate nesciunt, porro omnis? Dolores dicta perferendis dolore soluta maiores sit nemo aliquid temporibus!
-            </p>
-          </div>
-        </article>
-
+        <Team />
       </Section>
     </main>
   )
