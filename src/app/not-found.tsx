@@ -14,7 +14,7 @@ export const metadata: Metadata = {
   }
 }
 
-const PageNotFound = () => {
+const NotFound = () => {
   return (
     <main className={styles.PageNotFound} >
       <h1>4<span>0</span>4</h1>
@@ -25,4 +25,4 @@ const PageNotFound = () => {
   )
 }
 
-export default PageNotFound
+export default NotFound
