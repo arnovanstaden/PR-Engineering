@@ -1,0 +1,289 @@
+.HomePage {
+  .landing {
+    width: 100vw;
+    max-height: 90vh;
+    overflow: hidden;
+    position: relative;
+
+    video {
+      min-width: 100vw;
+      min-height: 100vh;
+    }
+
+    .overlay {
+      @include cover-parent;
+      background-color: rgba($grey, 0.5);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      .content {
+        text-align: center;
+        padding-bottom: 5vh;
+
+        h1 {
+          margin: 0;
+          color: $white;
+          font-weight: 600;
+          font-size: 3rem;
+          text-transform: uppercase;
+          letter-spacing: 1px;
+
+          sup {
+            font-weight: 300;
+            font-size: 1.5rem
+          }
+        }
+
+        hr {
+          @include hr-reset;
+          width: 40%;
+          height: 2px;
+          background-color: $blue;
+          margin: 1rem auto;
+        }
+
+        h2 {
+          margin: 0;
+          font-weight: 400;
+          font-family: $font;
+          color: $white;
+          font-size: 1.75rem;
+          padding-top: 0.25rem;
+        }
+
+        .actions {
+          margin-top: 2rem;
+
+          button:first-child {
+            margin-right: 1rem;
+          }
+
+          .videoButton {
+            border: none;
+            color: $grey;
+            background-color: $white;
+            font-size: 0.9rem;
+            font-weight: 500;
+            font-family: $font;
+            padding: 0.2rem 0.5rem;
+          }
+        }
+      }
+    }
+  }
+
+  .social {
+    position: absolute;
+    right: 1rem;
+    bottom: 1rem;
+
+    a {
+      font-size: 1.2rem;
+      margin-right: 0.5rem;
+      color: $blue;
+
+      &:hover {
+        color: $white;
+      }
+    }
+  }
+
+  .intro {
+
+    display: flex;
+
+    .text {
+      width: 60%;
+      padding-right: 2rem;
+
+      p {
+        font-size: 1.1rem;
+      }
+
+      button {
+        margin-top: 2rem;
+      }
+    }
+
+    .image {
+      width: 40%;
+      position: relative;
+      display: flex;
+      justify-content: center;
+
+      img {
+        position: absolute;
+        object-position: center top;
+        object-fit: contain;
+        height: 130%;
+        top: -20%;
+      }
+    }
+  }
+
+  .services {
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+
+      .area {
+        border-right: 2px solid $blue;
+        padding-right: 1rem;
+
+        h2 {
+          font-size: 1.5rem;
+          font-weight: 600;
+          color: $blue;
+        }
+
+        &:last-child {
+          border-right: none
+        }
+      }
+
+
+      .list {
+        @include list-reset;
+
+        li {
+          margin: 0 0 0.5rem 0;
+          display: flex;
+
+          i {
+            color: $blue;
+            font-size: 0.75rem;
+            margin-right: 0.5rem;
+            margin-top: 0.3rem;
+          }
+        }
+      }
+    }
+
+    .more {
+      display: flex;
+      justify-content: center;
+      margin-top: 1rem;
+    }
+  }
+
+
+  @media screen and (min-width:1600px) {
+    .intro {
+
+      .image {
+        img {
+          height: 200%;
+          top: -70%;
+        }
+      }
+    }
+  }
+
+
+  @media screen and (max-width: 991px) {
+
+    .intro {
+      flex-wrap: wrap;
+
+      .text {
+        width: 100%;
+        padding: 0;
+      }
+
+      .image {
+        width: 100%;
+        margin-top: 3rem;
+
+        img {
+          position: relative;
+          top: unset;
+          height: unset;
+          width: 50%;
+        }
+      }
+    }
+
+    .services {
+      .grid {
+        grid-template-columns: 1fr;
+
+        .area {
+          border-right: 0;
+          padding-right: 0;
+
+          &:last-child {
+            border-bottom: none
+          }
+        }
+      }
+
+      .more {
+        justify-content: flex-start;
+      }
+    }
+  }
+
+  @media screen and (max-width: 768px) {
+
+    .landing {
+      min-height: 100vh;
+
+      .social {
+        position: absolute;
+        left: 0;
+        bottom: 1rem;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+
+        a {
+          font-size: 1.25rem;
+          margin: 0 0.75rem;
+        }
+      }
+    }
+
+    .intro {
+
+      .image {
+
+        img {
+          width: 100%;
+        }
+      }
+    }
+
+
+
+  }
+
+  @media screen and (max-width: 600px) {
+    .landing {
+
+
+      .overlay {
+
+        background-color: rgba($grey, 0.6);
+
+        .content {
+
+
+          h1 {
+            font-size: 2.25rem;
+          }
+
+          hr {
+            width: 50%;
+            height: 3px;
+          }
+
+          h2 {
+            font-size: 1.5rem;
+          }
+        }
+      }
+    }
+  }
+}

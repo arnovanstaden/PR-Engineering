@@ -14,7 +14,6 @@ import LightBox from '../../components/UI/Lightbox/Lightbox';
 import styles from '../../styles/pages/projects/[slug].module.scss';
 
 const Project = ({ project }) => {
-
   const [lightboxImage, setLightboxImage] = useState(undefined);
 
   const hideLightBox = () => {
@@ -105,7 +104,6 @@ const Project = ({ project }) => {
       </Section>
 
       <LightBox image={lightboxImage} toggle={hideLightBox} />
-
     </Page>
   )
 }
@@ -142,7 +140,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
         `,
   });
 
-  const project = data.allProject.filter(project => project.slug.current === params.slug)[0]
+  const project = data.allProject.filter(project => project.slug.current === params!.slug)[0]
 
   return {
     props: {

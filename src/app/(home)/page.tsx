@@ -1,33 +1,25 @@
-import { GetStaticProps } from 'next';
-import { gql } from '@apollo/client';
-import { client } from '../utils/apollo-client';
-
 // Components
-import Page from '../components/UI/Page/Page';
-import Section from '../components/UI/Section/Section';
-import Button from '../components/UI/Button/Button';
-import Contact from '../components/Content/Contact/Contact';
-import ProjectsGrid from '../components/Content/ProjectsGrid/ProjectsGrid'
-import Banner from '../components/UI/Banner/Banner'
+import Section from '../../components/UI/Section/Section';
+import Button from '../../components/UI/Button/Button';
+import Contact from '../../components/Content/Contact/Contact';
+import ProjectsGrid from '../../components/Content/ProjectsGrid/ProjectsGrid'
+import Banner from '../../components/UI/Banner/Banner'
 
 // Data
-import servicesData from '../assets/data/services.json';
+import servicesData from '../../assets/data/services.json';
 
 // styles
-import styles from '../styles/pages/home.module.scss'
+import styles from './home.module.scss';
+import { Metadata } from 'next';
 
-const Home = ({ projects }) => {
+export const metadata: Metadata = {
+  title: 'PR Engineering',
+  description: 'PR Engineering is a Dynamic and Experienced Consulting Engineering Firm offering Professional Value-Driven Consulting Engineering Solutions.',
+}
 
+const Home = ({ projects = [] }) => {
   return (
-    <Page
-      head={{
-        title: 'PR Engineering',
-        description: 'PR Engineering is a Dynamic and Experienced Consulting Engineering Firm offering Professional Value-Driven Consulting Engineering Solutions.',
-        canonical: '/',
-      }}
-      className={styles.home}
-    >
-
+    <main className={styles.HomePage}>
       <section className={styles.landing}>
         <video autoPlay muted={true} loop={true} >
           <source src={'/videos/landing1.mp4'} type="video/mp4" />
@@ -39,8 +31,8 @@ const Home = ({ projects }) => {
               <hr />
               <h2>Mechanical, Fire and Electrical Engineers</h2>
               <div className={styles.actions}>
-                <Button text="What We Do" link="/services" />
-                <Button text="Get In Touch" link="/contact" />
+                <Button link="/services">What We Do</Button>
+                <Button link="/contact">Get In Touch"</Button>
               </div>
             </div>
           </div>
@@ -62,7 +54,7 @@ const Home = ({ projects }) => {
       >
         <div className={styles.text}>
           <p>PR Engineering is a dynamic and experienced consulting engineering firm with the capacity to provide comprehensive and value-driven design and project management services. As providers of engineering solutions to clients in the property, commercial and industrial markets, our dedicated and professional team of engineering specialists have built a reputation for providing viable, durable and cost-effective solutions to meet challenging project requirements throughout Africa.</p>
-          <Button text="Learn More" link="/about" />
+          <Button link="/about" >Learn More</Button>
         </div>
         <div className={styles.image}>
           <img src="/images/pages/home/overview.png" alt="Map of Africa" />
@@ -105,7 +97,7 @@ const Home = ({ projects }) => {
           ))}
         </div>
         <div className={styles.more}>
-          <Button text="All Services" link="/services" />
+          <Button link="/services" >All Services</Button>
         </div>
       </Section>
 
@@ -115,36 +107,36 @@ const Home = ({ projects }) => {
       >
         <Contact />
       </Section>
-    </Page >
+    </main>
   )
 }
 
 export default Home
 
-export const getStaticProps: GetStaticProps = async () => {
-  const { data } = await await client.query({
-    query: gql`
-          query GetProjects {
-            allProject (where: {home: {eq: true}}) {
-                title
-                location
-                slug {
-                current
-                }
-                thumbnail {
-                asset {
-                    url
-                }
-                }
-            }
-            }
-        `,
-  });
+// export const getStaticProps: GetStaticProps = async () => {
+//   const { data } = await await client.query({
+//     query: gql`
+//           query GetProjects {
+//             allProject (where: {home: {eq: true}}) {
+//                 title
+//                 location
+//                 slug {
+//                 current
+//                 }
+//                 thumbnail {
+//                 asset {
+//                     url
+//                 }
+//                 }
+//             }
+//             }
+//         `,
+//   });
 
 
-  return {
-    props: {
-      projects: data.allProject
-    }
-  }
-}
+//   return {
+//     props: {
+//       projects: data.allProject
+//     }
+//   }
+// }

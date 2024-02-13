@@ -1,153 +1,151 @@
-@import "../../../styles/variables.scss";
-
 .contact {
-    display: flex;
+  display: flex;
 
-    >div {
-        padding: 3rem 2rem 4rem 2rem;
-        box-sizing: border-box;
+  >div {
+    padding: 3rem 2rem 4rem 2rem;
+    box-sizing: border-box;
 
-        h1 {
-            font-size: 1.5rem;
+    h1 {
+      font-size: 1.5rem;
+      color: $blue;
+      font-weight: 600;
+      margin: 0;
+      margin-bottom: 2rem;
+    }
+  }
+
+  .details {
+    width: 40%;
+    background-color: $grey;
+    color: $white;
+
+    p {
+      color: $white;
+      margin-bottom: 2.5rem
+    }
+
+    .links {
+      @include list-reset;
+      margin-bottom: 2rem;
+
+      li {
+        font-size: 1rem;
+        display: flex;
+        align-items: center;
+        margin: 1rem 0;
+
+        i {
+          color: $blue;
+          margin-right: 0.5rem;
+        }
+
+
+        &:hover a {
+          color: $blue;
+          padding-left: 0.25rem;
+        }
+
+      }
+    }
+
+    .social {
+      a {
+        font-size: 1.2rem;
+        margin-right: 0.5rem;
+
+        &:hover {
+          color: $blue;
+        }
+      }
+    }
+  }
+
+  .form {
+    width: 60%;
+    background-color: rgba($lightgrey, $alpha: 0.075);
+
+    form {
+      display: grid;
+      width: 100%;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+
+      .group {
+
+        label {
+          display: block;
+          font-weight: 500;
+          font-size: 0.8rem;
+          padding: 0.25rem 0;
+          text-transform: uppercase;
+        }
+
+        input,
+        textarea {
+          width: 100%;
+          padding: 0.25rem 0;
+          box-sizing: border-box;
+          font-family: $font;
+          border: none;
+          outline: none;
+          border-bottom: 1px solid $grey;
+          font-size: 1rem;
+          transition: 0.3s ease-in-out;
+          resize: none;
+          background-color: transparent;
+
+          &:focus {
+            border-color: $blue;
             color: $blue;
-            font-weight: 600;
-            margin: 0;
-            margin-bottom: 2rem;
-        }
-    }
+            font-weight: 500;
 
+            &::placeholder {
+              color: $blue;
+              font-weight: 400;
+            }
+          }
+        }
+
+        &.row {
+          grid-column: 1/3;
+
+          textarea {
+            height: 5rem;
+          }
+        }
+
+      }
+
+
+      .button {
+        grid-column: 1/3;
+        display: flex;
+        justify-content: flex-end;
+      }
+
+    }
+  }
+
+  @media screen and (max-width: 991px) {
+    flex-wrap: wrap;
+
+    .form,
     .details {
-        width: 40%;
-        background-color: $grey;
-        color: $white;
-
-        p {
-            color: $white;
-            margin-bottom: 2.5rem
-        }
-
-        .links {
-            @include list-reset;
-            margin-bottom: 2rem;
-
-            li {
-                font-size: 1rem;
-                display: flex;
-                align-items: center;
-                margin: 1rem 0;
-
-                i {
-                    color: $blue;
-                    margin-right: 0.5rem;
-                }
-
-
-                &:hover a {
-                    color: $blue;
-                    padding-left: 0.25rem;
-                }
-
-            }
-        }
-
-        .social {
-            a {
-                font-size: 1.2rem;
-                margin-right: 0.5rem;
-
-                &:hover {
-                    color: $blue;
-                }
-            }
-        }
+      width: 100%;
     }
+  }
 
+  @media screen and (max-width: 600px) {
     .form {
-        width: 60%;
-        background-color: rgba($lightgrey, $alpha: 0.075);
 
-        form {
-            display: grid;
-            width: 100%;
-            grid-template-columns: 1fr 1fr;
-            gap: 2rem;
+      form {
+        display: block;
 
-            .group {
-
-                label {
-                    display: block;
-                    font-weight: 500;
-                    font-size: 0.8rem;
-                    padding: 0.25rem 0;
-                    text-transform: uppercase;
-                }
-
-                input,
-                textarea {
-                    width: 100%;
-                    padding: 0.25rem 0;
-                    box-sizing: border-box;
-                    font-family: $font;
-                    border: none;
-                    outline: none;
-                    border-bottom: 1px solid $grey;
-                    font-size: 1rem;
-                    transition: 0.3s ease-in-out;
-                    resize: none;
-                    background-color: transparent;
-
-                    &:focus {
-                        border-color: $blue;
-                        color: $blue;
-                        font-weight: 500;
-
-                        &::placeholder {
-                            color: $blue;
-                            font-weight: 400;
-                        }
-                    }
-                }
-
-                &.row {
-                    grid-column: 1/3;
-
-                    textarea {
-                        height: 5rem;
-                    }
-                }
-
-            }
-
-
-            .button {
-                grid-column: 1/3;
-                display: flex;
-                justify-content: flex-end;
-            }
-
+        .group {
+          padding-top: 1rem;
         }
+
+      }
     }
-
-    @media screen and (max-width: 991px) {
-        flex-wrap: wrap;
-
-        .form,
-        .details {
-            width: 100%;
-        }
-    }
-
-    @media screen and (max-width: 600px) {
-        .form {
-
-            form {
-                display: block;
-
-                .group {
-                    padding-top: 1rem;
-                }
-
-            }
-        }
-    }
+  }
 }

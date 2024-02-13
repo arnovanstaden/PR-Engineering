@@ -51,9 +51,14 @@ const Projects = ({ allProjects }) => {
         number={1}
       >
         <div className={styles.filter}>
-          <Button text="All Projects" hollow click={resetFilter} />
+          <Button hollow click={resetFilter} >All Projects</Button>
           {getFilters().map((type, index) => (
-            <Button key={index} text={`${type} Projects`} hollow click={() => handleFilter(type)} />
+            <Button
+              key={index}
+              hollow click={() => handleFilter(type)}
+            >
+              {`${type} Projects`}
+            </Button>
           ))}
         </div>
         <ProjectsGrid projects={projects} />

@@ -1,4 +1,6 @@
-import { useRef } from 'react';
+'use client';
+
+import { MutableRefObject, useRef } from 'react';
 
 // Components
 import Button from '../../UI/Button/Button';
@@ -8,11 +10,11 @@ import styles from './contact.module.scss';
 
 
 const Contact = () => {
-  const formRef = useRef()
+  const formRef = useRef() as MutableRefObject<HTMLFormElement>;
 
   const submitForm = (e) => {
     e.preventDefault()
-    const form = formRef.current as HTMLFormElement;
+    const form = formRef.current;
     const formData = new FormData(form);
 
     fetch('https://formspree.io/f/myyleyll', {
@@ -88,7 +90,7 @@ const Contact = () => {
             <textarea name="Message"></textarea>
           </div>
           <div className={styles.button}>
-            <Button text="Send Message" click={submitForm} />
+            <Button click={submitForm} >Send Message</Button>
           </div>
         </form>
       </div>

@@ -5,38 +5,35 @@ import ClassNames from 'classnames';
 import styles from './button.module.scss';
 
 interface IProps {
-    link?: string;
-    text: string;
-    hollow?: boolean;
-    click?: any;
+  link?: string;
+  children: string | React.ReactNode;
+  hollow?: boolean;
+  click?: any;
 }
 
-const Button = ({ link, text, hollow, click }: IProps) => {
+const Button = ({ link, children, hollow, click }: IProps) => {
+  const classes = ClassNames(
+    styles.button,
+    hollow ? styles.hollow : null,
+  )
 
-    const classes = ClassNames(
-        styles.button,
-        hollow ? styles.hollow : null,
+  const Inner = () => {
+    return (
+      <button className={classes} onClick={click ? click : null}>
+        {children}
+      </button>
     )
+  }
 
-    const Inner = () => {
-        return (
-            <button className={classes} onClick={click ? click : null}>
-                {text}
-            </button>
-        )
-    }
+  if (link) {
+    return (
+      <Link href={link} >
+        <Inner />
+      </Link >
+    )
+  }
 
-    if (link) {
-        return (
-            <Link href={link} >
-                <a>
-                    <Inner />
-                </a>
-            </Link >
-        )
-    }
-
-    return <Inner />
+  return <Inner />
 }
 
 export default Button

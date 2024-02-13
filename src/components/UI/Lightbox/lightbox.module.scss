@@ -1,47 +1,45 @@
-@import "../../../styles/variables.scss";
-
 .box {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    background-color: rgba($color: $grey, $alpha: 0.95);
-    z-index: 10;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba($color: $grey, $alpha: 0.95);
+  z-index: 10;
 
-    >i {
-        position: absolute;
-        top: 1rem;
-        right: 1rem;
-        color: $white;
-        font-weight: 500;
-        font-size: 1.25rem;
-        padding: 1rem;
-        cursor: pointer;
-        z-index: 15;
-        transition: 0.3s ease-in-out;
+  >i {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    color: $white;
+    font-weight: 500;
+    font-size: 1.25rem;
+    padding: 1rem;
+    cursor: pointer;
+    z-index: 15;
+    transition: 0.3s ease-in-out;
 
-        &:hover {
-            color: $white;
-        }
+    &:hover {
+      color: $white;
     }
+  }
 
-    .overlay {
-        width: 100%;
-        height: 100%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
+  .overlay {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
-        .image {
-            width: 90%;
-            height: 90%;
-            position: relative;
-            overflow: hidden;
+    .image {
+      width: 90%;
+      height: 90%;
+      position: relative;
+      overflow: hidden;
 
-            img {
-                position: absolute !important;
-            }
-        }
+      img {
+        position: absolute !important;
+      }
     }
+  }
 }

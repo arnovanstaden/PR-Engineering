@@ -4,7 +4,7 @@ import NextImage from '../NextImage/NextImage';
 import styles from './lightbox.module.scss';
 
 interface IProps {
-  image: string;
+  image?: string;
   toggle: () => void
 }
 

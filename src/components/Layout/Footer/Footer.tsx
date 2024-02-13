@@ -1,47 +1,53 @@
-import Link from 'next/link';
-import { useRouter } from 'next/router'
+'use client';
 
-// Styles
+import Link from 'next/link';
+import { usePathname } from 'next/navigation'
+import logo from '@static/images/logos/logo-white-text.png';
 import styles from './footer.module.scss';
+import Image from 'next/image';
 
 const Footer = () => {
-  const router = useRouter();
   const date = new Date();
   const currentYear = date.getFullYear();
+  const pathname = usePathname();
+
   return (
     <footer className={styles.footer}>
       <div className="container">
         <div className={`${styles.grid} ${styles.content}`}>
-          <Link href="/">
-            <a className={styles.logo}>
-              <img src="/images/logos/logo-white-text.png" alt="PR Engineering Logo" />
-            </a>
+          <Link href="/" className={styles.logo}>
+            <Image
+              src={logo}
+              alt="PR Engineering Logo"
+              width={96}
+              height={96}
+            />
           </Link>
           <div className={styles.top}>
             <ul className={`${styles.nav} ${styles.list}`}>
-              <li className={router.pathname == '/' ? styles.active : ''}>
+              <li className={pathname == '/' ? styles.active : ''}>
                 <Link href="/">
-                  <a>Home</a>
+                  Home
                 </Link>
               </li>
-              <li className={router.pathname == '/about' ? styles.active : ''}>
+              <li className={pathname == '/about' ? styles.active : ''}>
                 <Link href="/about">
-                  <a>About</a>
+                  About
                 </Link>
               </li>
-              <li className={router.pathname == '/services' ? styles.active : ''}>
+              <li className={pathname == '/services' ? styles.active : ''}>
                 <Link href="/services">
-                  <a>Services</a>
+                  Services
                 </Link>
               </li>
-              <li className={router.pathname == '/projects' ? styles.active : ''}>
+              <li className={pathname == '/projects' ? styles.active : ''}>
                 <Link href="/projects">
-                  <a>Projects</a>
+                  Projects
                 </Link>
               </li>
-              <li className={router.pathname == '/contact' ? styles.active : ''}>
+              <li className={pathname == '/contact' ? styles.active : ''}>
                 <Link href="/contact">
-                  <a>Contact</a>
+                  Contact
                 </Link>
               </li>
             </ul>

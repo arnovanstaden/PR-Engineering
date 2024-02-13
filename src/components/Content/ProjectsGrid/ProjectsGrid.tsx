@@ -18,17 +18,15 @@ const ProjectsGrid = ({ projects }) => {
             priority
           />
         </div>
-        <Link href={`/projects/${project.slug.current}`}>
-          <a className={styles.overlay}>
-            <div className={styles.content}>
-              <h1>{project.title}</h1>
-              <hr />
-              <p>
-                <i className="icon-room"></i>
-                {project.location}
-              </p>
-            </div>
-          </a>
+        <Link href={`/projects/${project.slug.current}`} className={styles.overlay}>
+          <div className={styles.content}>
+            <h1>{project.title}</h1>
+            <hr />
+            <p>
+              <i className="icon-room"></i>
+              {project.location}
+            </p>
+          </div>
         </Link>
       </div>
     )
