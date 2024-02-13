@@ -8,6 +8,7 @@ import styles from './[id].module.scss';
 import { getProject } from '@lib/projects';
 import { notFound } from 'next/navigation';
 import Image from 'next/image';
+import Icon from '@components/UI/Icon/Icon';
 
 export const metadata: Metadata = {
   title: 'PR Engineering',
@@ -38,7 +39,7 @@ const Project: React.FC<{ params: { slug: string } }> = async ({ params }) => {
               <h1>{project.title}</h1>
               <hr />
               <p>
-                <i className="icon-room"></i>
+                <Icon name="location_on" />
                 {project.location}
               </p>
             </div>

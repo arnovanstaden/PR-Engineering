@@ -1,6 +1,7 @@
 import NextImage from '@components/UI/NextImage/NextImage';
 import Link from 'next/link';
 import styles from './Project.module.scss';
+import Icon from '@components/UI/Icon/Icon';
 
 const Project = ({ project }) => {
   return (
@@ -19,7 +20,7 @@ const Project = ({ project }) => {
           <h1>{project.title}</h1>
           <hr />
           <p>
-            <i className="icon-room"></i>
+            <Icon name="location_on" />
             {project.location}
           </p>
         </div>

@@ -11,6 +11,7 @@ import servicesData from '../../assets/data/services.json';
 // styles
 import styles from './home.module.scss';
 import { Metadata } from 'next';
+import Icon from '@components/UI/Icon/Icon';
 
 export const metadata: Metadata = {
   title: 'PR Engineering',
@@ -38,10 +39,10 @@ const Home = ({ projects = [] }) => {
           </div>
           <div className={styles.social}>
             <a href="https://www.instagram.com/prengineering/?hl=en" target="blank">
-              <i className="icon-instagram"></i>
+              <Icon name="instagram" size={20} />
             </a>
             <a href="https://www.linkedin.com/company/pr-engineering-africa/" target="blank">
-              <i className="icon-linkedin"></i>
+              <Icon name="linkedin" size={20} />
             </a>
           </div>
         </div>
@@ -88,7 +89,7 @@ const Home = ({ projects = [] }) => {
               <ul className={styles.list}>
                 {service.categories.map((category, j) => (
                   <li key={j}>
-                    <i className="icon-square" />
+                    <Icon name="square" />
                     {category}
                   </li>
                 ))}

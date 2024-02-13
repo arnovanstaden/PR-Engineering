@@ -3,6 +3,7 @@
 import { useRef } from 'react';
 import Menu from '../Menu/Menu';
 import styles from './MobileMenu.module.scss';
+import Icon from '@components/UI/Icon/Icon';
 
 const MobileNav = () => {
   const navRef = useRef() as React.MutableRefObject<HTMLDivElement>;
@@ -18,16 +19,16 @@ const MobileNav = () => {
 
   return (
     <div className={styles.mobileNav} ref={navRef}>
-      <i className="icon-menu" onClick={toggleNav}></i>
+      <Icon name="menu" onClick={toggleNav} />
       <div className={styles.overlay}>
-        <i className="icon-close" onClick={toggleNav}></i>
+        <Icon name="close" onClick={toggleNav} />
         <Menu mobileNavToggle={toggleNav} />
         <div className={styles.social}>
           <a href="https://www.instagram.com/prengineering/?hl=en" target="blank">
-            <i className="icon-instagram"></i>
+            <Icon name="instagram" size={20} />
           </a>
           <a href="https://www.linkedin.com/company/pr-engineering-africa/" target="blank">
-            <i className="icon-linkedin"></i>
+            <Icon name="linkedin" size={20} />
           </a>
         </div>
       </div>

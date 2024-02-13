@@ -1,3 +1,4 @@
+import Icon from '../Icon/Icon';
 import NextImage from '../NextImage/NextImage';
 
 // Styles
@@ -14,7 +15,7 @@ const Lightbox = ({ image, toggle }: IProps) => {
 
     return (
       <div className={styles.box}>
-        <i className="icon-close" onClick={toggle}></i>
+        <Icon name="close" onClick={toggle} />
         <div className={styles.overlay} onClick={toggle}>
           <div className={styles.image}>
             <NextImage

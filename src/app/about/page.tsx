@@ -5,6 +5,7 @@ import styles from './about.module.scss';
 import { Metadata } from 'next';
 import Image from 'next/image';
 import MapOfAfricaImage from '@static/images/pages/home/overview.png';
+import Icon from '@components/UI/Icon/Icon';
 
 export const metadata: Metadata = {
   title: 'About | PR Engineering',
@@ -130,7 +131,7 @@ const About = () => {
             <h2>Jaco Buys</h2>
             <h3>Director</h3>
             <div>
-              <i className="icon-email"></i>
+              <Icon name="email" />
               <a href="mailto:jaco@engpr.com">jaco@engpr.com</a>
             </div>
           </div>
@@ -146,7 +147,7 @@ const About = () => {
             <h2>Paul van Staden</h2>
             <h3>Director</h3>
             <div>
-              <i className="icon-email"></i>
+              <Icon name="email" />
               <a href="mailto:paul@engpr.com">paul@engpr.com</a>
             </div>
           </div>

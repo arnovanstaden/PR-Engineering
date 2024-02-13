@@ -3,6 +3,7 @@
 import { MutableRefObject, useRef } from 'react';
 import styles from './contact.module.scss';
 import Button from '@components/UI/Button/Button';
+import Icon from '@components/UI/Icon/Icon';
 
 
 const Contact = () => {
@@ -34,19 +35,19 @@ const Contact = () => {
         <p>For more information on our services, please contact us and experience the value we can add.</p>
         <ul className={styles.links}>
           <li>
-            <i className="icon-phone"></i>
+            <Icon name="phone" />
             <a href="tel:0210125393">
               021 012 5393
             </a>
           </li>
           <li>
-            <i className="icon-email"></i>
+            <Icon name="email" />
             <a href="mailto:info@engpr.com">
               info@engpr.com
             </a>
           </li>
           <li>
-            <i className="icon-room"></i>
+            <Icon name="location_on" />
             <a href="https://g.page/Fire-Engineers?share" target="blank">
               Building A2, Devonbosch, <br />
               Bottelary Rd, Stellenbosch, 7600
@@ -55,10 +56,10 @@ const Contact = () => {
         </ul>
         <div className={styles.social}>
           <a href="https://www.instagram.com/prengineering/?hl=en" target="blank">
-            <i className="icon-instagram"></i>
+            <Icon name="instagram" size={20} />
           </a>
           <a href="https://www.linkedin.com/company/pr-engineering-africa/" target="blank">
-            <i className="icon-linkedin"></i>
+            <Icon name="linkedin" size={20} />
           </a>
         </div>
       </div>

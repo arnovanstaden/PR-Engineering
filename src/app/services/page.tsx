@@ -4,6 +4,7 @@ import Banner from '@components/UI/Banner/Banner';
 import servicesData from '../../assets/data/services.json';
 import styles from './services.module.scss';
 import { Metadata } from 'next';
+import Icon from '@components/UI/Icon/Icon';
 
 export const metadata: Metadata = {
   title: 'Services | PR Engineering',
@@ -26,35 +27,35 @@ const Services = () => {
           <h2>The scope of our professional services comprises:</h2>
           <ul className={styles.list}>
             <li>
-              <i className="icon-arrow"></i>
+              <Icon name="exit_to_app" />
               Feasibility Studies &amp; Reports and Planning Proposals
             </li>
             <li>
-              <i className="icon-arrow"></i>
+              <Icon name="exit_to_app" />
               Concept and Detailed Project Designs &amp; Drawings
             </li>
             <li>
-              <i className="icon-arrow"></i>
+              <Icon name="exit_to_app" />
               Equipment Selection &amp; Specifications
             </li>
             <li>
-              <i className="icon-arrow"></i>
+              <Icon name="exit_to_app" />
               Economic Evaluation &amp; Cost Estimation
             </li>
             <li>
-              <i className="icon-arrow"></i>
+              <Icon name="exit_to_app" />
               Tender Documentation &amp; Tender Adjudication
             </li>
             <li>
-              <i className="icon-arrow"></i>
+              <Icon name="exit_to_app" />
               Engineering Project Management Testing
             </li>
             <li>
-              <i className="icon-arrow"></i>
+              <Icon name="exit_to_app" />
               Commissioning &amp; Quality Reports
             </li>
             <li>
-              <i className="icon-arrow"></i>
+              <Icon name="exit_to_app" />
               Close-out and Maintenance Documentation
             </li>
           </ul>
@@ -63,35 +64,35 @@ const Services = () => {
           <h2>We offer these services in all market sectors including:</h2>
           <ul className={styles.list}>
             <li>
-              <i className="icon-arrow"></i>
+              <Icon name="exit_to_app" />
               Commercial Office Buildings
             </li>
             <li>
-              <i className="icon-arrow"></i>
+              <Icon name="exit_to_app" />
               Shopping Centres
             </li>
             <li>
-              <i className="icon-arrow"></i>
+              <Icon name="exit_to_app" />
               Schools, Colleges &amp; Universities
             </li>
             <li>
-              <i className="icon-arrow"></i>
+              <Icon name="exit_to_app" />
               Sports &amp; Recreation Facilities
             </li>
             <li>
-              <i className="icon-arrow"></i>
+              <Icon name="exit_to_app" />
               Residential Housing
             </li>
             <li>
-              <i className="icon-arrow"></i>
+              <Icon name="exit_to_app" />
               Industrial Buildings &amp; Factories
             </li>
             <li>
-              <i className="icon-arrow"></i>
+              <Icon name="exit_to_app" />
               Hospitals, Clinics &amp; Laboratories
             </li>
             <li>
-              <i className="icon-arrow"></i>
+              <Icon name="exit_to_app" />
               Hotels &amp; Lodges.
             </li>
           </ul>
@@ -114,7 +115,7 @@ const Services = () => {
         <ul className={styles.list}>
           {servicesData.filter(data => data.area === 'Mechanical')[0].categories.map((category, j) => (
             <li key={j}>
-              <i className="icon-square" />
+              <Icon name="square" />
               {category}
             </li>
           ))}
@@ -129,7 +130,7 @@ const Services = () => {
         <ul className={styles.list}>
           {servicesData.filter(data => data.area === 'Electrical & Electronic')[0].categories.map((category, j) => (
             <li key={j}>
-              <i className="icon-square" />
+              <Icon name="square" />
               {category}
             </li>
           ))}
@@ -145,7 +146,7 @@ const Services = () => {
         <ul className={styles.list}>
           {servicesData.filter(data => data.area === 'Fire')[0].categories.map((category, j) => (
             <li key={j}>
-              <i className="icon-square" />
+              <Icon name="square" />
               {category}
             </li>
           ))}

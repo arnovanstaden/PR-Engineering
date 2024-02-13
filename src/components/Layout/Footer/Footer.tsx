@@ -6,6 +6,7 @@ import logo from '@static/images/logos/logo-white-text.png';
 import styles from './footer.module.scss';
 import Image from 'next/image';
 import Container from '@components/UI/Container/Container';
+import Icon from '@components/UI/Icon/Icon';
 
 const Footer = () => {
   const date = new Date();
@@ -54,19 +55,19 @@ const Footer = () => {
             </ul>
             <ul className={`${styles.contact} ${styles.list}`}>
               <li>
-                <i className="icon-room"></i>
+                <Icon name="location_on" />
                 <a href="https://g.page/Fire-Engineers?share" target="blank">
                   Stellenbosch, Western Cape
                 </a>
               </li>
               <li>
-                <i className="icon-email"></i>
+                <Icon name="email" />
                 <a href="mailto:info@engpr.com">
                   info@engpr.com
                 </a>
               </li>
               <li>
-                <i className="icon-phone"></i>
+                <Icon name="phone" />
                 <a href="tel:0210125393">
                   021 012 5393
                 </a>
@@ -77,10 +78,10 @@ const Footer = () => {
         <div className={`${styles.grid} ${styles.bottom}`}>
           <div className={styles.social}>
             <a href="https://www.instagram.com/prengineering/?hl=en" target="blank">
-              <i className="icon-instagram"></i>
+              <Icon name="instagram" size={16} />
             </a>
             <a href="https://www.linkedin.com/company/pr-engineering-africa/" target="blank">
-              <i className="icon-linkedin"></i>
+              <Icon name="linkedin" size={16} />
             </a>
           </div>
           <p>© {currentYear} - PR Engineering Africa (PTY) LTD.</p>
