@@ -1,11 +1,11 @@
 // Components
-import Layout from "../components/Layout/Layout"
+import Layout from '../components/Layout/Layout'
 
 // Styles & Icons
 import '../styles/global.scss';
-import "../assets/icons/style.css";
+import '../assets/icons/style.css';
 
-function MyApp({ Component, pageProps }) {
+const MyApp = ({ Component, pageProps }) => {
   return (
     <Layout>
       <Component {...pageProps} />

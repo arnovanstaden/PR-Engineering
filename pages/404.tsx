@@ -1,16 +1,16 @@
-import Page from "../components/UI/Page/Page";
-import Button from "../components/UI/Button/Button";
+import Page from '../components/UI/Page/Page';
+import Button from '../components/UI/Button/Button';
 
 // Styles
-import styles from "../styles/pages/404.module.scss";
+import styles from '../styles/pages/404.module.scss';
 
 const PageNotFound = () => {
     return (
         <Page
             head={{
-                title: "Page Not Found",
-                description: "Page Not Found",
-                canonical: "/404",
+                title: 'Page Not Found',
+                description: 'Page Not Found',
+                canonical: '/404',
                 robots: false
             }}
             className={styles.pageNotFound}

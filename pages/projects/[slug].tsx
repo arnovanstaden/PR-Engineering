@@ -1,17 +1,17 @@
-import { client } from "../../utils/apollo-client";
-import { gql } from "@apollo/client";
+import { client } from '../../utils/apollo-client';
+import { gql } from '@apollo/client';
 import { GetStaticProps } from 'next'
 import { GetStaticPaths } from 'next'
-import NextImage from "../../components/UI/NextImage/NextImage";
-import { useState } from "react";
+import NextImage from '../../components/UI/NextImage/NextImage';
+import { useState } from 'react';
 
 // Components
-import Page from "../../components/UI/Page/Page";
-import Section from "../../components/UI/Section/Section";
-import LightBox from "../../components/UI/Lightbox/Lightbox";
+import Page from '../../components/UI/Page/Page';
+import Section from '../../components/UI/Section/Section';
+import LightBox from '../../components/UI/Lightbox/Lightbox';
 
 // Styles
-import styles from "../../styles/pages/projects/[slug].module.scss";
+import styles from '../../styles/pages/projects/[slug].module.scss';
 
 const Project = ({ project }) => {
 
@@ -19,7 +19,7 @@ const Project = ({ project }) => {
 
     const hideLightBox = () => {
         setLightboxImage(undefined)
-        document.body.classList.remove("noscroll")
+        document.body.classList.remove('noscroll')
     }
 
     return (

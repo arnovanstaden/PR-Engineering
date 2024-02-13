@@ -1,21 +1,21 @@
-import Page from "../components/UI/Page/Page";
-import Section from "../components/UI/Section/Section";
-import PageHeading from "../components/UI/PageHeading/PageHeading";
-import Banner from "../components/UI/Banner/Banner";
+import Page from '../components/UI/Page/Page';
+import Section from '../components/UI/Section/Section';
+import PageHeading from '../components/UI/PageHeading/PageHeading';
+import Banner from '../components/UI/Banner/Banner';
 
 // Data
-import servicesData from "../assets/data/services.json";
+import servicesData from '../assets/data/services.json';
 
 // Styles
-import styles from "../styles/pages/services.module.scss";
+import styles from '../styles/pages/services.module.scss';
 
 const Services = () => {
     return (
         <Page
             head={{
-                title: "Services | PR Engineering",
-                description: "FIX THIS",
-                canonical: "/services",
+                title: 'Services | PR Engineering',
+                description: 'FIX THIS',
+                canonical: '/services',
             }}
             className={styles.services}
         >
@@ -118,7 +118,7 @@ const Services = () => {
                 colour="dark"
             >
                 <ul className={styles.list}>
-                    {servicesData.filter(data => data.area === "Mechanical")[0].categories.map((category, j) => (
+                    {servicesData.filter(data => data.area === 'Mechanical')[0].categories.map((category, j) => (
                         <li key={j}>
                             <i className="icon-square" />
                             {category}
@@ -133,7 +133,7 @@ const Services = () => {
                 className={styles.category}
             >
                 <ul className={styles.list}>
-                    {servicesData.filter(data => data.area === "Electrical & Electronic")[0].categories.map((category, j) => (
+                    {servicesData.filter(data => data.area === 'Electrical & Electronic')[0].categories.map((category, j) => (
                         <li key={j}>
                             <i className="icon-square" />
                             {category}
@@ -151,7 +151,7 @@ const Services = () => {
                 colour="dark"
             >
                 <ul className={styles.list}>
-                    {servicesData.filter(data => data.area === "Fire")[0].categories.map((category, j) => (
+                    {servicesData.filter(data => data.area === 'Fire')[0].categories.map((category, j) => (
                         <li key={j}>
                             <i className="icon-square" />
                             {category}

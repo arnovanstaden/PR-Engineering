@@ -1,7 +1,7 @@
-import ClassNames from "classnames";
+import ClassNames from 'classnames';
 
 // Styles
-import styles from "./heading.module.scss";
+import styles from './heading.module.scss';
 
 interface IProps {
     children: React.ReactNode,

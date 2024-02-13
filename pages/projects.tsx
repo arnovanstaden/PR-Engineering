@@ -1,75 +1,72 @@
 import { GetStaticProps } from 'next';
-import { gql } from "@apollo/client";
-import { client } from "../utils/apollo-client";
-import { useState } from "react";
-
+import { gql } from '@apollo/client';
+import { client } from '../utils/apollo-client';
+import { useState } from 'react';
 
 // Components
-import Page from "../components/UI/Page/Page";
-import Section from "../components/UI/Section/Section";
-import PageHeading from "../components/UI/PageHeading/PageHeading";
-import ProjectsGrid from "../components/Content/ProjectsGrid/ProjectsGrid"
-import Button from "../components/UI/Button/Button";
+import Page from '../components/UI/Page/Page';
+import Section from '../components/UI/Section/Section';
+import PageHeading from '../components/UI/PageHeading/PageHeading';
+import ProjectsGrid from '../components/Content/ProjectsGrid/ProjectsGrid'
+import Button from '../components/UI/Button/Button';
 
 // Styles
-import styles from "../styles/pages/projects.module.scss";
+import styles from '../styles/pages/projects.module.scss';
 
 const Projects = ({ allProjects }) => {
-    // State
-    const [projects, setProjects] = useState(allProjects)
+  // State
+  const [projects, setProjects] = useState(allProjects)
 
+  // Handlers
+  const handleFilter = (type) => {
+    const newProjects = allProjects.filter(project => project.type === type);
+    setProjects(newProjects)
+  }
 
-    // Handlers
-    const handleFilter = (type) => {
-        const newProjects = allProjects.filter(project => project.type === type);
-        setProjects(newProjects)
-    }
+  const getFilters = () => {
+    const types = allProjects.map(project => project.type);
+    const uniqueTypes = [...new Set(types)];
+    return uniqueTypes
+  }
 
-    const getFilters = () => {
-        const types = allProjects.map(project => project.type);
-        const uniqueTypes = [...new Set(types)];
-        console.log(uniqueTypes)
-        return uniqueTypes
-    }
+  const resetFilter = () => {
+    setProjects(allProjects)
+  }
 
-    const resetFilter = () => {
-        setProjects(allProjects)
-    }
+  return (
+    <Page
+      head={{
+        title: 'Projects | PR Engineering',
+        description: 'FIX THIS',
+        canonical: '/projects',
+      }}
+      className={styles.projects}
+    >
+      <PageHeading dark={true}>
+        <h1>Our <span>Projects</span>.</h1>
+      </PageHeading>
 
-    return (
-        <Page
-            head={{
-                title: "Projects | PR Engineering",
-                description: "FIX THIS",
-                canonical: "/projects",
-            }}
-            className={styles.projects}
-        >
-            <PageHeading dark={true}>
-                <h1>Our <span>Projects</span>.</h1>
-            </PageHeading>
-
-            <Section
-                colour="light"
-                number={1}
-            >
-                <div className={styles.filter}>
-                    <Button text="All Projects" hollow click={resetFilter} />
-                    {getFilters().map((type, index) => (
-                        <Button key={index} text={`${type} Projects`} hollow click={() => handleFilter(type)} />
-                    ))}
-                </div>
-                <ProjectsGrid projects={projects} />
-            </Section>
-        </Page>
-    )
+      <Section
+        colour="light"
+        number={1}
+      >
+        <div className={styles.filter}>
+          <Button text="All Projects" hollow click={resetFilter} />
+          {getFilters().map((type, index) => (
+            <Button key={index} text={`${type} Projects`} hollow click={() => handleFilter(type)} />
+          ))}
+        </div>
+        <ProjectsGrid projects={projects} />
+      </Section>
+    </Page>
+  )
 }
 
 export default Projects
 
-export const getStaticProps: GetStaticProps = async (context) => {
-    const { data } = await await client.query({
-        query: gql`
+export const getStaticProps: GetStaticProps = async () => {
+  const { data } = await await client.query({
+    query: gql`
           query GetProjects {
             allProject {
                 title
@@ -86,11 +83,11 @@ export const getStaticProps: GetStaticProps = async (context) => {
             }
             }
         `,
-    });
+  });
 
-    return {
-        props: {
-            allProjects: data.allProject
-        }
+  return {
+    props: {
+      allProjects: data.allProject
     }
+  }
 }

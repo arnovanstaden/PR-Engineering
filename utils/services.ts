@@ -1,4 +1,4 @@
-import ServiceData from "../assets/data/services.json";
+import ServiceData from '../assets/data/services.json';
 
 export const getData = () => ServiceData;
 

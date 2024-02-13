@@ -1,40 +1,35 @@
-import { Fade } from "react-reveal"
-import NextImage from "../../UI/NextImage/NextImage";
-import Image from "next/image"
+import NextImage from '../../UI/NextImage/NextImage';
 
 // Styles
-import styles from "./lightbox.module.scss";
+import styles from './lightbox.module.scss';
 
 interface IProps {
-    image: string;
-    toggle: () => void
+  image: string;
+  toggle: () => void
 }
 
 const Lightbox = ({ image, toggle }: IProps) => {
+  if (image) {
+    document.body.classList.add('noscroll');
 
-    if (image) {
-        document.body.classList.add("noscroll");
+    return (
+      <div className={styles.box}>
+        <i className="icon-close" onClick={toggle}></i>
+        <div className={styles.overlay} onClick={toggle}>
+          <div className={styles.image}>
+            <NextImage
+              src={image}
+              alt="Enlarged Project Image"
+              priority
+              width={1600}
+            />
+          </div>
+        </div>
+      </div>
+    )
+  }
 
-        return (
-            <Fade duration={500}>
-                <div className={styles.box}>
-                    <i className="icon-close" onClick={toggle}></i>
-                    <div className={styles.overlay} onClick={toggle}>
-                        <div className={styles.image}>
-                            <NextImage
-                                src={image}
-                                alt="Enlarged Project Image"
-                                priority
-                                width={1600}
-                            />
-                        </div>
-                    </div>
-                </div>
-            </Fade>
-        )
-    }
-
-    return null
+  return null
 
 }
 

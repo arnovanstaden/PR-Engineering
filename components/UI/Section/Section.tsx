@@ -1,12 +1,12 @@
-import ClassNames from "classnames";
+import ClassNames from 'classnames';
 
 // Styles
-import styles from "./section.module.scss";
+import styles from './section.module.scss';
 
 interface IProps {
     children: React.ReactNode;
     heading?: string;
-    colour?: "light" | "dark";
+    colour?: 'light' | 'dark';
     number?: number;
     className?: string;
 }
@@ -14,8 +14,8 @@ interface IProps {
 const Section = ({ children, colour, heading, number, className }: IProps) => {
     const classes = ClassNames(
         styles.section,
-        colour === "light" ? styles.light : null,
-        colour === "dark" ? styles.dark : null,
+        colour === 'light' ? styles.light : null,
+        colour === 'dark' ? styles.dark : null,
     )
 
     return (

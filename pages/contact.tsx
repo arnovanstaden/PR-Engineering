@@ -1,18 +1,18 @@
 // Components
-import Page from "../components/UI/Page/Page";
-import Contact from "../components/Content/Contact/Contact"
-import PageHeading from "../components/UI/PageHeading/PageHeading";
+import Page from '../components/UI/Page/Page';
+import Contact from '../components/Content/Contact/Contact'
+import PageHeading from '../components/UI/PageHeading/PageHeading';
 
 // Styles
-import styles from "../styles/pages/contact.module.scss";
+import styles from '../styles/pages/contact.module.scss';
 
 const ContactPage = () => {
     return (
         <Page
             head={{
-                title: "Contact | PR Engineering",
-                description: "FIX THIS",
-                canonical: "/contact",
+                title: 'Contact | PR Engineering',
+                description: 'FIX THIS',
+                canonical: '/contact',
             }}
             className={styles.contact}
         >

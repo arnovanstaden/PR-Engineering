@@ -1,7 +1,7 @@
 import { Parallax } from 'react-parallax';
-import ClassNames from "classnames";
+import ClassNames from 'classnames';
 
-import styles from "./banner.module.scss"
+import styles from './banner.module.scss'
 
 interface IProps {
     children: React.ReactNode;
