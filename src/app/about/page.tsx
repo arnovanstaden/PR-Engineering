@@ -2,15 +2,15 @@ import PageHeading from '@components/UI/PageHeading/PageHeading';
 import Section from '@components/UI/Section/Section';
 import Banner from '@components/UI/Banner/Banner'
 import styles from './about.module.scss';
-import { Metadata } from 'next';
 import Image from 'next/image';
 import MapOfAfricaImage from '@static/images/pages/home/overview.png';
 import Icon from '@components/UI/Icon/Icon';
+import { generateCustomMetaData } from '@utils/metadata';
 
-export const metadata: Metadata = {
+export const metadata = generateCustomMetaData({
   title: 'About | PR Engineering',
-  description: 'FIX THIS',
-}
+  description: 'Learn more about what sets us apart, our history & values, our memberships and our amazing team.',
+});
 
 const About = () => {
   return (

@@ -1,18 +1,24 @@
-import { Metadata } from 'next'
-
-// Components
 import Section from '@components/UI/Section/Section';
-
-// Styles
-import styles from './[id].module.scss';
+import styles from './[slug].module.scss';
 import { getProject } from '@lib/projects';
 import { notFound } from 'next/navigation';
 import Image from 'next/image';
 import Icon from '@components/UI/Icon/Icon';
+import { generateCustomMetaData } from '@utils/metadata';
 
-export const metadata: Metadata = {
-  title: 'PR Engineering',
-  description: 'PR Engineering is a Dynamic and Experienced Consulting Engineering Firm offering Professional Value-Driven Consulting Engineering Solutions.',
+
+export async function generateMetadata({ params }) {
+  const project = await getProject(params.slug);
+
+  if (!project) {
+    return notFound();
+  }
+
+  return generateCustomMetaData({
+    title: `${project.title} | PR Engineering`,
+    description: `${project.location}, ${project.year} - ${project.description}`,
+    image: project.thumbnail.asset.url,
+  })
 }
 
 const Project: React.FC<{ params: { slug: string } }> = async ({ params }) => {
@@ -23,7 +29,7 @@ const Project: React.FC<{ params: { slug: string } }> = async ({ params }) => {
   }
 
   return (
-    <main >
+    <main className={styles.Project}>
       <section className={styles.landing}>
         <div className={styles.image}>
           <Image

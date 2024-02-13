@@ -1,22 +1,17 @@
-// Components
 import Section from '@components/UI/Section/Section';
 import Button from '@components/UI/Button/Button';
 import Contact from '@components/Content/Contact/Contact';
 import ProjectsGrid from '@components/Content/ProjectsGrid/ProjectsGrid'
 import Banner from '@components/UI/Banner/Banner'
-
-// Data
 import servicesData from '../../assets/data/services.json';
-
-// styles
 import styles from './home.module.scss';
-import { Metadata } from 'next';
 import Icon from '@components/UI/Icon/Icon';
+import { generateCustomMetaData } from '@utils/metadata';
 
-export const metadata: Metadata = {
+export const metadata = generateCustomMetaData({
   title: 'PR Engineering',
   description: 'PR Engineering is a Dynamic and Experienced Consulting Engineering Firm offering Professional Value-Driven Consulting Engineering Solutions.',
-}
+});
 
 const Home = ({ projects = [] }) => {
   return (
@@ -58,7 +53,7 @@ const Home = ({ projects = [] }) => {
           <Button link="/about" >Learn More</Button>
         </div>
         <div className={styles.image}>
-          <img src="/images/pages/home/overview.png" alt="Map of Africa" />
+          <img src="/static/images/pages/home/overview.png" alt="Map of Africa" />
         </div>
       </Section>
 

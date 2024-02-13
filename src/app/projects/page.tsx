@@ -1,14 +1,14 @@
 import Section from '@components/UI/Section/Section';
 import PageHeading from '@components/UI/PageHeading/PageHeading';
 import ProjectsGrid from '@components/Content/ProjectsGrid/ProjectsGrid'
-import { Metadata } from 'next';
 import styles from './projects.module.scss';
 import { getProjects } from '@lib/projects';
+import { generateCustomMetaData } from '@utils/metadata';
 
-export const metadata: Metadata = {
+export const metadata = generateCustomMetaData({
   title: 'Projects | PR Engineering',
-  description: 'PR Engineering is a Dynamic and Experienced Consulting Engineering Firm offering Professional Value-Driven Consulting Engineering Solutions.',
-}
+  description: 'Have a look at some of the ambitious projects we\'re working on or have completed.',
+});
 
 const Projects = async () => {
   const projects = await getProjects();

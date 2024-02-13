@@ -3,13 +3,13 @@ import PageHeading from '@components/UI/PageHeading/PageHeading';
 import Banner from '@components/UI/Banner/Banner';
 import servicesData from '../../assets/data/services.json';
 import styles from './services.module.scss';
-import { Metadata } from 'next';
 import Icon from '@components/UI/Icon/Icon';
+import { generateCustomMetaData } from '@utils/metadata';
 
-export const metadata: Metadata = {
+export const metadata = generateCustomMetaData({
   title: 'Services | PR Engineering',
-  description: 'PR Engineering is a Dynamic and Experienced Consulting Engineering Firm offering Professional Value-Driven Consulting Engineering Solutions.',
-}
+  description: 'PR Engineering provides comprehensive value engineering services for any scale project in and around Africa.',
+});
 
 const Services = () => {
   return (

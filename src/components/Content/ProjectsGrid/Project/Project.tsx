@@ -15,7 +15,7 @@ const Project = ({ project }) => {
           priority
         />
       </div>
-      <Link href={`/projects/${project.slug.current}`} className={styles.overlay}>
+      <Link href={`/projects/${project.slug}`} className={styles.overlay}>
         <div className={styles.content}>
           <h1>{project.title}</h1>
           <hr />

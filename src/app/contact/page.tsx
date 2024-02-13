@@ -1,13 +1,13 @@
 import Contact from '@components/Content/Contact/Contact'
 import PageHeading from '@components/UI/PageHeading/PageHeading';
 import styles from './contact.module.scss';
-import { Metadata } from 'next';
 import Container from '@components/UI/Container/Container';
+import { generateCustomMetaData } from '@utils/metadata';
 
-export const metadata: Metadata = {
+export const metadata = generateCustomMetaData({
   title: 'Contact | PR Engineering',
-  description: 'Get in touch with PR Engineering today.',
-}
+  description: 'Looking to get in touch? Find our contact details here or send us a message and we\'ll get back.',
+});
 
 const ContactPage = () => {
   return (
