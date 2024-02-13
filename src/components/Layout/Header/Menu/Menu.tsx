@@ -8,7 +8,7 @@ const Menu: React.FC<{ mobileNavToggle?: () => void }> = ({ mobileNavToggle }) =
   const pathname = usePathname();
 
   return (
-    <ul className={styles.menu}>
+    <ul className={styles.Menu}>
       {mobileNavToggle ?
         <li
           className={pathname == '/' ? styles.active : ''}

@@ -1,17 +1,17 @@
-import NextImage from '@components/UI/NextImage/NextImage';
 import Link from 'next/link';
 import styles from './Project.module.scss';
 import Icon from '@components/UI/Icon/Icon';
+import Image from 'next/image';
 
 const Project = ({ project }) => {
   return (
     <div className={styles.item}>
       <div className={styles.image}>
-        <NextImage
+        <Image
           src={project.thumbnail.asset.url}
           alt={project.title}
           width={400}
-          background
+          height={400}
           priority
         />
       </div>

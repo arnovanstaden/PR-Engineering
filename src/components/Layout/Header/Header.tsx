@@ -21,7 +21,9 @@ const Header = () => (
             <p>Engineering<sup>™</sup></p>
           </div>
         </Link>
-        <Menu />
+        <div className={styles.desktopNav}>
+          <Menu />
+        </div>
         <MobileMenu />
       </nav>
     </Container>

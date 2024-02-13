@@ -1,6 +1,6 @@
 .header {
   background-color: $grey;
-  padding: 1rem 0;
+  padding: 1.25rem 0;
   position: relative;
 
   .nav {
@@ -32,99 +32,11 @@
         }
       }
     }
-
-    .menu {
-      @include list-reset;
-      display: flex;
-      align-items: center;
-
-      li {
-        margin-left: 1rem;
-        color: $white;
-        text-transform: uppercase;
-        font-family: $heading-font;
-        font-weight: 400;
-        font-size: 1.05rem;
-        letter-spacing: 0.5px;
-
-        &:hover {
-          color: $blue;
-        }
-
-        &.active {
-          color: $blue;
-          font-weight: 500;
-        }
-
-
-      }
-    }
   }
 
-  .mobileNav {
-    z-index: 10;
-    display: flex;
-    align-items: center;
-
-    >i {
-      color: $white;
-      font-size: 1.5rem;
-      cursor: pointer;
-    }
-
-    .overlay {
-      position: fixed;
-      top: 0;
-      right: 0;
-      height: 100vh;
-      width: 0;
-      background-color: rgba($grey, 0.95);
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      box-sizing: border-box;
-      overflow: hidden;
-      transition: 0.3s ease-in-out;
-
-      >i {
-        position: absolute;
-        top: 1.5rem;
-        right: 1.5rem;
-        color: $white;
-        font-size: 1.4rem;
-        cursor: pointer;
-        padding: 0.1rem;
-      }
-
-      .menu {
-        padding: 1.5rem;
-        flex-direction: column;
-
-        li {
-          font-size: 1.1rem;
-          margin: 0.5rem 0;
-        }
-      }
-
-      .social {
-        position: absolute;
-        bottom: 5rem;
-        width: 100%;
-        display: flex;
-        justify-content: center;
-
-        i {
-          color: $white;
-          font-size: 1.4rem;
-          cursor: pointer;
-          padding: 0.5rem;
-        }
-      }
-    }
-
-    &.open .overlay {
-      width: 75vw;
-      border-left: 4px solid $blue;
+  @media (max-width: 768px) {
+    .desktopNav {
+      display: none;
     }
   }
 }

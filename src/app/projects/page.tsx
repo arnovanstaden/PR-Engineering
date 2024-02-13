@@ -2,7 +2,7 @@ import Section from '@components/UI/Section/Section';
 import PageHeading from '@components/UI/PageHeading/PageHeading';
 import ProjectsGrid from '@components/Content/ProjectsGrid/ProjectsGrid'
 import { Metadata } from 'next';
-import styles from './contact.module.scss';
+import styles from './projects.module.scss';
 import { getProjects } from '@lib/projects';
 
 export const metadata: Metadata = {
@@ -23,7 +23,6 @@ const Projects = async () => {
         colour="light"
         number={1}
       >
-
         <ProjectsGrid projects={projects} />
       </Section>
     </main>

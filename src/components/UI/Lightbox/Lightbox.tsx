@@ -1,5 +1,5 @@
+import Image from 'next/image';
 import Icon from '../Icon/Icon';
-import NextImage from '../NextImage/NextImage';
 
 // Styles
 import styles from './lightbox.module.scss';
@@ -18,7 +18,7 @@ const Lightbox = ({ image, toggle }: IProps) => {
         <Icon name="close" onClick={toggle} />
         <div className={styles.overlay} onClick={toggle}>
           <div className={styles.image}>
-            <NextImage
+            <Image
               src={image}
               alt="Enlarged Project Image"
               priority

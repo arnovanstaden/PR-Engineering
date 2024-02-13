@@ -1,27 +1,37 @@
 'use client';
 
-import { useRef } from 'react';
+import { useRef, useState } from 'react';
 import Menu from '../Menu/Menu';
 import styles from './MobileMenu.module.scss';
 import Icon from '@components/UI/Icon/Icon';
+import classNames from 'classnames';
 
 const MobileNav = () => {
   const navRef = useRef() as React.MutableRefObject<HTMLDivElement>;
+  const [open, setOpen] = useState(false);
 
   const toggleNav = () => {
-    const nav = navRef.current;
-    const body = document.body
-    if (nav) {
-      nav.classList.toggle(styles.open);
-      body.classList.toggle('noscroll')
-    }
+    setOpen((prev) => {
+      const body = document.body
+      if (prev === false) {
+        body.classList.add('noscroll');
+      } else {
+        body.classList.remove('noscroll');
+      }
+      return !prev;
+    })
   }
 
+  const classes = classNames(
+    styles.MobileMenu,
+    open && styles.open
+  )
+
   return (
-    <div className={styles.mobileNav} ref={navRef}>
-      <Icon name="menu" onClick={toggleNav} />
-      <div className={styles.overlay}>
-        <Icon name="close" onClick={toggleNav} />
+    <div className={classes} ref={navRef}>
+      <Icon name="menu" onClick={toggleNav} className={styles.menuIcon} size={24} />
+      <div className={styles.drawer}>
+        <Icon name="close" onClick={toggleNav} className={styles.closeButton} size={24} />
         <Menu mobileNavToggle={toggleNav} />
         <div className={styles.social}>
           <a href="https://www.instagram.com/prengineering/?hl=en" target="blank">

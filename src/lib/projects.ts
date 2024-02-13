@@ -8,7 +8,7 @@ const fakeProjects: IProject[] = [{
   category: 'Transportation',
   thumbnail: {
     asset: {
-      url: 'https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fwz51cnwa%2Fproduction%2F890bf0d773258a320c23d86d2a72bdd96e0d9029-4656x3492.jpg',
+      url: 'https://cdn.sanity.io/images/wz51cnwa/production/890bf0d773258a320c23d86d2a72bdd96e0d9029-4656x3492.jpg',
     }
   },
   slug: 'cruise-terminal-mergence',
