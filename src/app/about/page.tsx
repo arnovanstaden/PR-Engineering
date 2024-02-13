@@ -1,22 +1,17 @@
-// Components
-import Page from '../components/UI/Page/Page';
-import PageHeading from '../components/UI/PageHeading/PageHeading';
-import Section from '../components/UI/Section/Section';
-import Banner from '../components/UI/Banner/Banner'
+import PageHeading from '@components/UI/PageHeading/PageHeading';
+import Section from '@components/UI/Section/Section';
+import Banner from '@components/UI/Banner/Banner'
+import styles from './about.module.scss';
+import { Metadata } from 'next';
 
-// Styles
-import styles from '../styles/pages/about.module.scss';
+export const metadata: Metadata = {
+  title: 'About | PR Engineering',
+  description: 'FIX THIS',
+}
 
 const About = () => {
   return (
-    <Page
-      head={{
-        title: 'About | PR Engineering',
-        description: 'FIX THIS',
-        canonical: '/about',
-      }}
-      className={styles.about}
-    >
+    <main className={styles.AboutPage}>
       <PageHeading>
         <h1><span>About</span> Us.</h1>
       </PageHeading>
@@ -128,8 +123,7 @@ const About = () => {
         </article>
 
       </Section>
-
-    </Page>
+    </main>
   )
 }
 

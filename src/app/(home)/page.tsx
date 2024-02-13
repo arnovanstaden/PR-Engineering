@@ -1,9 +1,9 @@
 // Components
-import Section from '../../components/UI/Section/Section';
-import Button from '../../components/UI/Button/Button';
-import Contact from '../../components/Content/Contact/Contact';
-import ProjectsGrid from '../../components/Content/ProjectsGrid/ProjectsGrid'
-import Banner from '../../components/UI/Banner/Banner'
+import Section from '@components/UI/Section/Section';
+import Button from '@components/UI/Button/Button';
+import Contact from '@components/Content/Contact/Contact';
+import ProjectsGrid from '@components/Content/ProjectsGrid/ProjectsGrid'
+import Banner from '@components/UI/Banner/Banner'
 
 // Data
 import servicesData from '../../assets/data/services.json';

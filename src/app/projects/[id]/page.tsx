@@ -1,17 +1,21 @@
-import { client } from '../../utils/apollo-client';
+import { client } from '@utils/apollo-client';
 import { gql } from '@apollo/client';
-import { GetStaticProps } from 'next'
+import { GetStaticProps, Metadata } from 'next'
 import { GetStaticPaths } from 'next'
-import NextImage from '../../components/UI/NextImage/NextImage';
+import NextImage from '@components/UI/NextImage/NextImage';
 import { useState } from 'react';
 
 // Components
-import Page from '../../components/UI/Page/Page';
-import Section from '../../components/UI/Section/Section';
-import LightBox from '../../components/UI/Lightbox/Lightbox';
+import Section from '@components/UI/Section/Section';
+import LightBox from '@components/UI/Lightbox/Lightbox';
 
 // Styles
-import styles from '../../styles/pages/projects/[slug].module.scss';
+import styles from './[id].module.scss';
+
+export const metadata: Metadata = {
+  title: 'PR Engineering',
+  description: 'PR Engineering is a Dynamic and Experienced Consulting Engineering Firm offering Professional Value-Driven Consulting Engineering Solutions.',
+}
 
 const Project = ({ project }) => {
   const [lightboxImage, setLightboxImage] = useState(undefined);
@@ -22,14 +26,7 @@ const Project = ({ project }) => {
   }
 
   return (
-    <Page
-      head={{
-        title: `${project.title} | PR Engineering`,
-        description: `${project.description}`,
-        canonical: `/project/${project.slug}`,
-      }}
-      className={styles.project}
-    >
+    <main >
       <section className={styles.landing}>
         <div className={styles.image}>
           <NextImage
@@ -104,7 +101,7 @@ const Project = ({ project }) => {
       </Section>
 
       <LightBox image={lightboxImage} toggle={hideLightBox} />
-    </Page>
+    </main>
   )
 }
 
@@ -173,5 +170,4 @@ export const getStaticPaths: GetStaticPaths = async () => {
     paths,
     fallback: false
   }
-
 }

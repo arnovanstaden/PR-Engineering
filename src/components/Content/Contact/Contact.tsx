@@ -1,12 +1,8 @@
 'use client';
 
 import { MutableRefObject, useRef } from 'react';
-
-// Components
-import Button from '../../UI/Button/Button';
-
-// Styles
 import styles from './contact.module.scss';
+import Button from '@components/UI/Button/Button';
 
 
 const Contact = () => {

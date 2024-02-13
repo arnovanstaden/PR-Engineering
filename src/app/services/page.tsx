@@ -1,24 +1,18 @@
-import Page from '../components/UI/Page/Page';
-import Section from '../components/UI/Section/Section';
-import PageHeading from '../components/UI/PageHeading/PageHeading';
-import Banner from '../components/UI/Banner/Banner';
+import Section from '@components/UI/Section/Section';
+import PageHeading from '@components/UI/PageHeading/PageHeading';
+import Banner from '@components/UI/Banner/Banner';
+import servicesData from '../../assets/data/services.json';
+import styles from './services.module.scss';
+import { Metadata } from 'next';
 
-// Data
-import servicesData from '../assets/data/services.json';
-
-// Styles
-import styles from '../styles/pages/services.module.scss';
+export const metadata: Metadata = {
+  title: 'Services | PR Engineering',
+  description: 'PR Engineering is a Dynamic and Experienced Consulting Engineering Firm offering Professional Value-Driven Consulting Engineering Solutions.',
+}
 
 const Services = () => {
   return (
-    <Page
-      head={{
-        title: 'Services | PR Engineering',
-        description: 'FIX THIS',
-        canonical: '/services',
-      }}
-      className={styles.services}
-    >
+    <main className={styles.ServicesPage}>
       <PageHeading>
         <h1>Our <span>Services</span>.</h1>
       </PageHeading>
@@ -142,8 +136,6 @@ const Services = () => {
         </ul>
       </Section>
 
-
-
       <Section
         heading="Fire Engineering"
         number={4}
@@ -159,7 +151,7 @@ const Services = () => {
           ))}
         </ul>
       </Section>
-    </Page >
+    </main >
   )
 }
 
