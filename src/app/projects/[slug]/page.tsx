@@ -1,40 +1,35 @@
-import { client } from '@utils/apollo-client';
-import { gql } from '@apollo/client';
-import { GetStaticProps, Metadata } from 'next'
-import { GetStaticPaths } from 'next'
-import NextImage from '@components/UI/NextImage/NextImage';
-import { useState } from 'react';
+import { Metadata } from 'next'
 
 // Components
 import Section from '@components/UI/Section/Section';
-import LightBox from '@components/UI/Lightbox/Lightbox';
 
 // Styles
 import styles from './[id].module.scss';
+import { getProject } from '@lib/projects';
+import { notFound } from 'next/navigation';
+import Image from 'next/image';
 
 export const metadata: Metadata = {
   title: 'PR Engineering',
   description: 'PR Engineering is a Dynamic and Experienced Consulting Engineering Firm offering Professional Value-Driven Consulting Engineering Solutions.',
 }
 
-const Project = ({ project }) => {
-  const [lightboxImage, setLightboxImage] = useState(undefined);
+const Project: React.FC<{ params: { slug: string } }> = async ({ params }) => {
+  const project = await getProject(params.slug);
 
-  const hideLightBox = () => {
-    setLightboxImage(undefined)
-    document.body.classList.remove('noscroll')
+  if (!project) {
+    return notFound();
   }
 
   return (
     <main >
       <section className={styles.landing}>
         <div className={styles.image}>
-          <NextImage
+          <Image
             src={project.thumbnail.asset.url}
             alt={project.title}
-            width={1920}
-            background
             priority
+            fill
           />
         </div>
         <div className={styles.overlay}>
@@ -83,8 +78,8 @@ const Project = ({ project }) => {
         colour="light"
       >
         <div className={styles.grid}>
-          {project.images.map((image, index) => (
-            <div className={styles.item} key={index} onClick={() => setLightboxImage(image.asset.url)}>
+          {/* {project.images.map((image, index) => (
+            <div className={styles.item} key={index} >
               <div className={styles.image}>
                 <div className={styles.overlay}></div>
                 <NextImage
@@ -96,78 +91,12 @@ const Project = ({ project }) => {
                 />
               </div>
             </div>
-          ))}
+          ))} */}
         </div>
       </Section>
-
-      <LightBox image={lightboxImage} toggle={hideLightBox} />
+      {/* <LightBox image={lightboxImage} toggle={hideLightBox} /> */}
     </main>
   )
 }
 
-export default Project
-
-export const getStaticProps: GetStaticProps = async ({ params }) => {
-  // FIX THIS - GraphQL Vars
-  const { data } = await client.query({
-    query: gql`
-          query GetProjects {
-            allProject {
-                title
-                description
-                type
-                services
-                location
-                year
-                slug {
-                    current
-                    }
-                thumbnail {
-                    asset {
-                        url
-                        }
-                }
-                images {
-                    asset {
-                        url
-                        }
-                }
-            }
-            }
-        `,
-  });
-
-  const project = data.allProject.filter(project => project.slug.current === params!.slug)[0]
-
-  return {
-    props: {
-      project,
-    },
-  }
-}
-
-
-export const getStaticPaths: GetStaticPaths = async () => {
-  const { data } = await client.query({
-    query: gql`
-          query GetProjects {
-            allProject {
-                slug {
-                current
-                }
-            }
-          }
-        `,
-  });
-
-  const paths = data.allProject.map((project) => ({
-    params: {
-      slug: project.slug.current
-    },
-  }))
-
-  return {
-    paths,
-    fallback: false
-  }
-}
+export default Project;

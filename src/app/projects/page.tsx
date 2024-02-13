@@ -3,13 +3,16 @@ import PageHeading from '@components/UI/PageHeading/PageHeading';
 import ProjectsGrid from '@components/Content/ProjectsGrid/ProjectsGrid'
 import { Metadata } from 'next';
 import styles from './contact.module.scss';
+import { getProjects } from '@lib/projects';
 
 export const metadata: Metadata = {
   title: 'Projects | PR Engineering',
   description: 'PR Engineering is a Dynamic and Experienced Consulting Engineering Firm offering Professional Value-Driven Consulting Engineering Solutions.',
 }
 
-const Projects = ({ projects = [] }) => {
+const Projects = async () => {
+  const projects = await getProjects();
+
   return (
     <main className={styles.ProjectsPage}>
       <PageHeading dark={true}>
@@ -27,32 +30,4 @@ const Projects = ({ projects = [] }) => {
   )
 }
 
-export default Projects
-
-// export const getStaticProps: GetStaticProps = async () => {
-//   const { data } = await await client.query({
-//     query: gql`
-//           query GetProjects {
-//             allProject {
-//                 title
-//                 location
-//                 type
-//                 slug {
-//                     current
-//                     }
-//                 thumbnail {
-//                 asset {
-//                         url
-//                     }
-//                 }
-//             }
-//             }
-//         `,
-//   });
-
-//   return {
-//     props: {
-//       allProjects: data.allProject
-//     }
-//   }
-// }
+export default Projects;
