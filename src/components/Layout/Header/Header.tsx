@@ -4,10 +4,11 @@ import MobileMenu from './MobileMenu/MobileMenu';
 import Menu from './Menu/Menu';
 import logo from '@static/images/logos/logo.svg';
 import Image from 'next/image';
+import Container from '@components/UI/Container/Container';
 
 const Header = () => (
   <header className={styles.header}>
-    <div className="container">
+    <Container>
       <nav className={styles.nav}>
         <Link href="/">
           <div className={styles.logo}>
@@ -23,7 +24,7 @@ const Header = () => (
         <Menu />
         <MobileMenu />
       </nav>
-    </div>
+    </Container>
   </header>
 );
 

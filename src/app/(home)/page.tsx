@@ -32,7 +32,7 @@ const Home = ({ projects = [] }) => {
               <h2>Mechanical, Fire and Electrical Engineers</h2>
               <div className={styles.actions}>
                 <Button link="/services">What We Do</Button>
-                <Button link="/contact">Get In Touch"</Button>
+                <Button link="/contact">Get In Touch</Button>
               </div>
             </div>
           </div>
@@ -70,7 +70,7 @@ const Home = ({ projects = [] }) => {
       </Section>
 
       <Banner
-        img="/images/pages/home/banner.png"
+        img="/static/images/pages/home/banner.png"
       >
         <h1>We aim to ensure excellent <span>service delivery</span> with <span>cost efficient</span> solutions across <span>Africa</span>.</h1>
       </Banner>

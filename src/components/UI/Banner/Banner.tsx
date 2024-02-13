@@ -1,6 +1,8 @@
 import ClassNames from 'classnames';
 
 import styles from './banner.module.scss'
+import Image from 'next/image';
+import Container from '../Container/Container';
 
 interface IProps {
   children: React.ReactNode;
@@ -9,7 +11,7 @@ interface IProps {
   blur?: boolean
 }
 
-const Banner = ({ children, dark }: IProps) => {
+const Banner = ({ children, dark, img }: IProps) => {
   const classes = ClassNames(
     styles.banner,
     dark ? styles.dark : null
@@ -17,17 +19,24 @@ const Banner = ({ children, dark }: IProps) => {
 
   return (
     <div className={classes}>
-      <div className={styles.inner}>
-        <div className="container">
+      <Container>
+        <div className={styles.content}>
           <div className={styles.grid}>
-            <div></div>
             <div className={styles.content}>
               {children}
             </div>
           </div>
         </div>
+      </Container>
+
+      <div className={styles.image}>
+        <div className={styles.overlay} />
+        <Image
+          src={img}
+          alt="Banner Image"
+          fill
+        />
       </div>
-      <div className={styles.overlay}></div>
     </div>
   )
 }

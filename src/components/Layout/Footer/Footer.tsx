@@ -5,6 +5,7 @@ import { usePathname } from 'next/navigation'
 import logo from '@static/images/logos/logo-white-text.png';
 import styles from './footer.module.scss';
 import Image from 'next/image';
+import Container from '@components/UI/Container/Container';
 
 const Footer = () => {
   const date = new Date();
@@ -13,7 +14,7 @@ const Footer = () => {
 
   return (
     <footer className={styles.footer}>
-      <div className="container">
+      <Container>
         <div className={`${styles.grid} ${styles.content}`}>
           <Link href="/" className={styles.logo}>
             <Image
@@ -85,7 +86,7 @@ const Footer = () => {
           <p>© {currentYear} - PR Engineering Africa (PTY) LTD.</p>
           <p>Design &amp; Development by <a target="blank" href="https://webdacity.dev">Webdacity</a></p>
         </div>
-      </div>
+      </Container>
     </footer>
   )
 }

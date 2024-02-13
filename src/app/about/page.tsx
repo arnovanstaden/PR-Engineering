@@ -3,6 +3,8 @@ import Section from '@components/UI/Section/Section';
 import Banner from '@components/UI/Banner/Banner'
 import styles from './about.module.scss';
 import { Metadata } from 'next';
+import Image from 'next/image';
+import MapOfAfricaImage from '@static/images/pages/home/overview.png';
 
 export const metadata: Metadata = {
   title: 'About | PR Engineering',
@@ -35,7 +37,11 @@ const About = () => {
           </div>
         </div>
         <div className={styles.image}>
-          <img src="/images/pages/home/overview.png" alt="Map of Africa" />
+          <Image
+            alt="Map of Africa"
+            priority
+            src={MapOfAfricaImage}
+          />
         </div>
       </Section>
 
@@ -64,7 +70,7 @@ const About = () => {
       </Section>
 
       <Banner
-        img="/images/pages/about/banner.png"
+        img="/static/images/pages/about/banner.png"
         dark
       >
         <h1>Another cool phrase here with some <span>highlighted keywords</span>.</h1>
@@ -75,13 +81,42 @@ const About = () => {
         number={3}
         className={styles.memberships}
       >
-        <img src="/images/pages/about/ECSA-Logo.png" alt="ECSA-Logo" />
-        <img src="/images/pages/about/GBCSA-Logo.png" alt="GBCSA-Logo" />
-        <img src="/images/pages/about/ASHRAE-Logo.png" alt="SAIMECHE-Logo" />
-        <img src="/images/pages/about/SAIRAC_2012_web.png" alt="SAIMECHE-Logo" />
-        <img src="/images/pages/about/revit-logo.png" alt="SAIMECHE-Logo" />
-        <img src="/images/pages/about/AutoCAD-logo.png" alt="SAIMECHE-Logo" />
-
+        <Image
+          src="/static/images/pages/about/ECSA-Logo.png"
+          alt="ECSA-Logo"
+          width={200}
+          height={90}
+        />
+        <Image
+          src="/static/images/pages/about/GBCSA-Logo.png"
+          alt="GBCSA-Logo"
+          width={200}
+          height={90}
+        />
+        <Image
+          src="/static/images/pages/about/ASHRAE-Logo.png"
+          alt="SAIMECHE-Logo"
+          width={200}
+          height={90}
+        />
+        <Image
+          src="/static/images/pages/about/SAIRAC_2012_web.png"
+          alt="SAIMECHE-Logo"
+          width={200}
+          height={90}
+        />
+        <Image
+          src="/static/images/pages/about/revit-logo.png"
+          alt="SAIMECHE-Logo"
+          width={200}
+          height={90}
+        />
+        <Image
+          src="/static/images/pages/about/AutoCAD-logo.png"
+          alt="SAIMECHE-Logo"
+          width={200}
+          height={90}
+        />
       </Section>
 
       <Section

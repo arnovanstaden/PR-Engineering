@@ -10,13 +10,14 @@ const openSans = Open_Sans({
   subsets: ['latin'],
   display: 'swap',
   variable: '--font-open-sans',
+  weight: ['500', '600', '700'],
 })
 
 const titilliumWeb = Titillium_Web({
   subsets: ['latin'],
   display: 'swap',
   variable: '--font-titillium-web',
-  weight: ['300', '400', '600'],
+  weight: ['300', '400', '600', '700'],
 })
 
 const RootLayout: React.FC<{ children: React.ReactNode }> = ({ children }) => {

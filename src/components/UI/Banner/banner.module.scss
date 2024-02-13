@@ -1,14 +1,27 @@
 .banner {
   position: relative;
 
-  .overlay {
+  .image {
     position: absolute;
-    z-index: 0;
-    background-color: rgba($color: $lightgrey, $alpha: 0.1);
-    width: 100%;
-    height: 100%;
     top: 0;
     left: 0;
+    height: 100%;
+    width: 100%;
+
+    img {
+      object-fit: cover;
+      object-position: center;
+    }
+
+    .overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      background-color: rgba($lightgrey, 0.1);
+      z-index: 1;
+    }
   }
 
   &.dark {
@@ -17,7 +30,7 @@
     }
   }
 
-  .inner {
+  .content {
     display: flex;
     align-items: center;
     box-sizing: border-box;

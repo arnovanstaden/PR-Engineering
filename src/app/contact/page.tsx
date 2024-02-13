@@ -2,6 +2,7 @@ import Contact from '@components/Content/Contact/Contact'
 import PageHeading from '@components/UI/PageHeading/PageHeading';
 import styles from './contact.module.scss';
 import { Metadata } from 'next';
+import Container from '@components/UI/Container/Container';
 
 export const metadata: Metadata = {
   title: 'Contact | PR Engineering',
@@ -16,13 +17,13 @@ const ContactPage = () => {
       </PageHeading>
 
       <section className={styles.content}>
-        <div className="container">
+        <Container>
           <Contact />
 
           <div className={styles.map}>
             <iframe src="https://snazzymaps.com/embed/161128"></iframe>
           </div>
-        </div>
+        </Container>
       </section>
     </main>
   )

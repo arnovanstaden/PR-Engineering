@@ -100,7 +100,7 @@ const Services = () => {
       </Section>
 
       <Banner
-        img="/images/pages/services/banner.png"
+        img="/static/images/pages/services/banner.png"
       >
         <h1>We aspire to provide the <span>highest quality engineering services</span> in our chosen field of expertise to ensure excellent service delivery with cost efficient solutions <span>across Africa</span>.</h1>
       </Banner>
