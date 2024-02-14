@@ -76,7 +76,7 @@ const About = () => {
         img="/static/images/pages/about/banner.png"
         dark
       >
-        <h1>Another cool phrase here with some <span>highlighted keywords</span>.</h1>
+        <h1>Discover top-tier <span>engineering solutions</span> for streamlined <span>project delivery</span> throughout <span>Africa</span>.</h1>
       </Banner>
 
       <Section
