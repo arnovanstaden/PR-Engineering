@@ -21,7 +21,8 @@ const ProjectGallery: React.FC<{ images: string[] }> = ({ images }) => {
             <Image
               src={image}
               alt="Project Image"
-              fill
+              width={400}
+              height={300}
             />
           </div>
         ))
