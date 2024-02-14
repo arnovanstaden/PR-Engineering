@@ -10,6 +10,7 @@ import { generateCustomMetaData } from '@utils/metadata';
 import MapOfAfricaImage from '@static/images/pages/home/overview.png';
 import Image from 'next/image';
 import { getProjects } from '@lib/sanity';
+import Container from '@components/UI/Container/Container';
 
 export const metadata = generateCustomMetaData({
   title: 'PR Engineering',
@@ -27,7 +28,7 @@ const Home = async () => {
           <source src={'/videos/landing1.mp4'} type="video/mp4" />
         </video>
         <div className={styles.overlay}>
-          <div className="container">
+          <Container>
             <div className={styles.content}>
               <h1>PR Engineering<sup>™</sup></h1>
               <hr />
@@ -37,7 +38,7 @@ const Home = async () => {
                 <Button link="/contact">Get In Touch</Button>
               </div>
             </div>
-          </div>
+          </Container>
           <div className={styles.social}>
             <a href="https://www.instagram.com/prengineering/?hl=en" target="blank">
               <Icon name="instagram" size={20} />

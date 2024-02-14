@@ -22,7 +22,6 @@
       }
     }
 
-
     .image {
       width: 40%;
       position: relative;
@@ -110,10 +109,8 @@
 
   @media screen and (max-width:600px) {
     .memberships {
-
-      img {
-        width: 8rem;
-      }
+      grid-template-columns: 1fr;
+      justify-items: center;
     }
   }
 }

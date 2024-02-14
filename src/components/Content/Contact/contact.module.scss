@@ -150,4 +150,15 @@
       min-height: 300px;
     }
   }
+
+  @media screen and (max-width: 991px) {
+    .form form {
+      grid-template-columns: 1fr;
+
+      .group.row,
+      .button {
+        grid-column: 1/2;
+      }
+    }
+  }
 }
