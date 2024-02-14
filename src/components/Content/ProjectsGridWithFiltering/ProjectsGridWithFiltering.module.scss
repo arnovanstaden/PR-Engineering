@@ -3,6 +3,52 @@
     margin-bottom: 2rem;
     display: flex;
     flex-wrap: wrap;
-    gap: 1.5rem;
+    align-items: center;
+    gap: 1rem;
+
+    button {
+      margin-top: 0;
+    }
+  }
+
+  .mobileFilter {
+    position: relative;
+    display: none;
+    margin-bottom: 2rem;
+    z-index: 2;
+
+    .select {
+      border: 1px solid $blue;
+
+      [class*="control"] {
+        padding: 8px;
+      }
+
+
+      [class*="Menu"] {
+        border: 1px solid $blue;
+        padding: 8px;
+        background-color: $lightgrey;
+      }
+
+      [class*="option"] {
+        border-bottom: 1px solid $blue;
+        padding: 8px;
+
+        &:last-child {
+          border-bottom: none;
+        }
+      }
+    }
+  }
+
+  @media screen and (max-width: 991px) {
+    .filter {
+      display: none;
+    }
+
+    .mobileFilter {
+      display: block;
+    }
   }
 }

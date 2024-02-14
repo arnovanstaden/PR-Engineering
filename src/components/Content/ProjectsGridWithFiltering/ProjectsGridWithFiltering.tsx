@@ -7,6 +7,7 @@ import { useEffect, useState } from 'react';
 import { IProject } from '@types';
 import { useRouter, useSearchParams } from 'next/navigation';
 import ProjectsGrid from '../ProjectsGrid/ProjectsGrid';
+import Select from 'react-select';
 
 const ProjectsGridWithFiltering: React.FC<{ projects: IProject[] }> = ({ projects }) => {
   const [filteredProjects, setProjects] = useState(projects);
@@ -44,17 +45,26 @@ const ProjectsGridWithFiltering: React.FC<{ projects: IProject[] }> = ({ project
     handleFilterService(service);
   }, [service]);
 
-  const getFilters = () => {
-    const categories = projects.map(project => project.category);
-    const uniqueCategories = [...new Set(categories)];
-    return uniqueCategories
+  const categoryFilterItems = [...new Set(projects.map(project => project.category))];
+
+  const defaultSelectValue = {
+    value: 'All Projects',
+    label: 'All Projects'
   }
+
+  const reactSelectOptions = [
+    defaultSelectValue,
+    ...categoryFilterItems.map((category) => ({
+      value: category,
+      label: category
+    }))
+  ];
 
   return (
     <div className={styles.ProjectsGridWithFiltering}>
       <div className={styles.filter}>
         <Button hollow click={() => router.replace('/projects')} >All Projects</Button>
-        {getFilters().map((type, index) => (
+        {categoryFilterItems.map((type, index) => (
           <Button
             key={index}
             hollow
@@ -63,6 +73,20 @@ const ProjectsGridWithFiltering: React.FC<{ projects: IProject[] }> = ({ project
             {`${type} Projects`}
           </Button>
         ))}
+      </div>
+      <div className={styles.mobileFilter}>
+        <Select
+          id="category"
+          defaultValue={defaultSelectValue}
+          value={category ? { value: category, label: category } : defaultSelectValue}
+          onChange={(option) => {
+            option.value === 'All Projects' ? router.replace('/projects') : router.replace(`/projects?category=${option.value}`)
+          }}
+          options={reactSelectOptions}
+          unstyled
+          className={styles.select}
+          defaultMenuIsOpen
+        />
       </div>
       <ProjectsGrid projects={filteredProjects} />
     </div>
