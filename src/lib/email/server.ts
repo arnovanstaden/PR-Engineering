@@ -8,15 +8,15 @@ const getTransporter = async () => {
 
   if (!transporter) {
     transporter = await nodemailer.createTransport({
-      host: 'mail.engpr.com',
-      port: 465,
-      secure: true, // upgrade later with STARTTLS
+      host: 'smtp-mail.outlook.com',
+      port: 587,
+      secureConnection: false,
       auth: {
         user: 'info@engpr.com',
         pass: process.env.NODEMAILER_PW
       },
       tls: {
-        ciphers: 'SSLv3'
+        ciphers: 'SSLv3',
       }
     });
 
@@ -51,8 +51,9 @@ export const sendEmail = async ({ subject, body, recipient }: SendEmail): Promis
   await transporter.sendMail(message, (error) => {
     if (error) {
       console.error(error);
+      return;
     }
-  });
 
-  console.log(`Email Sent to ${to}`);
+    console.log(`Email Sent to ${to}`);
+  });
 }
