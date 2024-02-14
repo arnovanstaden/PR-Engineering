@@ -12,11 +12,17 @@ const ProjectsGridWithFiltering: React.FC<{ projects: IProject[] }> = ({ project
   const [filteredProjects, setProjects] = useState(projects);
   const searchParams = useSearchParams()
   const category = searchParams.get('category')
+  const service = searchParams.get('service')
   const router = useRouter();
 
   // Handlers
-  const handleFilter = (category: string) => {
+  const handleFilterCategory = (category: string) => {
     const newProjects = projects.filter(project => project.category === category);
+    setProjects(newProjects)
+  }
+
+  const handleFilterService = (service: string) => {
+    const newProjects = projects.filter(project => project.services.includes(decodeURIComponent(service)));
     setProjects(newProjects)
   }
 
@@ -26,8 +32,17 @@ const ProjectsGridWithFiltering: React.FC<{ projects: IProject[] }> = ({ project
       return;
 
     }
-    handleFilter(category);
+    handleFilterCategory(category);
   }, [category]);
+
+  useEffect(() => {
+    if (!service) {
+      setProjects(projects);
+      return;
+
+    }
+    handleFilterService(service);
+  }, [service]);
 
   const getFilters = () => {
     const categories = projects.map(project => project.category);

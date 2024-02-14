@@ -11,11 +11,10 @@ const client = createClient({
 
 const buildGROQ = (slug?: string): string => (
   `*[_type == "project"${slug ? ` && slug.current == "${slug}"` : ''}]{
-    id,
     title,
     "slug": slug.current,
     description,
-    services,
+    "services": services[]->title,
     "category":category->title,
     location,
     year,

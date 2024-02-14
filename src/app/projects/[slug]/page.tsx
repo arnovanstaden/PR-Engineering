@@ -76,7 +76,15 @@ const Project: React.FC<{ params: { slug: string } }> = async ({ params }) => {
                 </Link>
               </li>
               <li>
-                <span>Services:</span>{project.services}
+                <span>Services:</span>
+                {
+                  project.services.map((service, index) => (
+                    <Link href={`/projects?service=${service}`} key={index}>
+                      {service}
+                      {', '}
+                    </Link>
+                  ))
+                }
               </li>
               <li>
                 <span>Date:</span>{project.year}
