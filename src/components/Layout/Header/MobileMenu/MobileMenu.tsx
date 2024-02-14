@@ -5,18 +5,19 @@ import Menu from '../Menu/Menu';
 import styles from './MobileMenu.module.scss';
 import Icon from '@components/UI/Icon/Icon';
 import classNames from 'classnames';
+import useFreezeScrolling from 'src/hooks/useFreezeScrolling';
 
 const MobileNav = () => {
   const navRef = useRef() as React.MutableRefObject<HTMLDivElement>;
   const [open, setOpen] = useState(false);
+  const { freezeScrolling, unfreezeScrolling } = useFreezeScrolling()
 
   const toggleNav = () => {
     setOpen((prev) => {
-      const body = document.body
       if (prev === false) {
-        body.classList.add('noscroll');
+        freezeScrolling();
       } else {
-        body.classList.remove('noscroll');
+        unfreezeScrolling();
       }
       return !prev;
     })

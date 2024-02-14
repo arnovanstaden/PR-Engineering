@@ -3,23 +3,24 @@
 import Button from '@components/UI/Button/Button';
 
 // Styles
-import styles from './grid.module.scss';
+import styles from './ProjectsGrid.module.scss';
 import { useState } from 'react';
 import Project from './Project/Project';
+import { IProject } from '@types';
 
-const ProjectsGrid = ({ projects }) => {
+const ProjectsGrid: React.FC<{ projects: IProject[] }> = ({ projects }) => {
   const [filteredProjects, setProjects] = useState(projects);
 
   // Handlers
-  const handleFilter = (type) => {
-    const newProjects = projects.filter(project => project.type === type);
+  const handleFilter = (category: string) => {
+    const newProjects = projects.filter(project => project.category === category);
     setProjects(newProjects)
   }
 
   const getFilters = () => {
-    const types = projects.map(project => project.type);
-    const uniqueTypes = [...new Set(types)];
-    return uniqueTypes
+    const categories = projects.map(project => project.category);
+    const uniqueCategories = [...new Set(categories)];
+    return uniqueCategories
   }
 
   const resetFilter = () => {
@@ -27,7 +28,7 @@ const ProjectsGrid = ({ projects }) => {
   }
 
   return (
-    <div className={styles.grid}>
+    <div className={styles.ProjectsGrid}>
       <div className={styles.filter}>
         <Button hollow click={resetFilter} >All Projects</Button>
         {getFilters().map((type, index) => (
@@ -39,9 +40,11 @@ const ProjectsGrid = ({ projects }) => {
           </Button>
         ))}
       </div>
-      {filteredProjects.map((project, index) => (
-        <Project project={project} key={index} />
-      ))}
+      <div className={styles.grid}>
+        {filteredProjects.map((project, index) => (
+          <Project {...project} key={index} />
+        ))}
+      </div>
     </div>
   )
 }

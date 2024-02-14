@@ -6,6 +6,9 @@ import Header from '@components/Layout/Header/Header';
 import Footer from '@components/Layout/Footer/Footer';
 import localFont from 'next/font/local';
 
+
+export const revalidate = process.env.NODE_ENV === 'development' ? 0 : false;
+
 // If loading a variable font, you don't need to specify the font weight
 const openSans = Open_Sans({
   subsets: ['latin'],

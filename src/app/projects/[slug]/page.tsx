@@ -1,10 +1,11 @@
 import Section from '@components/UI/Section/Section';
 import styles from './[slug].module.scss';
-import { getProject } from '@lib/projects';
+import { getProject } from '@lib/sanity';
 import { notFound } from 'next/navigation';
 import Image from 'next/image';
 import Icon from '@components/UI/Icon/Icon';
 import { generateCustomMetaData } from '@utils/metadata';
+import ProjectGallery from '@components/Content/ProjectGallery/ProjectGallery';
 
 
 export async function generateMetadata({ params }) {
@@ -17,7 +18,7 @@ export async function generateMetadata({ params }) {
   return generateCustomMetaData({
     title: `${project.title} | PR Engineering`,
     description: `${project.location}, ${project.year} - ${project.description}`,
-    image: project.thumbnail.asset.url,
+    image: project.thumbnail,
   })
 }
 
@@ -33,7 +34,7 @@ const Project: React.FC<{ params: { slug: string } }> = async ({ params }) => {
       <section className={styles.landing}>
         <div className={styles.image}>
           <Image
-            src={project.thumbnail.asset.url}
+            src={project.thumbnail}
             alt={project.title}
             priority
             fill
@@ -78,30 +79,16 @@ const Project: React.FC<{ params: { slug: string } }> = async ({ params }) => {
         </div>
       </Section>
 
-      <Section
-        className={styles.gallery}
-        heading="Project Gallery"
-        number={2}
-        colour="light"
-      >
-        <div className={styles.grid}>
-          {/* {project.images.map((image, index) => (
-            <div className={styles.item} key={index} >
-              <div className={styles.image}>
-                <div className={styles.overlay}></div>
-                <NextImage
-                  src={image.asset.url}
-                  alt={project.title}
-                  width={400}
-                  background
-                  priority
-                />
-              </div>
-            </div>
-          ))} */}
-        </div>
-      </Section>
-      {/* <LightBox image={lightboxImage} toggle={hideLightBox} /> */}
+      {project.images.length > 0 && (
+        <Section
+          className={styles.gallery}
+          heading="Project Gallery"
+          number={2}
+          colour="light"
+        >
+          <ProjectGallery images={project.images} />
+        </Section>
+      )}
     </main>
   )
 }

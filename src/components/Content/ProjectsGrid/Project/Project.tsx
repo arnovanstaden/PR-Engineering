@@ -2,16 +2,17 @@ import Link from 'next/link';
 import styles from './Project.module.scss';
 import Icon from '@components/UI/Icon/Icon';
 import Image from 'next/image';
+import { IProject } from '@types';
 
-const Project = ({ project }) => {
+const Project: React.FC<IProject> = (project) => {
   return (
-    <div className={styles.item}>
+    <div className={styles.Project}>
       <div className={styles.image}>
         <Image
-          src={project.thumbnail.asset.url}
+          src={project.thumbnail}
           alt={project.title}
-          width={400}
-          height={400}
+          width={500}
+          height={250}
           priority
         />
       </div>
