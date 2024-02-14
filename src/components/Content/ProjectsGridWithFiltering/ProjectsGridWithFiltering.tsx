@@ -10,47 +10,32 @@ import ProjectsGrid from '../ProjectsGrid/ProjectsGrid';
 import Select from 'react-select';
 
 const ProjectsGridWithFiltering: React.FC<{ projects: IProject[] }> = ({ projects }) => {
-  const [filteredProjects, setProjects] = useState(projects);
-  const searchParams = useSearchParams()
-  const category = searchParams.get('category')
-  const service = searchParams.get('service')
+  const [filteredProjects, setFilteredProjects] = useState<IProject[]>(projects);
+  const searchParams = useSearchParams();
+  const category = searchParams.get('category');
+  const service = searchParams.get('service');
   const router = useRouter();
 
-  // Handlers
-  const handleFilterCategory = (category: string) => {
-    const newProjects = projects.filter(project => project.category === category);
-    setProjects(newProjects)
-  }
-
-  const handleFilterService = (service: string) => {
-    const newProjects = projects.filter(project => project.services.includes(decodeURIComponent(service)));
-    setProjects(newProjects)
-  }
-
   useEffect(() => {
-    if (!category) {
-      setProjects(projects);
-      return;
+    let newProjects = projects;
 
+    if (category) {
+      newProjects = newProjects.filter(project => project.category === decodeURIComponent(category));
     }
-    handleFilterCategory(category);
-  }, [category]);
 
-  useEffect(() => {
-    if (!service) {
-      setProjects(projects);
-      return;
-
+    if (service) {
+      newProjects = newProjects.filter(project => project.services.includes(decodeURIComponent(service)));
     }
-    handleFilterService(service);
-  }, [service]);
+
+    setFilteredProjects(newProjects);
+  }, [category, service, projects]);
 
   const categoryFilterItems = [...new Set(projects.map(project => project.category))];
 
   const defaultSelectValue = {
     value: 'All Projects',
     label: 'All Projects'
-  }
+  };
 
   const reactSelectOptions = [
     defaultSelectValue,

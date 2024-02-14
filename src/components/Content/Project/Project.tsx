@@ -11,8 +11,8 @@ const Project: React.FC<IProject> = (project) => {
         <Image
           src={project.thumbnail}
           alt={project.title}
-          fill
-          priority
+          width={400}
+          height={300}
         />
       </div>
       <Link href={`/projects/${project.slug}`} className={styles.overlay}>
