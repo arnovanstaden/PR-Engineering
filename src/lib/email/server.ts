@@ -8,11 +8,11 @@ const getTransporter = async () => {
 
   if (!transporter) {
     transporter = await nodemailer.createTransport({
-      host: 'mail.dmerworldwide.com',
+      host: 'mail.engpr.com',
       port: 465,
       secure: true, // upgrade later with STARTTLS
       auth: {
-        user: 'orders@dmerworldwide.com',
+        user: 'info@engpr.com',
         pass: process.env.NODEMAILER_PW
       },
       tls: {
@@ -24,7 +24,7 @@ const getTransporter = async () => {
       if (error) {
         console.error(error);
       } else {
-        console.log('Server is ready to take our messages (orders@dmerworldwide.com)');
+        console.log('Server is ready to take our messages (info@engpr.com)');
       }
     });
   }
@@ -40,7 +40,7 @@ interface SendEmail {
 
 export const sendEmail = async ({ subject, body, recipient }: SendEmail): Promise<void> => {
   const transporter = await getTransporter();
-  const to = recipient || process.env.NODEMAILER_CONTACT;
+  const to = recipient || process.env.NODEMAILER_CONTACT_EMAIL;
   const message = {
     from: 'PR Engineering Website <info@engpr.com>',
     to,
