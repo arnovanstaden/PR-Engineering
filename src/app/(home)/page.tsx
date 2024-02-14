@@ -9,13 +9,17 @@ import Icon from '@components/UI/Icon/Icon';
 import { generateCustomMetaData } from '@utils/metadata';
 import MapOfAfricaImage from '@static/images/pages/home/overview.png';
 import Image from 'next/image';
+import { getProjects } from '@lib/sanity';
 
 export const metadata = generateCustomMetaData({
   title: 'PR Engineering',
   description: 'PR Engineering is a Dynamic and Experienced Consulting Engineering Firm offering Professional Value-Driven Consulting Engineering Solutions.',
 });
 
-const Home = ({ projects = [] }) => {
+const Home = async () => {
+  const projects = await getProjects();
+  const homePageProjects = projects.filter(project => project.home === true);
+
   return (
     <main className={styles.HomePage}>
       <section className={styles.landing}>
@@ -65,11 +69,11 @@ const Home = ({ projects = [] }) => {
       </Section>
 
       <Section
-        heading="Projects We've Undertaken In The Past"
+        heading="Featured Projects"
         number={2}
         colour="light"
       >
-        <ProjectsGrid projects={projects} />
+        <ProjectsGrid projects={homePageProjects} />
       </Section>
 
       <Banner

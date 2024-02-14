@@ -1,22 +1,12 @@
 .ProjectsGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
 
-  .filter {
-    margin-bottom: 2rem;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1.5rem;
+  @media screen and (min-width:1600px) {
+    grid-template-columns: repeat(3, 1fr);
   }
 
-  .grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-
-    @media screen and (min-width:1600px) {
-      grid-template-columns: repeat(3, 1fr);
-    }
-
-    @media screen and (max-width: 768px) {
-      grid-template-columns: 1fr;
-    }
+  @media screen and (max-width: 768px) {
+    grid-template-columns: 1fr;
   }
 }

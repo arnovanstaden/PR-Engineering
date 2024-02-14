@@ -1,6 +1,6 @@
 import Section from '@components/UI/Section/Section';
 import PageHeading from '@components/UI/PageHeading/PageHeading';
-import ProjectsGrid from '@components/Content/ProjectsGrid/ProjectsGrid'
+import ProjectsGridWithFiltering from '@components/Content/ProjectsGridWithFiltering/ProjectsGridWithFiltering'
 import styles from './projects.module.scss';
 import { getProjects } from '@lib/sanity';
 import { generateCustomMetaData } from '@utils/metadata';
@@ -23,7 +23,7 @@ const Projects = async () => {
         colour="light"
         number={1}
       >
-        <ProjectsGrid projects={projects} />
+        <ProjectsGridWithFiltering projects={projects} />
       </Section>
     </main>
   )
