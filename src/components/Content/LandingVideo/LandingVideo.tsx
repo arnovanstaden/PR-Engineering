@@ -1,5 +1,3 @@
-'use client';
-
 import styles from './LandingVideo.module.scss';
 import fallbackImage from '@static/videos/fallback.jpg';
 import Image from 'next/image';
