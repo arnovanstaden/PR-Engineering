@@ -1,13 +1,19 @@
 .HomePage {
   .landing {
     width: 100vw;
-    max-height: 90vh;
+    height: calc(100vh - $header-height);
     overflow: hidden;
     position: relative;
 
-    video {
-      min-width: 100vw;
-      min-height: 100vh;
+    .videoContainer {
+      height: 100%;
+      width: 100%;
+
+      video {
+        min-height: 100%;
+        min-width: 100%;
+        object-position: center;
+      }
     }
 
     .overlay {
@@ -89,7 +95,6 @@
   }
 
   .intro {
-
     display: flex;
 
     .text {
@@ -142,7 +147,6 @@
         }
       }
 
-
       .list {
         @include list-reset;
 
@@ -182,7 +186,6 @@
 
 
   @media screen and (max-width: 991px) {
-
     .intro {
       flex-wrap: wrap;
 
@@ -225,10 +228,7 @@
   }
 
   @media screen and (max-width: 768px) {
-
     .landing {
-      min-height: 100vh;
-
       .social {
         position: absolute;
         left: 0;
@@ -245,30 +245,20 @@
     }
 
     .intro {
-
       .image {
-
         img {
           width: 100%;
         }
       }
     }
-
-
-
   }
 
   @media screen and (max-width: 600px) {
     .landing {
-
-
       .overlay {
-
         background-color: rgba($grey, 0.6);
 
         .content {
-
-
           h1 {
             font-size: 2.25rem;
           }

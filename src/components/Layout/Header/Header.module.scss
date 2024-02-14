@@ -1,7 +1,9 @@
 .header {
   background-color: $grey;
-  padding: 1.25rem 0;
+  height: $header-height;
   position: relative;
+  display: flex;
+  align-items: center;
 
   .nav {
     display: flex;

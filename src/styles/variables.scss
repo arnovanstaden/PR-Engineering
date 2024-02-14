@@ -4,6 +4,7 @@ $lightgrey: #333437;
 $white: #ffffff;
 $font: var(--font-titillium-web);
 $heading-font: var(--font-open-sans);
+$header-height: 60px;
 
 @mixin list-reset {
   list-style: none;
