@@ -24,8 +24,8 @@ const Home = async () => {
   return (
     <main className={styles.HomePage}>
       <section className={styles.landing}>
-        <video autoPlay muted={true} loop={true} >
-          <source src={'/videos/landing1.mp4'} type="video/mp4" />
+        <video autoPlay muted={true} loop={true} controls={false}>
+          <source src="'/static/videos/landing2.mp4'" type="video/mp4" />
         </video>
         <div className={styles.overlay}>
           <Container>
