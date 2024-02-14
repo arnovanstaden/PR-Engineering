@@ -9,8 +9,8 @@ const ProjectGallery: React.FC<{ images: string[] }> = ({ images }) => {
   const [lightBoxImage, setLightBoxImage] = useState('');
 
   return (
-    <div className={styles.ProjectGallery}>
-      <div className={styles.grid}>
+    <>
+      <div className={styles.ProjectGallery}>
         {images.map((image, index) => (
           <div
             className={styles.image}
@@ -21,8 +21,7 @@ const ProjectGallery: React.FC<{ images: string[] }> = ({ images }) => {
             <Image
               src={image}
               alt="Project Image"
-              width={500}
-              height={350}
+              fill
             />
           </div>
         ))
@@ -34,7 +33,7 @@ const ProjectGallery: React.FC<{ images: string[] }> = ({ images }) => {
         onClose={() => setLightBoxImage('')}
         firstImage={lightBoxImage}
       />
-    </div >
+    </>
   );
 };
 

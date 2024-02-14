@@ -1,33 +1,41 @@
 .ProjectGallery {
-  .grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-auto-rows: auto;
-    gap: 1rem;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  width: 100%;
 
-    .image {
-      position: relative;
-      cursor: pointer;
+  .image {
+    position: relative;
+    cursor: pointer;
+    width: 100%;
+    height: 250px;
+
+    .overlay {
+      @include cover-parent;
+      background-color: $white;
+      opacity: 0;
+      transition: 0.3s ease-in-out;
+      z-index: 1;
+    }
+
+    img {
+      object-fit: cover;
+      object-position: center;
       width: 100%;
+    }
 
+    &:hover {
       .overlay {
-        @include cover-parent;
-        background-color: $white;
-        opacity: 0;
-        transition: 0.3s ease-in-out;
-        z-index: 1;
-      }
-
-      img {
-        object-fit: cover;
-        object-position: center;
-      }
-
-      &:hover {
-        .overlay {
-          opacity: 0.4;
-        }
+        opacity: 0.4;
       }
     }
+  }
+
+  @media (max-width: $breakpoint-sm) {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  @media (max-width: $breakpoint-xs) {
+    grid-template-columns: 1fr;
   }
 }

@@ -18,7 +18,7 @@ const Project: React.FC<IProject> = (project) => {
       <Link href={`/projects/${project.slug}`} className={styles.overlay}>
         <div className={styles.content}>
           <h1>{project.title}</h1>
-          <hr />
+          <div className={styles.divider} />
           <p>
             <Icon name="location_on" />
             {project.location}
