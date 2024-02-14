@@ -61,11 +61,11 @@
     }
   }
 
-  @media (max-width: 768px) {
+  @media (max-width: $breakpoint-sm) {
     display: block;
   }
 
-  @media (max-width: 600px) {
+  @media (max-width: $breakpoint-xs) {
     &.open {
       .drawer {
         width: 100%;

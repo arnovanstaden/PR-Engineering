@@ -102,7 +102,6 @@ const Project: React.FC<{ params: { slug: string } }> = async ({ params }) => {
 
       {project.images.length > 0 && (
         <Section
-          className={styles.gallery}
           heading="Project Gallery"
           colour="light"
         >

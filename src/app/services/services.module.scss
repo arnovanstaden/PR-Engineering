@@ -59,7 +59,7 @@
     }
   }
 
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: $breakpoint-sm) {
     .intro {
       grid-template-columns: 1fr;
 
@@ -79,7 +79,7 @@
     }
   }
 
-  @media screen and (max-width: 600px) {
+  @media screen and (max-width: $breakpoint-xs) {
     .category {
       .list {
         grid-template-columns: 1fr;

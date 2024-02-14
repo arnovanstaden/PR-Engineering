@@ -160,7 +160,7 @@
   }
 
 
-  @media screen and (max-width: 991px) {
+  @media screen and (max-width: $breakpoint-md) {
     .intro {
       grid-template-columns: 1fr;
       gap: 2rem;
@@ -195,7 +195,7 @@
     }
   }
 
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: $breakpoint-sm) {
     .landing {
       .social {
         position: absolute;
@@ -221,7 +221,7 @@
     }
   }
 
-  @media screen and (max-width: 600px) {
+  @media screen and (max-width: $breakpoint-xs) {
     .landing {
       .overlay {
         background-color: rgba($grey, 0.6);
