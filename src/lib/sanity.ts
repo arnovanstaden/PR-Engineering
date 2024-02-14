@@ -16,7 +16,7 @@ const buildGROQ = (slug?: string): string => (
     "slug": slug.current,
     description,
     services,
-    category,
+    "category":category->title,
     location,
     year,
     home,

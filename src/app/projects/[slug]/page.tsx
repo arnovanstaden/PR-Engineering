@@ -6,6 +6,7 @@ import Image from 'next/image';
 import Icon from '@components/UI/Icon/Icon';
 import { generateCustomMetaData } from '@utils/metadata';
 import ProjectGallery from '@components/Content/ProjectGallery/ProjectGallery';
+import Link from 'next/link';
 
 export const generateMetadata = async ({ params }) => {
   const project = await getProject(params.slug);
@@ -69,7 +70,13 @@ const Project: React.FC<{ params: { slug: string } }> = async ({ params }) => {
           <div className={styles.stats}>
             <ul>
               <li>
-                <span>Scope:</span>{project.services}
+                <span>Category:</span>
+                <Link href={`/projects?category=${project.category}`}>
+                  {project.category}
+                </Link>
+              </li>
+              <li>
+                <span>Services:</span>{project.services}
               </li>
               <li>
                 <span>Date:</span>{project.year}
@@ -77,6 +84,7 @@ const Project: React.FC<{ params: { slug: string } }> = async ({ params }) => {
               <li>
                 <span>Location:</span>{project.location}
               </li>
+
             </ul>
           </div>
           <div className={styles.description}>
