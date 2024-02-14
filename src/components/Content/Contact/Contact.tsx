@@ -1,31 +1,56 @@
 'use client';
 
-import { MutableRefObject, useRef } from 'react';
 import styles from './contact.module.scss';
 import Button from '@components/UI/Button/Button';
 import Icon from '@components/UI/Icon/Icon';
+import { FieldErrors, UseFormRegisterReturn, useForm } from 'react-hook-form';
+import { TContactMessage } from '@types';
+import { buildContactEmail } from '@lib/email/client';
+import { sendEmail } from '@lib/email/server';
+import { useState } from 'react';
 
+interface InputProps {
+  name: string;
+  type: 'text' | 'email' | 'tel';
+  register: UseFormRegisterReturn;
+  errors: FieldErrors<TContactMessage>
+}
+
+const Input: React.FC<InputProps> = ({ name, errors, register }) => (
+  <>
+    <label htmlFor={name}>{name}</label>
+    <input
+      type="text"
+      name={name}
+      autoComplete={name}
+      {...register}
+    />
+    {errors[name]?.type === 'required' && <small>{name} is required</small>}
+  </>
+);
 
 const Contact = () => {
-  const formRef = useRef() as MutableRefObject<HTMLFormElement>;
+  const [success, setSuccess] = useState(false);
 
-  const submitForm = (e) => {
-    e.preventDefault()
-    const form = formRef.current;
-    const formData = new FormData(form);
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+    reset
+  } = useForm<TContactMessage>();
 
-    fetch('https://formspree.io/f/myyleyll', {
-      method: 'POST',
-      body: formData,
-      headers: {
-        'Accept': 'application/json'
-      }
-    })
-      .then(response => response.json())
-      .then(() => {
-        form.reset()
-        alert('Thanks for your submission. We\'ll get back to you soon.');
+  // Handlers
+  const handleSubmitContactForm = async (data: TContactMessage) => {
+    try {
+      await sendEmail({
+        subject: 'Website Contact Message',
+        body: buildContactEmail(data),
       });
+      reset();
+      setSuccess(true);
+    } catch (error) {
+      console.error(error);
+    }
   }
 
   return (
@@ -63,34 +88,63 @@ const Contact = () => {
           </a>
         </div>
       </div>
-      <div className={styles.form}>
-        <h1>Send us a Message</h1>
-        <form ref={formRef}>
-          <div className={styles.group}>
-            <label htmlFor="Name">Name</label>
-            <input type="text" name="Name" required />
+      {!success
+        ? (
+          <div className={styles.form}>
+            <h1>Send us a Message</h1>
+            <form onSubmit={handleSubmit(handleSubmitContactForm)}>
+              <div className={styles.group}>
+                <Input
+                  name="name"
+                  type="text"
+                  register={{ ...register('name', { required: true }) }}
+                  errors={errors}
+                />
+              </div>
+              <div className={styles.group}>
+                <Input
+                  name="email"
+                  type="text"
+                  register={{ ...register('email', { required: true }) }}
+                  errors={errors}
+                />
+              </div>
+              <div className={styles.group}>
+                <Input
+                  name="phone"
+                  type="tel"
+                  register={{ ...register('phone', { required: true }) }}
+                  errors={errors}
+                />
+              </div>
+              <div className={styles.group}>
+                <Input
+                  name="company"
+                  type="text"
+                  register={{ ...register('company', { required: true }) }}
+                  errors={errors}
+                />
+              </div>
+              <div className={`${styles.group} ${styles.row}`}>
+                <label htmlFor="Message">Message</label>
+                <textarea
+                  name="Message"
+                  {...register('message', { required: true })}
+                >
+                </textarea>
+                {errors.message?.type === 'required' && <small>message is required</small>}
+              </div>
+              <div className={styles.button}>
+                <Button>Send Message</Button>
+              </div>
+            </form>
           </div>
-          <div className={styles.group}>
-            <label htmlFor="Email">Email</label>
-            <input type="email" name="Email" required />
+        )
+        : (
+          <div className={styles.success}>
+            <h1>Thanks for submitting your message. We'll get back to you soon</h1>
           </div>
-          <div className={styles.group}>
-            <label htmlFor="Phone">Phone</label>
-            <input type="tel" name="Phone" required />
-          </div>
-          <div className={styles.group}>
-            <label htmlFor="Company">Company</label>
-            <input type="text" name="Company" />
-          </div>
-          <div className={`${styles.group} ${styles.row}`}>
-            <label htmlFor="Message">Message</label>
-            <textarea name="Message"></textarea>
-          </div>
-          <div className={styles.button}>
-            <Button click={submitForm} >Send Message</Button>
-          </div>
-        </form>
-      </div>
+        )}
     </div>
   )
 }

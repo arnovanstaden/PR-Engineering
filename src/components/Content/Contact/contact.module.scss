@@ -1,5 +1,6 @@
 .contact {
-  display: flex;
+  display: grid;
+  grid-template-columns: 2fr 3fr;
 
   >div {
     padding: 3rem 2rem 4rem 2rem;
@@ -15,7 +16,6 @@
   }
 
   .details {
-    width: 40%;
     background-color: $grey;
     color: $white;
 
@@ -61,7 +61,6 @@
   }
 
   .form {
-    width: 60%;
     background-color: rgba($lightgrey, $alpha: 0.075);
 
     form {
@@ -71,7 +70,6 @@
       gap: 2rem;
 
       .group {
-
         label {
           display: block;
           font-weight: 500;
@@ -79,6 +77,14 @@
           padding: 0.25rem 0;
           text-transform: uppercase;
         }
+
+        small {
+          font-weight: 500;
+          color: $blue;
+
+        }
+
+        text-transform: uppercase;
 
         input,
         textarea {
@@ -126,26 +132,22 @@
     }
   }
 
-  @media screen and (max-width: 991px) {
-    flex-wrap: wrap;
-
-    .form,
-    .details {
-      width: 100%;
-    }
+  .success {
+    background-color: rgba($lightgrey, $alpha: 0.075);
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    width: 100%;
+    height: 100%;
   }
 
-  @media screen and (max-width: 600px) {
-    .form {
+  @media screen and (max-width: 991px) {
+    grid-template-columns: 1fr;
 
-      form {
-        display: block;
-
-        .group {
-          padding-top: 1rem;
-        }
-
-      }
+    .success {
+      min-height: 300px;
     }
   }
 }

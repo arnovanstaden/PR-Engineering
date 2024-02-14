@@ -10,3 +10,11 @@ export interface IProject {
   thumbnail: string;
   images: string[];
 }
+
+export type TContactMessage = {
+  name: string;
+  email: string;
+  message: string;
+  company: string;
+  phone: string;
+};
