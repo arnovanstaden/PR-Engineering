@@ -1,8 +1,7 @@
 'use client';
 
 import Button from '@components/UI/Button/Button';
-
-// Styles
+import { Suspense } from 'react'
 import styles from './ProjectsGrid.module.scss';
 import { useEffect, useState } from 'react';
 import Project from './Project/Project';
@@ -59,4 +58,10 @@ const ProjectsGrid: React.FC<{ projects: IProject[] }> = ({ projects }) => {
   )
 }
 
-export default ProjectsGrid
+const WithSuspense = (props) => (
+  <Suspense>
+    <ProjectsGrid {...props} />
+  </Suspense>
+);
+
+export default WithSuspense;
