@@ -7,6 +7,8 @@ import servicesData from '../../assets/data/services.json';
 import styles from './home.module.scss';
 import Icon from '@components/UI/Icon/Icon';
 import { generateCustomMetaData } from '@utils/metadata';
+import MapOfAfricaImage from '@static/images/pages/home/overview.png';
+import Image from 'next/image';
 
 export const metadata = generateCustomMetaData({
   title: 'PR Engineering',
@@ -53,7 +55,12 @@ const Home = ({ projects = [] }) => {
           <Button link="/about" >Learn More</Button>
         </div>
         <div className={styles.image}>
-          <img src="/static/images/pages/home/overview.png" alt="Map of Africa" />
+          <Image
+            alt="Map of Africa"
+            priority
+            src={MapOfAfricaImage}
+            fill
+          />
         </div>
       </Section>
 

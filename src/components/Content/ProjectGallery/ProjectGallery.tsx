@@ -20,8 +20,8 @@ const ProjectGallery: React.FC<{ images: string[] }> = ({ images }) => {
           <Image
             src={image}
             alt="Project Image"
-            width={400}
-            height={400}
+            width={500}
+            height={350}
           />
         </div>
       ))}

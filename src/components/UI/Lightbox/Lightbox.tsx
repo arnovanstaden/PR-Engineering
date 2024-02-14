@@ -2,7 +2,7 @@ import Image from 'next/image';
 import Icon from '../Icon/Icon';
 
 // Styles
-import styles from './LightBox.module.scss';
+import styles from './styles.module.scss';
 import { useEffect, useState } from 'react';
 import useFreezeScrolling from 'src/hooks/useFreezeScrolling';
 

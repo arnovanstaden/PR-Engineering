@@ -42,6 +42,8 @@ const About = () => {
             alt="Map of Africa"
             priority
             src={MapOfAfricaImage}
+            fill
+
           />
         </div>
       </Section>
