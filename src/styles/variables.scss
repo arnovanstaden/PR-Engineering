@@ -6,6 +6,12 @@ $font: var(--font-titillium-web);
 $heading-font: var(--font-open-sans);
 $header-height: 60px;
 
+// Breakpoints
+$breakpoint-xs: 600px;
+$breakpoint-sm: 768px;
+$breakpoint-md: 1024px;
+$breakpoint-lg: 1200px;
+
 @mixin list-reset {
   list-style: none;
   padding: 0;

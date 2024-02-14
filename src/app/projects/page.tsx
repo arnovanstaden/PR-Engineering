@@ -21,7 +21,6 @@ const Projects = async () => {
 
       <Section
         colour="light"
-        number={1}
       >
         <ProjectsGridWithFiltering projects={projects} />
       </Section>

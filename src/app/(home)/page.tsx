@@ -51,7 +51,6 @@ const Home = async () => {
 
       <Section
         heading="Professional Value-Driven Consulting Engineering Solutions"
-        number={1}
         className={styles.intro}
       >
         <div className={styles.text}>
@@ -70,7 +69,6 @@ const Home = async () => {
 
       <Section
         heading="Featured Projects"
-        number={2}
         colour="light"
       >
         <ProjectsGrid projects={homePageProjects} />
@@ -84,7 +82,6 @@ const Home = async () => {
 
       <Section
         heading="Services We Offer"
-        number={3}
         colour="dark"
         className={styles.services}
       >
@@ -110,7 +107,6 @@ const Home = async () => {
 
       <Section
         heading="Get In Touch"
-        number={4}
       >
         <Contact />
       </Section>

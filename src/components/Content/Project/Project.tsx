@@ -11,15 +11,14 @@ const Project: React.FC<IProject> = (project) => {
         <Image
           src={project.thumbnail}
           alt={project.title}
-          width={500}
-          height={250}
+          fill
           priority
         />
       </div>
       <Link href={`/projects/${project.slug}`} className={styles.overlay}>
         <div className={styles.content}>
           <h1>{project.title}</h1>
-          <hr />
+          <div className={styles.divider} />
           <p>
             <Icon name="location_on" />
             {project.location}

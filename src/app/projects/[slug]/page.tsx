@@ -64,7 +64,6 @@ const Project: React.FC<{ params: { slug: string } }> = async ({ params }) => {
       <Section
         className={styles.details}
         heading="Project Overview"
-        number={1}
       >
         <div className={styles.grid}>
           <div className={styles.stats}>
@@ -81,7 +80,7 @@ const Project: React.FC<{ params: { slug: string } }> = async ({ params }) => {
                   project.services.map((service, index) => (
                     <Link href={`/projects?service=${service}`} key={index}>
                       {service}
-                      {', '}
+                      {index < project.services.length - 1 && ', '}
                     </Link>
                   ))
                 }
@@ -103,9 +102,7 @@ const Project: React.FC<{ params: { slug: string } }> = async ({ params }) => {
 
       {project.images.length > 0 && (
         <Section
-          className={styles.gallery}
           heading="Project Gallery"
-          number={2}
           colour="light"
         >
           <ProjectGallery images={project.images} />

@@ -21,7 +21,6 @@ const About = () => {
 
       <Section
         heading="Company Overview"
-        number={1}
         className={styles.overview}
       >
         <div className={styles.text}>
@@ -43,14 +42,12 @@ const About = () => {
             priority
             src={MapOfAfricaImage}
             fill
-
           />
         </div>
       </Section>
 
       <Section
         heading="Our Values"
-        number={2}
         colour="dark"
         className={styles.values}
       >
@@ -81,7 +78,6 @@ const About = () => {
 
       <Section
         heading="Our Memberships"
-        number={3}
         className={styles.memberships}
       >
         <Image
@@ -124,7 +120,6 @@ const About = () => {
 
       <Section
         heading="Our Team"
-        number={4}
         colour="light"
         className={styles.team}
       >

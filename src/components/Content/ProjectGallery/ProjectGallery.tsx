@@ -9,29 +9,31 @@ const ProjectGallery: React.FC<{ images: string[] }> = ({ images }) => {
   const [lightBoxImage, setLightBoxImage] = useState('');
 
   return (
-    <div className={styles.ProjectGallery}>
-      {images.map((image, index) => (
-        <div
-          className={styles.image}
-          key={index}
-          onClick={() => setLightBoxImage(image)}
-        >
-          <div className={styles.overlay}></div>
-          <Image
-            src={image}
-            alt="Project Image"
-            width={500}
-            height={350}
-          />
-        </div>
-      ))}
+    <>
+      <div className={styles.ProjectGallery}>
+        {images.map((image, index) => (
+          <div
+            className={styles.image}
+            key={index}
+            onClick={() => setLightBoxImage(image)}
+          >
+            <div className={styles.overlay}></div>
+            <Image
+              src={image}
+              alt="Project Image"
+              fill
+            />
+          </div>
+        ))
+        }
+      </div >
       <LightBox
         open={!!lightBoxImage}
         images={images}
         onClose={() => setLightBoxImage('')}
         firstImage={lightBoxImage}
       />
-    </div>
+    </>
   );
 };
 

@@ -143,7 +143,7 @@
     height: 100%;
   }
 
-  @media screen and (max-width: 991px) {
+  @media screen and (max-width: $breakpoint-md) {
     grid-template-columns: 1fr;
 
     .success {
@@ -151,7 +151,7 @@
     }
   }
 
-  @media screen and (max-width: 991px) {
+  @media screen and (max-width: $breakpoint-md) {
     .form form {
       grid-template-columns: 1fr;
 

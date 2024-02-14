@@ -1,6 +1,8 @@
 .Project {
   position: relative;
   cursor: pointer;
+  width: 100%;
+  height: 300px;
 
   .image {
     width: 100%;
@@ -17,35 +19,51 @@
   }
 
   .overlay {
-    padding: 6rem 1rem;
+    width: 100%;
+    height: 100%;
     background-color: rgba($color: $grey, $alpha: 0.75);
     text-align: center;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
     position: relative;
     z-index: 1;
     transition: 0.3s ease-in-out;
+    display: block;
 
-    h1 {
-      margin: 0 0 0.5rem 0;
-      font-weight: 500;
-      letter-spacing: 0.5px;
-      font-size: 1.75rem;
-      color: $white;
-    }
-
-    p {
-      margin: 0;
-      color: $blue;
-      font-weight: 500;
+    .content {
+      padding: 1rem;
       display: flex;
       align-items: center;
+      flex-direction: column;
       justify-content: center;
+      gap: 16px;
+      width: 100%;
+      height: 100%;
 
-      i {
-        margin-right: 0.5rem;
+      h1 {
+        margin: 0;
+        font-weight: 500;
+        letter-spacing: 0.5px;
+        font-size: 1.75rem;
+        color: $white;
+      }
+
+      .divider {
+        height: 1px;
+        background-color: $white;
+        width: 100%;
+      }
+
+      p {
+        margin: 0;
+        color: $blue;
+        font-weight: 500;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: $blue !important;
+
+        i {
+          margin-right: 0.5rem;
+        }
       }
     }
   }

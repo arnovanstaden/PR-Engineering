@@ -9,7 +9,6 @@ body {
   margin: 0;
   width: 100vw;
   min-height: 100vh;
-  box-sizing: border-box;
   color: $grey;
   transition: 0.3s ease-out;
   scroll-behavior: smooth;
@@ -21,6 +20,10 @@ body {
     height: 100vh;
     overflow: hidden;
   }
+}
+
+* {
+  box-sizing: border-box;
 }
 
 // Typography
