@@ -14,7 +14,7 @@ interface IProps {
 }
 
 export const generateCustomMetaData = ({ title, description, image }: IProps): Metadata => {
-  const url = 'https://engpr.com';
+  const url = 'https://www.engpr.com';
 
   const images = image ?
     [{
