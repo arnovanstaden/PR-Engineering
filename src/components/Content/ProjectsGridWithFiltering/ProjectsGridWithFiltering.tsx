@@ -85,7 +85,6 @@ const ProjectsGridWithFiltering: React.FC<{ projects: IProject[] }> = ({ project
           options={reactSelectOptions}
           unstyled
           className={styles.select}
-          defaultMenuIsOpen
         />
       </div>
       <ProjectsGrid projects={filteredProjects} />
