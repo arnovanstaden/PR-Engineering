@@ -5,23 +5,14 @@
     overflow: hidden;
     position: relative;
 
-    .videoContainer {
-      height: 100%;
-      width: 100%;
-
-      video {
-        min-height: 100%;
-        min-width: 100%;
-        object-position: center;
-      }
-    }
-
     .overlay {
       @include cover-parent;
       background-color: rgba($grey, 0.5);
       display: flex;
       justify-content: center;
       align-items: center;
+      position: absolute;
+      z-index: 3;
 
       .content {
         text-align: center;

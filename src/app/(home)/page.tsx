@@ -11,6 +11,7 @@ import MapOfAfricaImage from '@static/images/pages/home/overview.png';
 import Image from 'next/image';
 import { getProjects } from '@lib/sanity';
 import Container from '@components/UI/Container/Container';
+import LandingVideo from '@components/Content/LandingVideo/LandingVideo';
 
 export const metadata = generateCustomMetaData({
   title: 'PR Engineering',
@@ -24,11 +25,7 @@ const Home = async () => {
   return (
     <main className={styles.HomePage}>
       <section className={styles.landing}>
-        <div className={styles.videoContainer}>
-          <video autoPlay muted={true} loop={true} controls={false} preload="none" >
-            <source src="/static/videos/landing.mp4" type="video/mp4" />
-          </video>
-        </div>
+        <LandingVideo />
         <div className={styles.overlay}>
           <Container>
             <div className={styles.content}>
