@@ -1,0 +1,75 @@
+.MobileMenu {
+  display: none;
+
+  .menuIcon {
+    color: $white;
+    cursor: pointer;
+  }
+
+  .drawer {
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100vh;
+    width: 0;
+    background-color: rgba($grey, 0.95);
+    justify-content: center;
+    flex-direction: column;
+    display: flex;
+    align-items: center;
+    box-sizing: border-box;
+    overflow: hidden;
+    transition: 0.3s ease-in-out;
+    z-index: 10;
+    gap: 2rem;
+    padding: 2rem 0;
+
+    .closeButton {
+      position: absolute;
+      top: 1.5rem;
+      right: 1.5rem;
+      color: $white;
+      font-size: 1.4rem;
+      cursor: pointer;
+      padding: 0.1rem;
+    }
+
+    ul {
+      flex-direction: column;
+      gap: 1.25rem;
+    }
+
+    .social {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
+
+      i {
+        color: $white;
+        font-size: 1.4rem;
+        cursor: pointer;
+        padding: 0.5rem;
+      }
+    }
+  }
+
+  &.open {
+    .drawer {
+      width: 75vw;
+      border-left: 4px solid $blue;
+    }
+  }
+
+  @media (max-width: 768px) {
+    display: block;
+  }
+
+  @media (max-width: 600px) {
+    &.open {
+      .drawer {
+        width: 100%;
+      }
+    }
+  }
+}

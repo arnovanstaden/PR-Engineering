@@ -1,0 +1,24 @@
+.Menu {
+  @include list-reset;
+  display: flex;
+  align-items: center;
+
+  li {
+    margin-left: 1rem;
+    color: $white;
+    text-transform: uppercase;
+    font-family: $heading-font;
+    font-weight: 400;
+    font-size: 1rem;
+    letter-spacing: 0.5px;
+
+    &:hover {
+      color: $blue;
+    }
+
+    &.active {
+      color: $blue;
+      font-weight: 500;
+    }
+  }
+}
