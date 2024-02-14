@@ -1,14 +1,13 @@
 import Section from '@components/UI/Section/Section';
 import styles from './[slug].module.scss';
-import { getProject } from '@lib/sanity';
+import { getProject, getProjects } from '@lib/sanity';
 import { notFound } from 'next/navigation';
 import Image from 'next/image';
 import Icon from '@components/UI/Icon/Icon';
 import { generateCustomMetaData } from '@utils/metadata';
 import ProjectGallery from '@components/Content/ProjectGallery/ProjectGallery';
 
-
-export async function generateMetadata({ params }) {
+export const generateMetadata = async ({ params }) => {
   const project = await getProject(params.slug);
 
   if (!project) {
@@ -20,6 +19,13 @@ export async function generateMetadata({ params }) {
     description: `${project.location}, ${project.year} - ${project.description}`,
     image: project.thumbnail,
   })
+}
+
+export const generateStaticParams = async () => {
+  const projects = await getProjects();
+  return projects.map((project) => ({
+    slug: project.slug,
+  }));
 }
 
 const Project: React.FC<{ params: { slug: string } }> = async ({ params }) => {
