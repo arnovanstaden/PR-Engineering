@@ -24,11 +24,9 @@ const Team: React.FC = () => {
               <a href={`mailto:${member.email}`}>{member.email}</a>
             </div>
           </div>
-          <div className={styles.bio}>
-            <p>
-              {member.description}
-            </p>
-          </div>
+          <p className={styles.bio}>
+            {member.description}
+          </p>
         </article>
       ))}
     </div>

@@ -20,7 +20,6 @@ const Services = () => {
 
       <Section
         heading="Professional Services"
-        number={1}
         className={styles.intro}
       >
         <div className={styles.content}>
@@ -108,7 +107,6 @@ const Services = () => {
 
       <Section
         heading="Mechanical Engineering"
-        number={2}
         className={styles.category}
         colour="dark"
       >
@@ -124,7 +122,6 @@ const Services = () => {
 
       <Section
         heading="Electrical &amp; Electronic Engineering"
-        number={3}
         className={styles.category}
       >
         <ul className={styles.list}>
@@ -139,7 +136,6 @@ const Services = () => {
 
       <Section
         heading="Fire Engineering"
-        number={4}
         className={styles.category}
         colour="dark"
       >

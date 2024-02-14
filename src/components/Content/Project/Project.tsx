@@ -11,8 +11,7 @@ const Project: React.FC<IProject> = (project) => {
         <Image
           src={project.thumbnail}
           alt={project.title}
-          width={500}
-          height={250}
+          fill
           priority
         />
       </div>

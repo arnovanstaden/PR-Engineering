@@ -58,16 +58,15 @@
     }
 
     .bio {
-      p {
-        color: $lightgrey;
-        margin-top: 1.5rem;
-        font-style: italic;
+      color: $lightgrey !important;
+      margin-top: 1rem;
+      font-style: italic;
+      color: $lightgrey;
 
-        span {
-          display: block;
-          color: $blue;
-          font-weight: 300;
-        }
+      span {
+        display: block;
+        color: $blue;
+        font-weight: 300;
       }
     }
   }

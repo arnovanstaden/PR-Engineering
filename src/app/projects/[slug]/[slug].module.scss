@@ -76,13 +76,13 @@
       .stats {
         background-color: $lightgrey;
         color: $white;
-        padding-left: 2rem;
-        padding-right: 1rem;
+        padding: 1.5rem;
         display: flex;
         align-items: center;
 
         ul {
           @include list-reset;
+          width: 100%;
 
           li {
             padding: 1.25rem 0;
