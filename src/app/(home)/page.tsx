@@ -26,7 +26,7 @@ const Home = async () => {
       <section className={styles.landing}>
         <div className={styles.videoContainer}>
           <video autoPlay muted={true} loop={true} controls={false} preload="none" >
-            <source src="/static/videos/landing2.mp4" type="video/mp4" />
+            <source src="/static/videos/landing.mp4" type="video/mp4" />
           </video>
         </div>
         <div className={styles.overlay}>
