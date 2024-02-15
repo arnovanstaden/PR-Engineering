@@ -13,8 +13,8 @@ const LandingVideo: React.FC = () => (
     />
     <video
       autoPlay
-      muted={true}
-      loop={true}
+      muted
+      loop
       controls={false}
       playsInline
     >
