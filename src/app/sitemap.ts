@@ -4,7 +4,7 @@ import { MetadataRoute } from 'next';
 export const revalidate = 0;
 
 const sitemap = async (): Promise<MetadataRoute.Sitemap> => {
-  const url = 'https://engpr.com';
+  const url = 'https://www.engpr.com';
 
   const basicPages = ['', 'about', 'services', 'projects', 'contact'];
 

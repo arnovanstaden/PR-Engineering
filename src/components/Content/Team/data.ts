@@ -22,7 +22,7 @@ export const teamData: ITeamMember[] = [
     email: 'paul@engpr.com',
   },
   {
-    name: 'Matthys',
+    name: 'Matthys Olivier',
     position: 'Associate Director',
     description: 'Matthys discovered his passion for construction and MEP during his mechanical engineering studies. He thrives on seeing projects evolve and approaches problem-solving with fairness and impartiality. As second in command, he ensures smooth communication and workflow, earning praise for his determination and honesty. Matthys embodies integrity and dedication, fundamental to our consultancy\'s success.',
     image: '/static/images/pages/about/team/Matthys.jpg',
