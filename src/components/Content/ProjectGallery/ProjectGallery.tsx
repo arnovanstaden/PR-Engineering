@@ -11,21 +11,24 @@ const ProjectGallery: React.FC<{ images: string[] }> = ({ images }) => {
   return (
     <>
       <div className={styles.ProjectGallery}>
-        {images.map((image, index) => (
-          <div
-            className={styles.image}
-            key={index}
-            onClick={() => setLightBoxImage(image)}
-          >
-            <div className={styles.overlay}></div>
-            <Image
-              src={image}
-              alt="Project Image"
-              width={400}
-              height={300}
-            />
-          </div>
-        ))
+        {images.map((image, index) =>
+          image ? (
+            (
+              <div
+                className={styles.image}
+                key={index}
+                onClick={() => setLightBoxImage(image)}
+              >
+                <div className={styles.overlay}></div>
+                <Image
+                  src={image}
+                  alt="Project Image"
+                  width={400}
+                  height={300}
+                />
+              </div>
+            )
+          ) : null)
         }
       </div >
       <LightBox
